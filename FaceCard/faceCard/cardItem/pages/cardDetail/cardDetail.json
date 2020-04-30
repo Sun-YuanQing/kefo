@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "卡项详情",
+  "usingComponents": {
+    "i-action-sheet": "/cardItem/compoment/iview/action-sheet/index",
+    "i-modal": "/cardItem/compoment/iview/modal/index"
+  }
+}

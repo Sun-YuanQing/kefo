@@ -1,0 +1,12 @@
+{
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "Header": "/components/navbar/navbar",
+    "commodity-list": "/components/commodity/commodity",
+    "i-modal": "/components/iview/modal/index",
+    "i-seckill": "/components/seckillList/seckillList",
+    "i-spin": "/components/iview/spin/index",
+    "i-message": "/components/iview/message/index"
+  }
+}

@@ -1,0 +1,61 @@
+<!--pages/doctor/reportDetail/reportDetail.wxml-->
+<view>
+	<scroll-view class="scroll-box" scroll-x="true">
+		<view wx:for="{{tabBar}}" wx:key="index" data-index="{{index}}" class="scroll-item {{ItemName == item.ItemName ? 'scroll-sel' : ''}}" bindtap="changeProduct">{{item.ItemName}}</view>
+	</scroll-view>
+	<view class="paddingRL30">
+		<block>
+			<view class="block-box  ">
+				<view class="block-conter marginT28">
+					<view class="charts-titleY">{{"身高cm"}}</view>
+					<canvas canvas-id="canvasLineA" id="canvasLineA" class="charts" bindtouchstart="touchLineA" bindtouchmove="moveLineA" bindtouchend="touchEndLineA"></canvas>
+				</view>
+				<view class="valueBox">
+					<view class="charts-value f-column-between">
+						<view class="f-row">
+							<view class=" valueBox-fontSize f-1">判定：{{reportDetail[tabBar[index].ItemName].detail[uChartIndex].ItemResult}}</view>
+							<view class="valueBox-fontSize f-1">标准值：{{reportDetail[tabBar[index].ItemName].detail[uChartIndex].ItemStand}}</view>
+						</view>
+						<view class="valueBox-fontSize">备注: {{reportDetail[tabBar[index].ItemName].detail[uChartIndex].Reamrk}}</view>
+					</view>
+				</view>
+			</view>
+		</block>
+
+		<block>
+			<view class="block-box  paddingRL28">
+				<view class="paddingTB28 marginT28">
+					<view class="reportDetail-title">体检记录</view>
+					<view class="marginT28">
+						<view class=" marginT28 f-row-between" wx:for="{{reportDetail[tabBar[index].ItemName].detail}}" wx:item="item" wx:key="index">
+							<view class="item-lable">
+								{{item.PhyDate}}
+							</view>
+							<view class="item-value f-row-between">
+								<text>{{item.ItemAct}}</text>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</block>
+		<block>
+			<view class="block-box marginTB28 paddingRL28 ">
+				<view class="paddingTB28 marginT28">
+					<view class="determine-title">判定基准</view>
+					<view class="determine-conter marginT28">
+						<view>A：未发现异常</view>
+						<view>B：发现有所变化或轻微异常。 现在上不必担心（建议每年检查1次）</view>
+						<view>C：需要继续观察</view>
+						<view>C1：6个月后请做复查</view>
+						<view>C2：3个月后请做复查</view>
+						<view>D：要医治</view>
+						<view>D1：需要接受治疗</view>
+						<view>D2：需要进一步精密检查</view>
+						<view>E：请继续您现在的就医治疗</view>
+					</view>
+				</view>
+			</view>
+		</block>
+	</view>
+</view>

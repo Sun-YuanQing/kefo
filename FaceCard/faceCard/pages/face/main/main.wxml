@@ -1,0 +1,27 @@
+<!--pages/face/face.wxml-->
+<view class="container">
+  <view class="photo">
+    <block wx:for="{{[0,1,2,3]}}" wx:key="*this">
+      <view class="border border{{index+1}}"></view>
+    </block>
+    <view class="camera2">
+        <camera  device-position="{{devicePosition}}"
+                flash="off"
+                binderror="error">
+        </camera>
+        <cover-view class='wrap' wx-if="{{imgSrc}}">
+          <cover-image class="img" src="{{imgSrc}}" />
+        </cover-view>
+        <cover-view class="box" wx-if="{{isScan}}">
+          <cover-image class="img" src="../../../images/rectangular.png" />
+          <cover-view class="line"></cover-view>
+        </cover-view>
+    </view>
+    <view class="error">{{tipMsg}}</view>
+    <view class="button_wrap">
+        <text bindtap="cancel">取消</text>
+        <image src="../../../images/camera.png" bindtap="takePhoto"></image>
+        <image src="../../../images/reverse.png" bindtap="reserve"></image>
+    </view>
+  </view>
+</view>

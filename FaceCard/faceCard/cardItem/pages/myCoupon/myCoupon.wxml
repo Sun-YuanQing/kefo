@@ -1,0 +1,19 @@
+<!--cardItem/pages/myCoupon/myCoupon.wxml-->
+<view class="item_box" wx:for="{{detailList}}" wx:key="index" data-price="{{item.Amount}}" data-index="{{index}}" bindtap="toOrder">
+  <view class="detail">
+    <view class="detail_left">
+      <view>
+        <text class="small">￥</text>
+        <text class="big">{{item.PreferentialAmount}}</text>
+      </view>
+      <view>到店使用</view>
+    </view>
+    <view class="detail_right">
+      <view class="usage">满{{item.Amount}}元减{{item.PreferentialAmount}}元</view>
+      <view class="validity">有效期：{{item.DueTime == null ? "一直有效" : item.StartTime + "至" + item.DueTime}}</view>
+      <view class="remain" wx:if="{{item.Days < 31}}">
+        {{item.Days == 0 ? "今天到期" : item.Days + "天后到期"}}</view>
+    </view>
+  </view>
+</view>
+<i-message id="message" />

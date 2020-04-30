@@ -1,0 +1,71 @@
+<!--pages/statistics/index/index.wxml-->
+<view class="container">
+
+  <view class="user-notes" wx:if="{{isShowImg}}">
+    <view class="img_wrap">
+      <image src="../../../images/user-notes.png" mode="widthFix" style="width: 600rpx;"></image>
+      <view class="btn" bindtap="closeImg"></view>
+    </view>
+  </view>
+  <image class="tip" bindtap="showTip" src="../../../images/tip.png" mode="widthFix"></image>
+
+  <view class="total_wrap">
+    <view class="total">
+      <navigator url="/pages/statistics/balance/balance" class="item" hover-class="navigator-hover">
+        <view>{{statistics.AccountBalance}}<text>.{{statistics.DecimalBalance}}</text></view>
+        <view>账户余额(元)</view>
+      </navigator>
+      <navigator url="/pages/statistics/consume/consume?type=1" class="item" hover-class="navigator-hover">
+        <view>{{statistics.TotalRecharge}}<text>.{{statistics.DecimalRecharge}}</text></view>
+        <view>累计充值(元)</view>
+      </navigator>
+      <navigator url="/pages/statistics/consume/consume?type=3" class="item" hover-class="navigator-hover">
+        <view>{{statistics.TotalConsume}}<text>.{{statistics.DecimalConsume}}</text></view>
+        <view>累计消费(元)</view>
+      </navigator>
+    </view>
+
+  </view>
+  <view class="content">
+
+    <view class="line-chart">
+      <view class="header">
+        <radio-group class="radio-group" bindchange="radio1Change">
+          <label class="{{type1=='3' ? 'checked radio' : 'radio'}}">
+            <radio value="3" checked="{{type1=='3'}}" />累计消费
+          </label>
+          <label class="{{type1=='1' ? 'checked radio' : 'radio'}}">
+            <radio value="1" checked="{{type1=='1'}}" />累计充值
+          </label>
+        </radio-group>
+        <picker mode="date" value="{{year}}" fields="year" bindchange="bindDateChange">
+          <view class="picker">
+            {{year}}年
+            <image src="../../../images/down.png" mode="widthFix" style="width: 22rpx;padding-left: 12rpx;"></image>
+          </view>
+        </picker>
+      </view>
+      <view class="chart_wrap" style='display:{{lineshen}}'>
+        <ec-canvas id="lineChart" canvas-id="lineChart" ec="{{ ecLine }}"></ec-canvas>
+      </view>
+      <view class="chart_wrap noData" style="display:{{lineshen=='none'?'block':'none'}}">{{isShowImg=='true'?'':'暂无数据'}}</view>
+    </view>
+
+    <view class="pie-chart">
+      <radio-group class="radio-group" bindchange="radio2Change">
+        <label class="{{type2=='1' ? 'checked radio' : 'radio'}}">
+          <radio value="1" checked="{{type2=='1'}}" />消费类别
+        </label>
+        <label class="{{type2=='2' ? 'checked radio' : 'radio'}}">
+          <radio value="2" checked="{{type2=='2'}}" />充值类别
+        </label>
+      </radio-group>{{dataIndex}}
+      <view class="chart_wrap" style='display:{{pieShen}}'>
+        <ec-canvas id="pieChart" canvas-id="pieChart" ec="{{ ecPie }}"></ec-canvas>
+      </view>
+      <view class="chart_wrap noData" style="display:{{pieShen=='none'?'block':'none'}}">{{isShowImg=='true'?'':'暂无数据'}}</view>
+    </view>
+
+  </view>
+
+</view>

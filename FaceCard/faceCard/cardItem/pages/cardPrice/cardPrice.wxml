@@ -1,0 +1,96 @@
+<!--cardItem/pages/cardPrice/cardPrice.wxml-->
+<image bindtap="toFei" class="head_img" mode="widthFix" src="/cardItem/images/card_price.png"></image>
+<view class="card_main_box">
+  <block wx:if="{{cardData.CardRightsItems.Project.length>0}}">
+    <view class="card_main_head_line">
+      <image class="card_main_head_img" src="/cardItem/images/left_sign.png"></image>
+      <view class="text_title">项目/服务权益</view>
+      <image class="card_main_head_img" src="/cardItem/images/right_sign.png"></image>
+    </view>
+    <view class="line_project_box" wx:for="{{cardData.CardRightsItems.Project}}" wx:key="index">
+      <image class="project_box_img" src="/cardItem/images/blue.png"></image>
+      <view class="projext_text_box">
+        <view class="project_text_title">{{item.ItemName}}</view>
+        <view class="project_text_num">{{item.ItemNum}}{{item.ItemUnit}}</view>
+        <view class="line_text_nun">
+          <view>¥{{item.ItemPrice}}/{{item.ItemUnit}}</view>
+          <image class="line_text_img" src="/cardItem/images/toroght.png"></image>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{cardData.CardRightsItems.Product.length>0}}">
+    <view class="card_main_head_line">
+      <image class="card_main_head_img" src="/cardItem/images/left_sign.png"></image>
+      <view class="text_title">产品权益</view>
+      <image class="card_main_head_img" src="/cardItem/images/right_sign.png"></image>
+    </view>
+    <view class="line_project_box" wx:for="{{cardData.CardRightsItems.Product}}" wx:key="index">
+      <image class="project_box_img" src="/cardItem/images/blue.png"></image>
+      <view class="projext_text_box">
+        <view class="project_text_title">{{item.ItemName}}</view>
+        <view class="project_text_num">10次</view>
+        <view class="line_text_nun">
+          <view>¥100.00/次</view>
+          <image class="line_text_img" src="/cardItem/images/toroght.png"></image>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{cardData.CardGivingItems.Project.length>0}}">
+    <view class="card_main_head_line">
+      <image class="card_main_head_img" src="/cardItem/images/left_sign.png"></image>
+      <view class="text_title">赠送权益</view>
+      <image class="card_main_head_img" src="/cardItem/images/right_sign.png"></image>
+    </view>
+    <view class="line_project_box" wx:for="{{cardData.CardGivingItems.Project}}" wx:key="index">
+      <image class="project_box_img" src="/cardItem/images/blue.png"></image>
+      <view class="projext_text_box">
+        <view class="project_text_title">{{item.ItemName}}</view>
+        <view class="project_text_num">{{item.ItemNum}}{{item.ItemUnit}}</view>
+        <view class="line_text_nun">
+          <view>¥{{item.ItemPrice}}/{{item.ItemUnit}}</view>
+          <image class="line_text_img" src="/cardItem/images/toroght.png"></image>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{cardData.CardGivingItems.Product.length>0}}">
+    <view class="card_main_head_line">
+      <image class="card_main_head_img" src="/cardItem/images/left_sign.png"></image>
+      <view class="text_title">赠送产品</view>
+      <image class="card_main_head_img" src="/cardItem/images/right_sign.png"></image>
+    </view>
+    <view class="line_project_box" wx:for="{{cardData.CardGivingItems.Product}}" wx:key="index">
+      <image class="project_box_img" src="/cardItem/images/blue.png"></image>
+      <view class="projext_text_box">
+        <view class="project_text_title">{{item.ItemName}}</view>
+        <view class="project_text_num">1瓶</view>
+        <view class="line_text_nun">
+          <view>¥100.00/次</view>
+          <image class="line_text_img" src="/cardItem/images/toroght.png"></image>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class="activate_box">
+  <view class="line_activate">
+    <image class="activate_img" src="/cardItem/images/share.png"></image>
+    <view class="activate_text_time">激活：第一次到店使用即激活或到期自动激活</view>
+  </view>
+  <view class="line_activate time_margin">
+    <image class="activate_img" src="/cardItem/images/bag.png"></image>
+    <view class="activate_text_time">有效时间：自激活日起35天内有效（其中包含赠送的5天）</view>
+  </view>
+</view>
+<view class="shop_info">
+  <view class="line_shop">
+    <view class="left_title">{{siteData.Name}}</view>
+    <image class="tel_img" bindtap="showphone" src="/cardItem/images/tel.png"></image>
+  </view>
+  <view class="line_subshop">
+    <view class="left_subhead">{{siteData.Address}}</view>
+    <image class="local_img" bindtap="getLocaltion" src="/cardItem/images/location.png"></image>
+  </view>
+</view>

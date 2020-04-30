@@ -1,0 +1,29 @@
+/* pages/pdfFile/pdfFile.wxss */
+
+.img-box {
+  padding-bottom: 100rpx;
+}
+.img-box image{
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+
+.down-now {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.down-btn {
+  font-size: 28rpx;
+  color: #fff;
+  background: #4d85ff;
+  padding: 16rpx 144rpx;
+  border-radius: 36rpx;
+}

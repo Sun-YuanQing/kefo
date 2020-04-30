@@ -1,0 +1,39 @@
+<!--pages/mine/orderDetail/orderDetail.wxml-->
+<view class="order_box">
+  <view class="line_box">
+    <view class="line_title">商品金额</view>
+    <view class="right_text">¥{{orderList.CardPrice}}</view>
+  </view>
+  <view class="line_box">
+    <view class="line_title">实付金额</view>
+    <view class="right_text">¥{{orderList.ActPrice}}</view>
+  </view>
+  <view class="line_box">
+    <view class="line_title">购买类别</view>
+    <view class="right_text">{{orderList.BuyType}}</view>
+  </view>
+  <view class="line_box">
+    <view class="line_title">购买方式</view>
+    <view class="right_text">{{orderList.BuyWay}}</view>
+  </view>
+  <view class="line_box">
+    <view class="line_title">会员卡号</view>
+    <view class="right_text">{{orderList.Order}}</view>
+  </view>
+  <view class="line_box">
+    <view class="line_title">商家名称</view>
+    <view class="right_text">{{orderList.SiteName}}</view>
+  </view>
+  <view class="line_box">
+    <view class="line_title">支付方式</view>
+    <view class="right_text">{{orderList.PayWay}}</view>
+  </view>
+  <view class="line_box">
+    <view class="line_title">支付时间</view>
+    <view class="right_text">{{orderList.PayTime}}</view>
+  </view>
+  <view class="line_box">
+    <view class="line_title">流水单号</view>
+    <view class="right_text">{{orderList.Order}}</view>
+  </view>
+</view>

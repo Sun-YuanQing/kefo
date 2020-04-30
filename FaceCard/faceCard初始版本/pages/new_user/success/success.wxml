@@ -1,0 +1,13 @@
+<!--pages/new_user/success/success.wxml-->
+<view class="container">
+    <image src="../../../images/success_text.png" mode="widthFix" style="width: 320rpx"></image>
+    <view class="tip">您已成为会员 快去看看吧～</view>
+    
+    <view class="animation">
+      <image class="circle" src="../../../images/circle.png" mode="widthFix" style="width: 100%"></image>
+      <view class="m-duigou"></view>
+    </view>
+    
+    <view wx-if="{{isButton}}" bindtap="toIndex"  class="button">进入卡包</view>
+
+</view>

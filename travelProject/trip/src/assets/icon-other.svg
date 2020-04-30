@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>icon-其他@3x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="92.5668312%" y2="92.5668312%" id="linearGradient-1">
+            <stop stop-color="#C4C9FD" offset="0%"></stop>
+            <stop stop-color="#5160EE" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-29.6%" y="-29.6%" width="159.3%" height="159.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="2" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-200.0%" y="-200.0%" width="500.0%" height="500.0%" filterUnits="objectBoundingBox" id="filter-3">
+            <feGaussianBlur stdDeviation="2" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="门店商品上传、总部审核" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="PC-总部-产品设置-默认展示系统全部产品" transform="translate(-144.000000, -708.000000)">
+            <g id="其他" transform="translate(144.000000, 708.000000)">
+                <g transform="translate(4.500000, 4.500000)">
+                    <path d="M14.6447132,21.75 C12.9236658,21.75 10.3420948,21.75 6.9,21.75 C3.91766235,21.75 1.5,19.24897 1.5,16.1637931 L1.5,7.0862069 C1.5,4.00103002 3.91766235,1.5 6.9,1.5 L16.35,1.5 C19.3323376,1.5 21.75,4.00103002 21.75,7.0862069 C21.75,10.2691984 21.75,12.6564421 21.75,14.2479378" id="路径" fill="url(#linearGradient-1)" opacity="0.5" filter="url(#filter-2)"></path>
+                    <path d="M13.6315545,21 C11.8467646,21 9.16957976,21 5.6,21 C2.5072054,21 0,18.4063392 0,15.2068966 L0,5.79310345 C0,2.59366076 2.5072054,0 5.6,0 L15.4,0 C18.4927946,0 21,2.59366076 21,5.79310345 C21,9.09398355 21,11.5696436 21,13.2200837 L13.6315545,21 Z" id="路径" fill="url(#linearGradient-1)"></path>
+                    <circle id="椭圆形" fill-opacity="0.6" fill="#7783F3" filter="url(#filter-3)" cx="20.25" cy="20.25" r="1.5"></circle>
+                    <circle id="椭圆形" fill="#7783F3" cx="19.5" cy="19.5" r="1.5"></circle>
+                    <circle id="椭圆形-copy-32" fill="#FFFFFF" cx="4.875" cy="10.875" r="1.125"></circle>
+                    <circle id="椭圆形-copy-33" fill="#FFFFFF" cx="10.5" cy="10.5" r="1.5"></circle>
+                    <circle id="椭圆形-copy-34" fill="#FFFFFF" cx="16.125" cy="10.875" r="1.125"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

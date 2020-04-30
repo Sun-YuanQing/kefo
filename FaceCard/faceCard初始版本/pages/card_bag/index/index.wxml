@@ -1,0 +1,79 @@
+<!--pages/cardBag/card_bag.wxml-->
+<view class="container">
+  <image src="{{showBigCard ? '../../../images/spread.png' : '../../../images/collapse.png'}}" mode="widthFix" class="switch-icon" bindtap='toggle'></image>
+  <card-list wx-if="{{!showBigCard}}" cardList="{{cardList}}" totalCards="{{totalCards}}" minHeight="{{minHeight}}rpx;"></card-list>
+  <view class="big-card" wx-if="{{showBigCard}}">
+    <view class="header">
+      <view>欢迎来到</view>
+      <view>菲卡时代！</view>
+    </view>
+    <view class="page_section" style="height: {{heiBox}}rpx;">
+      <swiper previous-margin="60rpx" next-margin="60rpx" style="height: 100%" duration="200" bindchange="swiperChange">
+        <block wx:for="{{cardList}}" wx:key="index">
+          <swiper-item>
+            <!-- <navigator url='{{"/pages/card_bag/balance/balance?SiteId="+ item.SiteId +"&UserId=" + item.Cards[0].UserId+"&CardId="+item.Cards[0].CardId}}' 
+              hover-class="navigator-hover"
+              class="swiper_item swiper_item{{index+1}}"> -->
+            <view class="swiper_item swiper_item{{index+1}}" data-options="{{item}}" catchtap="navigate">
+              <view class="main_content" style="height: {{curren == index ? 'calc(100% - 220rpx)' : 'calc(100% - 280rpx)'}};margin-top: {{curren == index ? '0' : '30rpx'}};background: url({{item.Cards[0].PhotoUrl}}) no-repeat center;background-size: cover">
+                <view class="top">
+                  <view class="part1">
+                    <view>{{item.Cards[0].CardNo}}</view>
+                    <view class="cardType">{{item.Cards[0].CardName}}</view>
+                  </view>
+
+                  <!-- 有效期 -->
+                  <!-- <view class="part2">
+                    <view>{{item.Cards[0].ExpiryDate}}</view>
+                    <view class="countdown" wx:if="{{item.Cards[0].DueDays < 31 }}">
+                      到倒计时：
+                      <text>{{item.Cards[0].DueDays}}</text>天</view>
+                  </view> -->
+                </view>
+
+                <view class="bottom">
+                  <view class="part3">
+                    <view>余额</view>
+                    <view class="number">
+                      <text>{{item.Cards[0].Amount}}</text>元</view>
+                  </view>
+                  <view class="button" style="background-color: rgba(0,0,0,0.12)" data-options="{{item.Cards[0]}}" catchtap="toMember">
+                    <text>会员中心</text>
+                    <image src="../../../images/right.png"></image>
+                  </view>
+                </view>
+              </view>
+
+              <view class="store_name">
+                <view>{{item.SiteName}}</view>
+                <block wx:for="{{[0,1,2,3,4]}}" wx:for-index="idx" wx:for-item="starItem" wx:key="idx">
+                  <image class="star_image" src="{{item.star > starItem ?(item.star-starItem == 0.5?halfSrc:selectedSrc) : normalSrc}}">
+                  </image>
+                </block>
+              </view>
+
+              <view wx:if="{{item.Count>1}}" class="total" style="border-color: {{item.Cards[0].Colour}}">
+                <text>{{item.Count}}</text>张</view>
+            </view>
+            <!-- </navigator> -->
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <!-- 点击开红包 -->
+    <view class="red_packet" wx-if="{{isOpen}}">
+      <image src="../../../images/open.gif" mode="widthFix" width="100%"></image>
+      <view class="close" bindtap="closeOpenImg"></view>
+      <view class="open" bindtap="queryRedpacket"></view>
+    </view>
+    <!-- 红包 -->
+    <view class="red_packet" wx-if="{{isShowImg}}">
+      <image src="../../../images/red_packet.gif" mode="widthFix" width="100%"></image>
+      <view class="amount" wx-if="{{isShowNum}}">
+        <text>{{amount}}</text>元
+      </view>
+      <view class="close" bindtap="closeImg"></view>
+    </view>
+  </view>
+</view>

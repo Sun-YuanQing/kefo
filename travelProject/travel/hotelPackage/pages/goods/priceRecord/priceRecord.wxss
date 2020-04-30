@@ -1,0 +1,25 @@
+/* hotelPackage/pages/goods/priceRecord/priceRecord.wxss */
+.gray {
+  background: #F5F5F5;
+  width: 100%;
+  height: 20rpx;
+}
+
+.content {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+
+.item-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 44rpx 0;
+  border-bottom: 1rpx solid #F5F5F5;
+  font-size: 28rpx;
+}
+
+.item-price {
+  font-weight: 800;
+}

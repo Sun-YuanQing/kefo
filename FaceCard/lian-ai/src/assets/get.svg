@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="38px" viewBox="0 0 88 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-领取</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="72" height="26" rx="13"></rect>
+        <filter x="-16.0%" y="-36.5%" width="131.9%" height="188.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.401712437   0 0 0 0 0.607277907   0 0 0 0 1  0 0 0 0.826709692 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="菲卡时代2.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="卡项-单项有限次卡权益-菲卡价" transform="translate(-877.000000, -1305.000000)">
+            <g id="领取按钮" transform="translate(877.000000, 1305.000000)">
+                <g transform="translate(8.000000, 5.000000)">
+                    <g id="矩形-copy-2">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#3275F5" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <text id="领取" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="24" y="18">领取</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

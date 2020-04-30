@@ -1,0 +1,56 @@
+<!--pages/cardDetail/cardDetail.wxml-->
+<view class="card_head" style="background: url({{detailList.PhotoUrl}}) no-repeat center; background-size: 100%; ">
+  {{detailList.ClassType}}
+</view>
+<view class="limit_box" wx:if="{{detailList.IsLimtNum}}">
+  <view>限量{{detailList.Num}}张</view>
+  <view class="bar_box">
+    <view style="width:{{(detailList.SellNum + detailList.SellFeikaNum) / detailList.Num *100}}%;height:100%;background: #FFB055;"></view>
+    <view style="width:{{100 -((detailList.SellNum + detailList.SellFeikaNum) / detailList.Num *100)}}%;height:100%;background: #FFDCB5;"></view>
+  </view>
+</view>
+<view class="card_contain">
+  <view class="card_contain_title">{{detailList.CardName}}</view>
+  <view class="card_top_line_money">
+    <text class="yuan_card_money">¥<text class="yuan_card_money_big">{{detailList.cardHead}}.</text>{{detailList.cardEnd}}</text>
+    <view class="yuan_pay_out">已售{{detailList.SellNum}}</view>
+  </view>
+  <view class="fei_line_money">
+    <view class="left_fei_line">
+      <text class="fei_card_money">¥<text class="fei_card_money_big">{{detailList.feiHead}}.</text>{{detailList.feiEnd}}</text>
+      <image class="fei_card_img" src="/images/face_money.png"></image>
+      <image class="fei_card_info" bindtap="toinfo" src="/images/redinfo.png"></image>
+    </view>
+    <view class="yuan_pay_out">已售{{detailList.SellFeikaNum}}</view>
+  </view>
+</view>
+<view class="shop_box">
+  <view class="shop_name">
+    <view class="left_name">
+      <image class="shop_img" src="{{detailList.SiteLogo || '/images/shop_logo.png'}}"></image>
+      <view class="left_center">
+        <view class="head">{{detailList.SiteName}}</view>
+        <view class="subhead" bindtap="subheadtag">{{detailList.Desc}}</view>
+      </view>
+    </view>
+    <image bindtap="showphone" class="shop_tel" src="/images/tel.png"></image>
+  </view>
+  <view class="shop_time">
+    <image class="shop_time_img" src="/images/time.png"></image>
+    <view class="shop_main shop_main_data">{{detailList.OpenDate}} {{detailList.OpenHour}}</view>
+  </view>
+  <view class="shop_address" bindtap="getLocaltion">
+    <image class="shop_address_img" src="/images/location.png"></image>
+    <view class="shop_main shop_main_address">{{detailList.Address}}</view>
+  </view>
+  <view wx:if="{{showsub}}" bindtap="subheadtag" class="close_box"></view>
+  <view wx:if="{{showsub}}" bindtap="subheadtag" class="allsubhead">{{detailList.Desc}}</view>
+</view>
+<view class="foot_box">
+  <view class="left_shopname" bindtap="changecollect" data-cardid="{{detailList.CardId}}" data-collect="{{!detailList.IsCollect}}">
+    <view class="shop_dian">{{detailList.CollectNum}}人收藏</view>
+    <image class="shop_logo" src="{{detailList.IsCollect ? '/images/collect_sel.png' : '/images/collect.png'}}"></image>
+  </view>
+  <view class="shop_now" bindtap="toNowPay">去看看</view>
+</view>
+<i-action-sheet visible="{{ visible }}" actions="{{ telphone }}" show-cancel bind:cancel="downphone" bind:click="handleClickItem" />

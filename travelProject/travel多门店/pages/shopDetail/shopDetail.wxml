@@ -1,0 +1,149 @@
+<!--pages/shopDetail/shopDetail.wxml-->
+<!-- <Header navbar-data='{{nvabarData}}'></Header> -->
+<view class="head-box">
+  <swiper autoplay interval="3000" circular bindchange="currentChange">
+    <block wx:for="{{goodsDetail.DisplayPhoto}}" wx:key="index">
+      <swiper-item>
+        <image class="carousel" src="{{item}}" mode="widthFix" data-img="{{item}}" bindtap='previewImg'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="top-swiper">
+    <view class="head-share">{{detailIndex}}/{{goodsDetail.DisplayPhoto.length}}</view>
+    <button class="head-share" open-type='share'>
+      <image src="/images/icon-share.png"></image>
+      <text>推荐好物</text>
+    </button>
+  </view>
+</view>
+<view class="title-box">
+  <view class="title">{{goodsDetail.Name}}</view>
+  <view class="title-line">
+    <view>
+      <text class="left-one">￥<text class="money">{{goodsDetail.Price}}</text></text>
+      <text class="left-end" wx:if="{{goodsType==2}}">￥{{goodsDetail.Price}}</text>
+    </view>
+    <view class="right-text">已售{{goodsDetail.SaleNum}}件</view>
+  </view>
+</view>
+<view class="detail-box">
+  <member-info merchant="{{merchant}}" bind:noneAddr="noneAddr"></member-info>
+  <view class="img-text-detail" wx:if='{{goodsDetail.TravelProfile}}'>
+    <view class="img-text-title">产品介绍</view>
+    <view class="detail-text">{{goodsDetail.TravelProfile}}</view>
+  </view>
+  <view class="pdf-box" bindtap="toLookPDF" wx:if="{{goodsDetail.ExistTravelPdf}}">
+    <image src="/images/icon-pdf.png"></image>
+    <view class="pdf-text">
+      <view class="pdf-open">打开PDF文件可查看商品详情</view>
+      <view class="pdf-look">
+        <text>去看看</text>
+      </view>
+    </view>
+  </view>
+  <block wx:for="{{goodsDetail.TravelPhoto}}" wx:key="index">
+    <image class="contain-box" src="{{item}}" mode="widthFix"></image>
+  </block>
+</view>
+<view class="foot-box">
+  <view class="bottom-box">
+    <view class="left-shopname" bindtap="goHome">
+      <image src="/images/icon-shop.png"></image>
+      <view class="shop-dian">店铺</view>
+    </view>
+    <button class="shop-now" open-type="getUserInfo" bindgetuserinfo="toNowPay">立即购买</button>
+  </view>
+</view>
+<view class="modal-box" wx:if="{{ showActive }}" bindtap="changeActive">
+  <image src="/images/active.png" mode="widthFix"></image>
+</view>
+
+<!-- 购买弹窗 -->
+<!-- bindtap="closePay" -->
+<view class="modal-pay" wx:if="{{showPay}}">
+  <view class="modal-white">
+    <view class="del-box">
+      <image catchtap="closePay" src="/images/delete.png"></image>
+    </view>
+    <view class="over-box">
+      <view wx:if="{{goodsDetail.Type != '3'}}">
+        <view class="payList-title">选择出发日期</view>
+        <view class="time-line">
+          <view wx:for="{{goodsDetail.MonthPrice}}" wx:key="index" class="month-box {{selIndex == index ?'sel-month' : ''}}" data-index="{{index}}" bindtap="changeIndex">
+            <view class="month">{{item.MonthIndex}}月</view>
+            <view class="price">￥{{item.MinPrice || 0}}起</view>
+          </view>
+        </view>
+        <view class="data-line">
+          <view class="red">日</view>
+          <view>一</view>
+          <view>二</view>
+          <view>三</view>
+          <view>四</view>
+          <view>五</view>
+          <view class="red">六</view>
+        </view>
+        <view class="data-list">
+          <block wx:if="{{goodsDetail.MonthPrice[selIndex].Location > 0}}">
+            <view class="singleton" wx:for="{{goodsDetail.MonthPrice[selIndex].Location}}" wx:key="index"></view>
+          </block>
+          <view wx:for="{{goodsDetail.MonthPrice[selIndex].Dates}}" wx:key="index" class="singleton {{item.Show ? '' : 'no-singleton'}} {{departureDate == item.ItemTime ? 'selSingleton' : ''}}" data-show="{{item.Show}}" data-time="{{item.ItemTime}}" data-unify="{{item.UnifiedSale}}"
+            bindtap="changeDate">
+            <view class="num">{{item.Index}}</view>
+            <view class="price {{item.Show ? '' : 'no-singleton'}}" wx:if="{{item.Price}}">￥{{item.Price}}</view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="pay-title">是否拼房</view>
+      <view class="join-line">
+        <view class="no-join {{selJoin == 'true' ? 'sel-join' : ''}}" data-join="true" bindtap="changeJoin">
+          <text>拼房</text>
+          <text class="sub-join">如拼房失败，需补交房差¥{{goodsDetail.HousePrice}}</text>
+        </view>
+        <view class="no-join {{selJoin == 'false' ? 'sel-join' : ''}}" data-join="false" bindtap="changeJoin">不拼房</view>
+      </view> -->
+      <block wx:if="{{showUnify == 1}}">
+        <view class="calculate-box">
+          <view class="calculate-line">
+            <view class="calculate-people">
+              <text>购买数量</text>
+            </view>
+            <i-input-number value="{{ unifyNum}}" min="1" max="100" data-index="{{index}}" bindchange="changeNum" />
+          </view>
+        </view>
+      </block>
+      <!-- 不统一售价 -->
+      <block wx:if="{{showUnify == 2}}">
+        <view class="pay-title">
+          <text>选择类型</text>
+          <text class="subtitle">（可多选）</text>
+        </view>
+        <view class="join-line">
+          <view wx:for="{{visitorType}}" wx:key="index" class="no-join {{item.show ? 'sel-join' : ''}}" data-index="{{index}}" bindtap="changeType">
+            <text>{{item.Name}}</text>
+            <text class="sub-join" wx:if="{{item.MinAge || item.MaxAge}}">{{item.MinAge}}-{{item.MaxAge}}岁</text>
+          </view>
+        </view>
+        <block wx:if="{{orderPriceList.length>0}}">
+          <view class="pay-title">类型数量</view>
+          <view class="calculate-box">
+            <view class="calculate-line" wx:for="{{orderPriceList}}" wx:key="index">
+              <view class="calculate-people">
+                <text>{{item.ItemName}}</text>
+                <text class="sub-people" wx:if="{{item.MinAge || item.MaxAge}}">{{item.MinAge}}-{{item.MaxAge}}岁</text>
+              </view>
+              <i-input-number value="{{ item.ItemNum }}" min="1" max="100" data-index="{{index}}" bindchange="changeNum" />
+            </view>
+          </view>
+        </block>
+      </block>
+    </view>
+    <view class="purchase-box">
+      <view class="purchase" bindtap="toPay">立即购买</view>
+    </view>
+  </view>
+</view>
+<i-message id="message" />
+<view class="container" wx:if="{{loadSpin}}">
+  <i-spin fix></i-spin>
+</view>

@@ -1,0 +1,91 @@
+/* pages/search/search.wxss */
+
+.line_head {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx 0;
+}
+
+.input_box {
+  display: flex;
+  align-items: center;
+  width: 612rpx;
+  height: 68rpx;
+  border: 2rpx solid #4d85ff;
+  border-radius: 34rpx;
+  overflow: hidden;
+}
+
+.search_img {
+  width: 36rpx;
+  height: 36rpx;
+  margin: 0 24rpx 0 30rpx;
+}
+
+.input_text {
+  width: 460rpx;
+  font-size: 24rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  color: #000;
+}
+
+.cancel_text {
+  color: #4d85ff;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+  width: 100rpx;
+  display: inline-block;
+  padding: 0;
+  border: none;
+  background: #fff;
+}
+
+.cancel_text::after {
+  border: none;
+}
+
+.lately {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 60rpx 30rpx 0;
+}
+
+.line_lately {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.del_img {
+  width: 28rpx;
+  height: 32rpx;
+}
+
+.lately_content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.lately_name {
+  border: 1rpx solid #d2d2d2;
+  font-size: 24rpx;
+  color: #000;
+  padding: 14rpx 44rpx;
+  border-radius: 34rpx;
+  margin: 20rpx 20rpx 0 0;
+}
+
+.hot {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40rpx 30rpx 0;
+}
+
+.hot_title {
+  font-size: 28rpx;
+  color: #000;
+  font-weight: 800;
+}

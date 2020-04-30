@@ -1,0 +1,80 @@
+/* pages/distribution/navigation/navigation.wxss */
+.top-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.total-box {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 28rpx 30rpx 0;
+}
+
+.total-nei {
+  background: #fff;
+  box-shadow: 0 4rpx 12rpx 0 #F0F0F0;
+  border-radius: 12rpx;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 84rpx 0 40rpx;
+}
+
+.earnings {
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.earnings-price {
+  font-size: 56rpx;
+  padding-top: 20rpx;
+  font-weight: 800;
+}
+
+.sell-price {
+  font-size: 28rpx;
+  color: #666666;
+  margin-top: 56rpx;
+}
+
+.sell-price text {
+  margin-left: 20rpx;
+  color: #333;
+}
+
+.list-box {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40rpx 30rpx 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.list-item {
+  width: calc(50% - 10rpx);
+  text-align: center;
+  margin-bottom: 20rpx;
+  border-radius: 8rpx;
+  box-sizing: border-box;
+  padding: 22rpx 0 30rpx;
+}
+
+.list-img {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.list-name {
+  font-size: 28rpx;
+  font-weight: 800;
+  margin-top: 12rpx;
+}
+
+.subname {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 8rpx;
+}

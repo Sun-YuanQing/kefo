@@ -1,0 +1,24 @@
+<!--pages/distribution/clientele/clientele.wxml-->
+<view class="clientele-box">
+	<view class="clientele-list" wx:for="{{clientData}}" wx:key="index">
+		<image class="rankNum" src="/images/icon-one.png" wx:if="{{index == 0}}"></image>
+		<image class="rankNum" src="/images/icon-two.png" wx:elif="{{index == 1}}"></image>
+		<image class="rankNum" src="/images/icon-three.png" wx:elif="{{index == 2}}"></image>
+		<view class="rankTelNum" wx:else>{{index + 1}}</view>
+		<view class="main-box">
+			<view class="client-line">
+				<image class="portrait" src="{{item.UserPhoto}}"></image>
+				<view class="client-name">{{item.UserName}}</view>
+				<image class="sexImg" src="{{item.Sex ? '/images/mine-boy.png' : '/images/mine-girl.png'}}"></image>
+			</view>
+			<view class="phone-line">
+				<view class="phone">{{item.UserPhone}}</view>
+				<view class="num">{{item.TotalConsumpAmount}}</view>
+			</view>
+			<view class="pay-line">
+				<view class="price">已消费{{item.TotalNumber}}次 / 访问{{item.TotalVisitNumber}}次</view>
+				<view class="name">总消费(元)</view>
+			</view>
+		</view>
+	</view>
+</view>

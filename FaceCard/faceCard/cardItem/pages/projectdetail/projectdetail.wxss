@@ -1,0 +1,284 @@
+/* cardItem/pages/projectdetail/projectdetail.wxss */
+
+page {
+  background: #f5f5f5;
+}
+
+swiper {
+  height: 422rpx;
+}
+
+.head_box {
+  position: relative;
+}
+
+.sold_out {
+  position: absolute;
+  top: 44rpx;
+  right: 6rpx;
+  color: #fff;
+  font-size: 30rpx;
+  width: 174rpx;
+  height: 56rpx;
+}
+
+.sold_out image {
+  width: 100%;
+  height: 100%;
+}
+
+.sold_text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 174rpx;
+  height: 56rpx;
+  text-align: right;
+  box-sizing: border-box;
+  padding-right: 30rpx;
+  line-height: 56rpx;
+}
+
+.carousel {
+  width: 100%;
+  height: 422rpx;
+}
+
+.title_box {
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40rpx 30rpx;
+}
+
+.title {
+  font-size: 32rpx;
+  font-weight: 800;
+}
+
+.title_line {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10rpx;
+}
+
+.left_line {
+  display: flex;
+  align-items: baseline;
+}
+
+.left_one {
+  display: flex;
+  font-size: 24rpx;
+  color: #ff4142;
+  align-items: baseline;
+  font-weight: 800;
+}
+
+.money {
+  font-size: 36rpx;
+}
+
+.left_end {
+  font-size: 24rpx;
+  color: #666;
+  text-decoration: line-through;
+  margin-left: 14rpx;
+}
+
+.right_text {
+  font-size: 20rpx;
+  color: #666;
+}
+
+.tabs {
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 18rpx;
+}
+
+.contain {
+  display: flex;
+  border-top: 1rpx solid #f0f0f0;
+  padding: 12rpx 0;
+}
+
+.left_tab {
+  display: flex;
+  width: calc(50% - 1rpx);
+  align-items: center;
+  justify-content: center;
+  border-right: 1rpx dashed #f0f0f0;
+}
+
+.right_tab {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab_img {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.tab_name {
+  color: #666;
+  font-size: 24rpx;
+  margin-left: 14rpx;
+}
+
+.shop_info {
+  background: #fff;
+  margin-top: 20rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40rpx 30rpx;
+}
+
+.line_shop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.line_subshop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.left_title {
+  font-size: 24rpx;
+  font-weight: 800;
+  width: 620rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-right: 1rpx solid #f0f0f0;
+}
+
+.left_subhead {
+  font-size: 20rpx;
+  color: #666;
+  width: 620rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-right: 1rpx solid #f0f0f0;
+}
+
+.tel_img {
+  width: 24rpx;
+  height: 30rpx;
+}
+
+.local_img {
+  width: 24rpx;
+  height: 30rpx;
+}
+
+.detail_box {
+  background: #fff;
+  margin: 20rpx 0 100rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 60rpx 30rpx;
+}
+
+.img_text_detail {
+  border: 1rpx solid #e4e4e4;
+  border-radius: 16rpx;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40rpx;
+}
+
+.img_text_title {
+  position: absolute;
+  top: -25rpx;
+  background: #fff;
+  width: 160rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  left: calc(50% - 80rpx);
+  text-align: center;
+  font-size: 32rpx;
+  color: #343434;
+}
+
+.detail_text {
+  font-size: 24rpx;
+  color: #666;
+  text-indent: 32rpx;
+  word-wrap: break-word;
+}
+
+.contain_box {
+  width: 100%;
+  height: 414rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+  margin-top: 30rpx;
+}
+
+.contain_img {
+  width: 100%;
+  height: 100%;
+}
+
+.foot_box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.bottom_box {
+  width: 100%;
+  background: #fff;
+  border-top: 1rpx solid #f0f0f0;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+}
+
+.left_shopname {
+  width: 200rpx;
+  text-align: center;
+}
+
+.shop_dian {
+  font-size: 20rpx;
+}
+
+.shop_logo {
+  width: 40rpx;
+  height: 38rpx;
+}
+
+.shop_now {
+  text-align: center;
+  background: linear-gradient(90deg, rgba(237, 57, 57, 1) 0%, rgba(255, 93, 82, 1) 100%);
+  width: calc(100% - 100rpx);
+  height: 100%;
+  line-height: 100rpx;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.foot_sold {
+  background: rgba(241, 241, 241, 0.77);
+  color: #ff4142;
+  font-size: 24rpx;
+  text-align: center;
+  padding: 22rpx;
+}
+
+.title_grad {
+  color: #999;
+}

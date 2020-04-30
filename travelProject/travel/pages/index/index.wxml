@@ -1,0 +1,95 @@
+<!--pages/index/index.wxml-->
+<!-- <Header navbar-data='{{nvabarData}}'></Header> -->
+<view class="contain">
+	<view class="manifesto">门店宣言</view>
+	<view class="subhead" wx:if="{{merchantInfo.SiteTitle}}">{{merchantInfo.SiteTitle}}</view>
+</view>
+<view class="swiper_box">
+	<swiper style="height:360rpx;" indicator-dots="{{merchantInfo.Photo.length > 1 ? true : false}}" current="{{current}}" previous-margin="30rpx" next-margin="30rpx" autoplay interval="3000">
+		<block wx:for="{{merchantInfo.Photo}}" wx:key="index">
+			<swiper-item>
+				<view class="swiper_img" style="height:360rpx; {{index == 0 ? 'padding-left:0;' : ''}} {{index + 1 == merchantInfo.Photo.length ? 'padding-right:0;' : ''}}">
+					<image src="{{item}}" mode="widthFix" lazy-load></image>
+				</view>
+			</swiper-item>
+		</block>
+	</swiper>
+</view>
+<view class="seckill_box" wx:if="{{isAdmin && seckKillData.length <= 0 && recommendData.length <= 0}}">
+	<view class="recommend-title">首页推荐设置</view>
+	<!-- <view>
+    <view>还没有旅行卡～</view>
+    <view>去设置 ></view>
+  </view> -->
+	<view class="recommend-line" bindtap="toSeckill" wx:if="{{seckKillData.length <= 0}}">
+		<view class="recommend-left">还没有秒杀、拼团～</view>
+		<view class="recommend-right">去设置 ></view>
+	</view>
+	<!-- <view>
+    <view>还没有超值组合行～</view>
+    <view>去设置 ></view>
+  </view> -->
+	<view class="recommend-line" bindtap="toshop" wx:if="{{recommendData.length <= 0}}">
+		<view class="recommend-left">还没有精选推荐～</view>
+		<view class="recommend-right">去设置 ></view>
+	</view>
+</view>
+<view class="seckill_box" wx:if="{{seckKillData.length > 0}}">
+	<view class="seckill_title_line">
+		<view class="seckill_title_seckill">限时秒杀</view>
+		<view class="seckill_title_more" bindtap="toSeckill">更多</view>
+	</view>
+	<view class="seckill_content_line">
+		<i-seckill wx:for="{{seckKillData}}" wx:key="index" wx:for-item="seckillList" setting="3" seckill="{{seckillList}}" />
+	</view>
+</view>
+<view class="seckill_box" wx:if="{{assemData.length > 0}}">
+	<view class="seckill_title_line">
+		<view class="seckill_title_seckill">组队拼团</view>
+		<view class="seckill_title_more" bindtap="toSeckill">更多</view>
+	</view>
+	<view class="seckill_content_line">
+		<i-seckill wx:for="{{assemData}}" wx:key="index" wx:for-item="assemList" setting="3" seckill="{{assemList}}" />
+	</view>
+</view>
+<view class="recommend-box" wx:if="{{recommendData.length > 0}}">
+	<view class="scorll_text">精选推荐</view>
+	<view class="goods_list">
+		<commodity-list class="goods_item" wx:for="{{recommendData}}" wx:key="index" wx:for-item="recommend" goods="{{recommend}}"></commodity-list>
+	</view>
+</view>
+<view class="merchant_Info">
+	<view class="merchant_Img">
+		<view class="merchant_logo_line">
+			<image class="merchant_logo_img" src="{{merchantInfo.Logo}}"></image>
+			<view class="merchant_logo_content">
+				<view class="merchant_logo_content_title">{{merchantInfo.Name}}</view>
+				<view class="merchant_logo_content_subhead_line">
+					<view class="merchant_logo_content_subhead">{{merchantInfo.Description}}</view>
+					<!-- <view class="merchant_logo_content_subhead_over">全部 ></view> -->
+				</view>
+			</view>
+		</view>
+		<view class="shop_mine_line">
+			<view class="shop_mine_left_line">
+				<image src="/images/icon-time.png"></image>
+				<text>{{merchantInfo.Operatingdate}} {{merchantInfo.operatinghours_F}}-{{merchantInfo.operatinghours_B}}</text>
+			</view>
+			<view class="shop_mine_right_line" bindtap="downphone">
+				<view class="shop_mine_right_shu"></view>
+				<image src="/images/icon-phone.png"></image>
+			</view>
+		</view>
+		<view class="shop_address" bindtap="getAddress">
+			<image src="/images/icon-address.png" lazy-load></image>
+			<text class="address-name">{{merchantInfo.Province}}{{merchantInfo.City}}{{merchantInfo.Area}}{{merchantInfo.Address}}</text>
+		</view>
+	</view>
+</view>
+<i-modal visible="{{ showTel }}" ok-text="拨打" bind:ok="makeCall" bind:cancel="downphone">
+	<view>{{merchantInfo.Tel}}</view>
+</i-modal>
+<view class="container" wx:if="{{loadSpin}}">
+	<i-spin fix></i-spin>
+</view>
+<i-message id="message" />

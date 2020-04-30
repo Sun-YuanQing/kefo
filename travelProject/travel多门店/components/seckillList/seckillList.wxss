@@ -1,0 +1,235 @@
+/* components/seckillList/seckillList.wxss */
+
+.seckill_box {
+  margin-bottom: 40rpx;
+}
+
+.seckill_list {
+  display: flex;
+  align-items: center;
+}
+
+.left_seckill {
+  position: relative;
+  width: 200rpx;
+  height: 240rpx;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+
+.seckill_type {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 20rpx;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 4rpx 20rpx;
+  border-radius: 0 60rpx 60rpx 0;
+}
+
+.right_seckill {
+  width: calc(100% - 220rpx);
+  margin-left: 20rpx;
+  position: relative;
+}
+
+.price_seckill_line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16rpx;
+}
+
+.atOnce {
+  border: 2rpx solid #ff4b35;
+  font-size: 24rpx;
+  color: #ff4b35;
+  padding: 8rpx 14rpx;
+  border-radius: 26rpx;
+}
+
+.atPay {
+  border: 2rpx solid #4d85ff;
+  font-size: 24rpx;
+  color: #4d85ff;
+  padding: 8rpx 14rpx;
+  border-radius: 26rpx;
+}
+
+.price_line {
+  display: flex;
+  align-items: center;
+}
+
+.currenPrice {
+  font-size: 24rpx;
+  color: #ff4b35;
+}
+
+.currenPrice text {
+  font-size: 36rpx;
+}
+
+.riginalCost {
+  font-size: 24rpx;
+  color: #999;
+  text-decoration: line-through;
+  margin-left: 12rpx;
+}
+
+.rob_line {
+  display: flex;
+  align-items: center;
+}
+
+.grab {
+  color: #999;
+  font-size: 20rpx;
+}
+
+.grab_jin {
+  width: 120rpx;
+  height: 8rpx;
+  border: 2rpx solid #ff4b35;
+  margin-left: 8rpx;
+  display: flex;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.grab_jin text {
+  background: #ff4b35;
+  height: 100%;
+  display: inline-block;
+}
+
+.setting-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+
+.set_time {
+  color: #333;
+  font-size: 24rpx;
+}
+
+.setTime_end {
+  color: #666;
+}
+
+.set_time .black {
+  color: #fff;
+  margin-left: 16rpx;
+  margin-right: 8rpx;
+  background: #333;
+  padding: 4rpx 8rpx;
+}
+
+.dot-box {
+  position: relative;
+}
+
+.dotImg-box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.dot-img {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.setting-box {
+  position: absolute;
+  right: -16rpx;
+  top: 56rpx;
+  z-index: 99;
+}
+
+.setting-content {
+  width: 180rpx;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 24rpx;
+  border-radius: 12rpx;
+  text-align: center;
+  box-sizing: border-box;
+  letter-spacing: 4rpx;
+}
+
+.setting-content view {
+  padding: 28rpx 0;
+}
+
+.slot-jiao {
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  right: 18rpx;
+  top: -18rpx;
+  border-bottom: 20rpx solid rgba(0, 0, 0, 0.75);
+  border-left: 20rpx solid transparent;
+  border-right: 20rpx solid transparent;
+}
+
+.recommend_box {
+  background: #fff8f7;
+  color: #ff4b35;
+  font-size: 20rpx;
+  display: inline-block;
+  padding: 2rpx 12rpx;
+  border-radius: 16rpx;
+  margin-left: 220rpx;
+  margin-top: 16rpx;
+}
+
+.title-box {
+  background: #fff;
+  min-height: 80rpx;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 45rpx;
+}
+
+.puzzle-box {
+  position: absolute;
+  top: 5rpx;
+  left: 0;
+  width: 100rpx;
+  height: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.puzzle-img {
+  width: 100rpx;
+  height: 32rpx;
+}
+
+.puzzle-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100rpx;
+  height: 32rpx;
+  font-size: 20rpx;
+  color: #4d85ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.departureData {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 20rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

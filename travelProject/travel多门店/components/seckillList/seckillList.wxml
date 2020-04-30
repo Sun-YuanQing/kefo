@@ -1,0 +1,65 @@
+<!--components/seckillList/seckillList.wxml-->
+<view class="seckill_box">
+	<view class="seckill_list" bindtap="toDetail">
+		<view class="left_seckill" style="background: url({{seckill.CoverPhoto}}) no-repeat center;background-size: cover">
+			<view class="seckill_type" wx:if="{{seckill.TravelTypeName}}">{{seckill.TravelTypeName}}</view>
+		</view>
+		<view class="right_seckill">
+			<view class="title-box" style="text-indent:{{seckill.ActivitType == 'assem' ? 110 : 0}}rpx">{{seckill.Name}}</view>
+			<view class="departureData" wx:if="{{setting == 2 && seckill.TraveOrderState != '10' && seckill.Type != 3}}">出发日期 {{seckill.Departuredate}}</view>
+			<view class="price_seckill_line">
+				<view>
+					<view class="price_line">
+						<text class="currenPrice">￥<text>{{seckill.KillPrice}}</text></text>
+						<text class="riginalCost">￥{{seckill.Price}}</text>
+					</view>
+					<view class="rob_line">
+						<text class="grab" wx:if="{{seckill.ActivitType == 'assem' && setting == 1}}">已拼{{seckill.SaleNum}}人</text>
+						<block wx:if="{{seckill.ActivitType == 'seck'}}">
+							<text class="grab">已抢{{sellout}}%</text>
+							<view class="grab_jin">
+								<text style="width:{{seckill.SaleNum / seckill.StockNum * 100}}%;"></text>
+							</view>
+						</block>
+					</view>
+				</view>
+				<block wx:if="{{setting == 2}}">
+					<view class="atPay" wx:if="{{seckill.TraveOrderState == '10'}}">去支付 ></view>
+				</block>
+				<block wx:else>
+					<view class="atOnce" wx:if="{{seckill.ActivitType == 'seck'}}">马上抢 ></view>
+					<view class="atOnce" wx:if="{{seckill.ActivitType == 'assem'}}">去开团 ></view>
+				</block>
+			</view>
+			<view class="setting-line" wx:if="{{setting == 1 || (setting == 2 && seckill.TraveOrderState == '10') || setting == 3}}">
+				<view class="set_time" wx:if="{{sellout >= 100}}">
+					<text class="setTime_end">已售罄</text>
+				</view>
+				<view class="set_time" wx:else>
+					<text class="setTime_end">距结束</text>
+					<text class="black">{{hour}}</text>
+					<text>：</text>
+					<text class="black">{{minute}}</text>
+					<text>：</text>
+					<text class="black">{{second}}</text>
+				</view>
+				<view class="dot-box" wx:if="{{isAdmin && setting == 1}}">
+					<view class="dotImg-box">
+						<image class="dot-img" src="/images/shop-dot.png" catchtap="showModal"></image>
+					</view>
+					<view class="setting-box" wx:if="{{showSet == seckill.Id}}">
+						<view class="setting-content">
+							<view catchtap="toRecommend">{{seckill.Recommend ? '取消推荐' : '首页推荐'}}</view>
+						</view>
+						<view class="slot-jiao"></view>
+					</view>
+				</view>
+			</view>
+			<view class="puzzle-box" wx:if="{{seckill.ActivitType == 'assem'}}">
+				<image class="puzzle-img" src="/images/rectangle.png"></image>
+				<view class="puzzle-text">{{seckill.AssemNum}}人团</view>
+			</view>
+		</view>
+	</view>
+	<view class="recommend_box" wx:if="{{isAdmin && setting == 1 && seckill.Recommend}}">已推荐至首页</view>
+</view>

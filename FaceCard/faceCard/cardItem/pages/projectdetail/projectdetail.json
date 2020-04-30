@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "项目/服务详情",
+  "usingComponents": {
+    "i-action-sheet": "/cardItem/compoment/iview/action-sheet/index",
+    "i-toast": "/cardItem/compoment/iview/toast/index"
+  }
+}

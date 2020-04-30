@@ -1,0 +1,123 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.10.0",
+	"appid": "wx03cde7ac0414a750",
+	"projectname": "travel",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 1,
+					"name": "商城",
+					"pathName": "pages/shopList/shopList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "活动",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "我的",
+					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "商品详情",
+					"pathName": "pages/groupBook/groupDetail/groupDetail",
+					"query": "Id=be8bb5de53094b14b08634fa660a4bb7",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "秒杀详情",
+					"pathName": "pages/seckillDetail/seckillDetail",
+					"query": "Id=409afbcfba0b4edbbcb908f0dd52e68d",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发起拼团",
+					"pathName": "pages/openSeckill/openSeckill",
+					"query": "id=886f493ce8c648ac8fc03d6f130b4bf9&type=assem",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "拼团详情",
+					"pathName": "pages/seckillDetail/seckillDetail",
+					"query": "Id=65a31f63a1a5494e94f50d060b3aaa38&type=assem",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "邀请参团",
+					"pathName": "pages/groupBook/invite/invite",
+					"query": "id=a367daa051f74ce1b3f0be1a53575237",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "订单详情",
+					"pathName": "pages/myOrderDetail/myOrderDetail",
+					"query": "orderid=033ef30420a74d7a9e267893af4c7271&type=2",
+					"scene": null
+				}
+			]
+		}
+	}
+}

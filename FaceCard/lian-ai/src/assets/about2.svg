@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="432px" height="230px" viewBox="0 0 432 230" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>菲卡价-多项有限次-权益</title>
+    <desc>Created with Sketch.</desc>
+    <g id="菲卡时代2.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="菲卡价" transform="translate(-418.000000, -463.000000)">
+            <g id="分组-10" transform="translate(418.000000, 463.000000)">
+                <g id="分组-6" transform="translate(10.000000, 31.000000)">
+                    <g id="分组" fill="#F9F9F9">
+                        <polygon id="矩形" transform="translate(9.485281, 28.824392) rotate(-315.000000) translate(-9.485281, -28.824392) " points="3.4138528 22.7529633 15.4852814 22.8243919 15.5567099 34.8958204 3.48528137 34.8243919"></polygon>
+                        <rect id="矩形-copy-12" x="9" y="0" width="398" height="168"></rect>
+                    </g>
+                    <text id="卡项权益" font-family="PingFangSC-Medium, PingFang SC" font-size="14" font-weight="400" fill="#000000">
+                        <tspan x="29" y="35">卡项权益</tspan>
+                    </text>
+                    <text id="项目/服务权益（共30次）" font-family="PingFangSC-Medium, PingFang SC" font-size="12" font-weight="400" fill="#333333">
+                        <tspan x="29" y="61">项目/服务权益（共30次）</tspan>
+                    </text>
+                    <g id="分组-2" transform="translate(29.000000, 81.000000)" fill="#666666" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal">
+                        <text id="进口资生堂修护-copy-14">
+                            <tspan x="0" y="13">进口资生堂修护</tspan>
+                        </text>
+                        <text id="¥170.00">
+                            <tspan x="314.656" y="13">¥170.00</tspan>
+                        </text>
+                    </g>
+                    <g id="分组-3" transform="translate(29.000000, 106.000000)" fill="#666666" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal">
+                        <text id="泰式洗头">
+                            <tspan x="0" y="13">泰式洗头</tspan>
+                        </text>
+                        <text id="¥100.00">
+                            <tspan x="314.02" y="13">¥100.00</tspan>
+                        </text>
+                    </g>
+                    <g id="分组-4" transform="translate(29.000000, 131.000000)" fill="#666666" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal">
+                        <text id="日本进口小金瓶专业护理">
+                            <tspan x="0" y="13">日本进口小金瓶专业护理</tspan>
+                        </text>
+                        <text id="¥170.00-copy-2">
+                            <tspan x="314.656" y="13">¥170.00</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

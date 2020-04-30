@@ -1,0 +1,70 @@
+/* cardItem/pages/myCoupon/myCoupon.wxss */
+
+page {
+  background: #f5f5f5;
+}
+
+.item_box {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx 0;
+}
+
+.detail {
+  width: 100%;
+  height: 200rpx;
+  overflow: hidden;
+  background: url(http://www.linkedsign.cn/Beauty/Pic/ticket1.png) no-repeat center center;
+  background-size: cover;
+  display: flex;
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  position: relative;
+}
+
+.detail_left {
+  width: 33.33%;
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.detail_left > view:first-of-type {
+  display: flex;
+  align-items: flex-start;
+}
+
+.detail_left .big {
+  font-size: 50rpx;
+}
+
+.detail_left .small {
+  padding-top: 16rpx;
+}
+
+.detail_right {
+  width: 66.66%;
+  height: 200rpx;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.detail_right .usage {
+  font-size: 28rpx;
+  font-weight: 700;
+}
+
+.detail_right .validity {
+  color: #666;
+}
+
+.detail_right .remain {
+  color: #ff4142;
+}

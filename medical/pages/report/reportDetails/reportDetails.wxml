@@ -1,0 +1,176 @@
+<!--pages/doctor/reportDetails/reportDetails.wxml-->
+<view>
+	<view class="paddingRL30">
+		<block>
+			<view class="block-box marginTB20 paddingRL28">
+				<view class="block-conter marginT28">
+					<view class="f-row-start ">
+						<view class="Package-label">套餐名称</view>
+						<view class="Package-conter marginL48">{{packageName}}</view>
+					</view>
+					<view class="f-row-start marginT28">
+						<view class="Package-label">体检次数</view>
+						<view class="Package-conter marginL48">{{packageNumder}}</view>
+					</view>
+					<view class="f-row-start marginT28">
+						<view class="Package-label">体检医院</view>
+						<view class="Package-conter marginL48">{{packageHospital}}</view>
+					</view>
+				</view>
+				<view class="chainView">
+					<view class="chainbox f-row-between">
+						<image class="chainImage" src="/images/chain.png"></image>
+						<image class="chainImage" src="/images/chain.png"></image>
+					</view>
+				</view>
+			</view>
+		</block>
+		<block>
+			<view class="block-box marginT20 paddingRL28">
+				<view class="block-conter">
+					<scroll-view class="scroll-box" scroll-x="true">
+						<view wx:for="{{reportDetail}}" wx:key="index" data-index="{{index}}" class="scroll-item {{phyDate == item.PhyDate ? 'scroll-sel' : ''}}" bindtap="changeProduct">{{item.PhyDate}}</view>
+					</scroll-view>
+					<view class="items">
+						<view class="item marginT28 f-row-between">
+							<view class="item-lable">
+								身高cm
+							</view>
+							<view class="item-value f-row-between">
+								<text>{{reportDetail[index].MyHealthyReportItemResult[1].ItemAct}}</text>
+								<view class="value-image  f-row-last" bindtap="toReportDetail" data-healthyid="{{reportDetail[index].Id}}">
+									<image src="/images/right-icon.png"></image>
+								</view>
+							</view>
+						</view>
+						<view class="item marginT28 f-row-between">
+							<view class="item-lable">
+								脉搏bpm
+							</view>
+							<view class="item-value f-row-between">
+								<text>234</text>
+								<view class="value-image  f-row-last" bindtap="toReportDetail" data-healthyid="{{reportDetail[index].Id}}">
+									<image src="/images/right-icon.png"></image>
+								</view>
+							</view>
+						</view>
+						<view class="item marginT28 f-row-between">
+							<view class="item-lable">
+								体脂肪率%
+							</view>
+							<view class="item-value f-row-between">
+								<text>234</text>
+								<view class="value-image  f-row-last" bindtap="toReportDetail" data-healthyid="{{reportDetail[index].Id}}">
+									<image src="/images/right-icon.png"></image>
+								</view>
+							</view>
+						</view>
+						<view class="item marginT28 f-row-between">
+							<view class="item-lable">
+								BMIkg/m2
+							</view>
+							<view class="item-value f-row-between">
+								<text>234</text>
+								<view class="value-image  f-row-last" bindtap="toReportDetail" data-healthyid="{{reportDetail[index].Id}}">
+									<image src="/images/right-icon.png"></image>
+								</view>
+							</view>
+						</view>
+						<view class="item marginT28 f-row-between">
+							<view class="item-lable">
+								视力-左裸眼（矫正）
+							</view>
+							<view class="item-value f-row-between">
+								<text>234</text>
+								<view class="value-image  f-row-last" bindtap="toReportDetail" data-healthyid="{{reportDetail[index].Id}}">
+									<image src="/images/right-icon.png"></image>
+								</view>
+							</view>
+						</view>
+						<view class="item marginT28 f-row-between">
+							<view class="item-lable">
+								视力-右裸眼（矫正）
+							</view>
+							<view class="item-value f-row-between">
+								<text>234</text>
+								<view class="value-image  f-row-last" bindtap="toReportDetail" data-healthyid="{{reportDetail[index].Id}}">
+									<image src="/images/right-icon.png"></image>
+								</view>
+							</view>
+						</view>
+						<view class="item marginT28 f-row-between">
+							<view class="item-lable">
+								肺部功能-肺活量L
+							</view>
+							<view class="item-value f-row-between">
+								<text>234</text>
+								<view class="value-image  f-row-last" bindtap="toReportDetail" data-healthyid="{{reportDetail[index].Id}}">
+									<image src="/images/right-icon.png"></image>
+								</view>
+							</view>
+						</view>
+						<view class="item marginT28 f-row-between">
+							<view class="item-lable">
+								肺部功能-1秒率%
+							</view>
+							<view class="item-value f-row-between">
+								<text>234</text>
+								<view class="value-image  f-row-last" bindtap="toReportDetail" data-healthyid="{{reportDetail[index].Id}}">
+									<image src="/images/right-icon.png"></image>
+								</view>
+							</view>
+						</view>
+
+						<view class="item marginT28 f-row-between">
+							<view class="item-lable">
+								肺部功能-肺功能判定
+							</view>
+							<view class="item-value f-row-between">
+								<text>正常范围</text>
+								<view class="value-image  f-row-last">
+
+								</view>
+							</view>
+						</view>
+						<view class="item marginT28 f-row-between">
+							<view class="item-lable">
+								胸部X片
+							</view>
+							<view class="item-value f-row-between">
+								<text>正常范围</text>
+								<view class="value-image  f-row-last">
+
+								</view>
+							</view>
+						</view>
+						<view class="item marginT28 f-row-between" bindtap="toReportDetail" data-healthyid="{{reportDetail[index].Id}}">
+							<view class="item-lable">
+								血压mmHg
+							</view>
+							<view class="item-value f-row-between">
+								<text>110/63</text>
+								<view class="value-image  f-row-last">
+									<image src="/images/right-icon.png"></image>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="chainView">
+					<view class="chainbox f-row-between">
+						<image class="chainImage" src="/images/chain.png"></image>
+						<image class="chainImage" src="/images/chain.png"></image>
+					</view>
+				</view>
+			</view>
+		</block>
+		<block>
+			<view class="block-box block-box-1 marginT20 paddingRL28">
+				<view class="block-conter-1 f-column-between">
+					<view class="lable">综合建议</view>
+					<view class="marginT28 conterText">上消化道检查判定为萎缩性胃炎，现在的诊断结果显现为阴性，无法判定是否接受过幽门螺旋杆菌的除菌治疗。</view>
+				</view>
+			</view>
+		</block>
+	</view>
+</view>

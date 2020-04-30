@@ -1,0 +1,21 @@
+<!--components/member/member.wxml-->
+<view class="merchant-box">
+  <view>
+    <view class="merchant-name">
+      <image src="/images/icon-shop.png"></image>
+      <view>{{merchant.Name}}</view>
+    </view>
+    <view class="merchant-address" bindtap="getAddress">
+      <image src="/images/shop-addr.png"></image>
+      <view class="adr-line">
+        <text class="address-name">{{merchant.Province}}{{merchant.City}}{{merchant.Area}}{{merchant.Address}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="merchant-phone" bindtap="downphone">
+    <image src="/images/icon-phone.png"></image>
+  </view>
+</view>
+<i-modal visible="{{ showTel }}" ok-text="拨打" bind:ok="makeCall" bind:cancel="downphone">
+  <view>{{merchant.Tel}}</view>
+</i-modal>

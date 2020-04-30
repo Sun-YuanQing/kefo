@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="46px" height="46px" viewBox="0 0 46 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>分组 15</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="42.3082443%" y1="36.9063088%" x2="92.4633897%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#13C9D6" offset="0%"></stop>
+            <stop stop-color="#0899AC" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="（非）直营产品-待付款" transform="translate(-173.000000, -149.000000)">
+            <g id="分组-15" transform="translate(173.000000, 149.000000)">
+                <circle id="椭圆形-copy-20" fill-opacity="0.25" fill="#0899AC" transform="translate(23.000000, 23.000000) rotate(-360.000000) translate(-23.000000, -23.000000) " cx="23" cy="23" r="23"></circle>
+                <circle id="椭圆形-copy-23" fill="url(#linearGradient-1)" cx="23" cy="23" r="19"></circle>
+                <g id="提交订单icon" transform="translate(11.000000, 11.000000)">
+                    <g id="分组-3" transform="translate(4.000000, 3.000000)">
+                        <path d="M2,2.75 C1.86192881,2.75 1.75,2.86192881 1.75,3 L1.75,17 C1.75,17.1380712 1.86192881,17.25 2,17.25 L14,17.25 C14.1380712,17.25 14.25,17.1380712 14.25,17 L14.25,3 C14.25,2.86192881 14.1380712,2.75 14,2.75 L2,2.75 Z M2,1.25 L14,1.25 C14.9664983,1.25 15.75,2.03350169 15.75,3 L15.75,17 C15.75,17.9664983 14.9664983,18.75 14,18.75 L2,18.75 C1.03350169,18.75 0.25,17.9664983 0.25,17 L0.25,3 C0.25,2.03350169 1.03350169,1.25 2,1.25 Z" id="矩形-copy-114" fill="#FFFFFF" fill-rule="nonzero"></path>
+                        <path d="M4.5,3.55271368e-15 L4.5,4" id="直线-13-copy-2" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"></path>
+                        <path d="M11.5,3.55271368e-15 L11.5,4" id="直线-13-copy-3" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"></path>
+                        <path d="M4,8.5 L12,8.5" id="直线-14-copy-2" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"></path>
+                        <path d="M4,11.5 L12,11.5" id="直线-14-copy-3" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,161 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.10.3",
+	"appid": "wx931ec37c9c5c19bb",
+	"projectname": "travel",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "全部订单",
+					"pathName": "pages/myOrder/myOrder",
+					"query": "state=",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "商品详情",
+					"pathName": "pages/myOrderDetail/myOrderDetail",
+					"query": "orderid=1be6810e8a7647a0a5c51b062bf4bd46&userType=1",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "物流详情",
+					"pathName": "pages/logistics/logistics",
+					"query": "orderid=71540f4649284628b65cec47ace468e9",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "普通商品详情",
+					"pathName": "pages/shopDetail/shopDetail",
+					"query": "Id=079f6a85e0df4040a0715f858343295f",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "确认订单",
+					"pathName": "pages/orderDetail/orderDetail",
+					"query": "orderid=f1e78ef04d604acabe848cb4fe816dd7",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "活动商品",
+					"pathName": "pages/seckillDetail/seckillDetail",
+					"query": "Id=d90b70d0985b4b42b66f26db2901e555&type=seck",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "选择收货地址",
+					"pathName": "pages/address/shippingAddress/shippingAddress",
+					"query": "TraveOrderId=851e9207ad5049639fd83f6f38f0e2d3",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新建收货地址",
+					"pathName": "pages/address/newAddress",
+					"query": "TraveOrderId=851e9207ad5049639fd83f6f38f0e2d3",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "拼团",
+					"pathName": "pages/groupBook/invite/invite",
+					"query": "id=9e2b416b918f4418b5bf14c6c7086e0c",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商品详情",
+					"pathName": "pages/shopDetail/shopDetail",
+					"query": "Id=d34cf272d9b64dce85785a7b4f45e344",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "活动",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "其它应用",
+					"pathName": "pages/doctor/reportList/reportList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 13,
+					"name": "图表  报告详情",
+					"pathName": "pages/doctor/reportDetail/reportDetail",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

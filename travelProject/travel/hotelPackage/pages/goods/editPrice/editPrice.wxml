@@ -1,0 +1,52 @@
+<!--hotelPackage/pages/goods/editPrice/editPrice.wxml-->
+<view class="content-box">
+	<view class="item-list" wx:for="{{hotelPrices}}" wx:key="index">
+		<view class="time-data">{{item.Date}}</view>
+		<view class="house-line">
+			<view class="house-name">是否有房</view>
+			<i-switch value="{{item.TypePrice.Valid}}" data-index="{{index}}" bind:change="changeSwitch" slot="footer"></i-switch>
+		</view>
+		<block wx:if="{{item.TypePrice.Valid}}">
+			<block wx:if="{{item.TypePrice.UnifiedSale == 1}}">
+				<view class="list-box">
+					<view class="type-line">
+						<view class="type-title">类型</view>
+						<view class="type-content">产品统一售价</view>
+					</view>
+					<view class="type-line">
+						<view class="type-title">售价</view>
+						<view class="type-content">¥{{item.TypePrice.SalePrice}}</view>
+						<view class="type-recode" bindtap="toRecord" wx:if="{{item.TypePrice.PriceChange}}" data-id="{{item.TypePrice.Id}}" data-saletype="{{item.TypePrice.UnifiedSale}}" data-time="{{item.Date}}">改价记录</view>
+					</view>
+					<view class="type-line">
+						<view class="type-title">改价</view>
+						<input class="type-input" type="digit" data-index="{{index}}" bindinput="getPrice" placeholder="请输入更改价格"></input>
+						<view class="type-yuan">元</view>
+					</view>
+				</view>
+			</block>
+			<block wx:elif="{{item.TypePrice.UnifiedSale == 0 && item.TypePrice.VisitorTypePrice.length > 0}}">
+				<view class="list-box" wx:for="{{item.TypePrice.VisitorTypePrice}}" wx:key="index" wx:for-item="types" wx:for-index="itemIndex">
+					<view class="type-line">
+						<view class="type-title">类型</view>
+						<view class="type-content">{{types.VisitorTypeName}}</view>
+					</view>
+					<view class="type-line">
+						<view class="type-title">售价</view>
+						<view class="type-content">¥{{types.SalePrice}}</view>
+						<view class="type-recode" wx:if="{{types.PriceChange}}" data-id="{{types.VisitorType}}" data-saletype="{{item.TypePrice.UnifiedSale}}" bindtap="toRecord" data-time="{{item.Date}}">改价记录</view>
+					</view>
+					<view class="type-line">
+						<view class="type-title">改价</view>
+						<input class="type-input" type="digit" data-index="{{index}}" type="number" data-itemindex="{{itemIndex}}" bindinput="getPrice" placeholder="请输入更改价格"></input>
+						<view class="type-yuan">元</view>
+					</view>
+				</view>
+			</block>
+		</block>
+	</view>
+	<view class="div-box"></view>
+</view>
+<view class="save-box">
+	<view class="save-btn" bindtap="toSave">保存</view>
+</view>

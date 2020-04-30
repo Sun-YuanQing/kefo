@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "卡项权益",
+  "usingComponents": {
+    "i-modal": "../../compoment/iview/modal/index",
+    "i-message": "../../compoment/iview/message/index"
+  }
+}

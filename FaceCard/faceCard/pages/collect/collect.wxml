@@ -1,0 +1,23 @@
+<!--pages/collect/collect.wxml-->
+<view class="contain_box">
+  <view class="card_item" wx:for="{{detailList}}" wx:key="index" data-cardid="{{item.CardId}}" bindtap="todetail">
+    <image class="back_img" src="{{item.PhotoUrl}}"></image>
+    <view class="sub_card">
+      <view class="sub_title">{{item.CardName}}</view>
+      <view class="line_fei">
+        <text class="line_money">￥<text class="money_big">{{item.feiHead}}.</text>{{item.feiEnd}}</text>
+        <image class="fei_img" src="/images/face_money.png"></image>
+      </view>
+      <view class="line_sub">
+        <view class="enshrine">{{item.CollectNum}}人收藏</view>
+        <image bindtap="changecollect" data-cardid="{{item.CardId}}"class="collect_img" src="/images/collect_sel.png"></image>
+      </view>
+    </view>
+    <view class="card_class" wx:if="{{!item.IsSellDone}}">{{item.ClassType}}</view>
+    <view class="shop_box" wx:if="{{item.IsSellDone || item.State == 0}}">
+      <image class="shopout_img" src="/images/shop_out.png"></image>
+      <view class="shop_text" wx:if="{{item.IsSellDone}}">已售罄</view>
+      <view class="shop_text" wx:if="{{item.State == 0}}">已下架</view>
+    </view>
+  </view>
+</view>

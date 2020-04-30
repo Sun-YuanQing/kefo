@@ -1,0 +1,50 @@
+/* pages/card_bag/success/success.wxss */
+.container{
+  width: 100%;
+  height: 100%;
+  padding: 60rpx 40rpx 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 28rpx;
+}
+.tip{
+  font-size: 36rpx;
+  font-weight: 700;
+  margin: 70rpx 0;
+}
+.detail{
+  width: 100%;
+  border: 1px solid #F0F0F0;
+  border-radius: 16rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+.detail_left{
+  display: flex;
+  align-items: center;
+}
+.detail image{
+  width:  40rpx;
+  padding-right: 20rpx;
+}
+.weight{
+  font-weight: 700;
+  font-size: 36rpx;
+}
+.btn{
+  width: 408rpx;
+  height: 88rpx;
+  background: linear-gradient(90deg,rgba(237,57,57,1) 0%,rgba(255,93,82,1) 100%);
+  box-shadow: 0rpx 12rpx 20rpx 0rpx rgba(255,209,206,1);
+  border-radius: 44rpx;
+  line-height: 88rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #fff;
+  margin-top: 290rpx;
+}

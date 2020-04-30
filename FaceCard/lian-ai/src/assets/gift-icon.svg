@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-赠送</title>
+    <desc>Created with Sketch.</desc>
+    <g id="菲卡时代2.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="卡项开单-单项有限次开单" transform="translate(-755.000000, -528.000000)">
+            <g id="分组-5-copy" transform="translate(689.000000, 518.000000)">
+                <g id="icon-赠送" transform="translate(66.000000, 10.000000)">
+                    <rect id="矩形" stroke="#E94E27" stroke-width="0.5" fill="#FFFFFF" x="0.25" y="0.25" width="13.5" height="13.5" rx="1"></rect>
+                    <text id="赠" font-family="PingFangSC-Regular, PingFang SC" font-size="10" font-weight="normal" fill="#E94E27">
+                        <tspan x="2" y="11">赠</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

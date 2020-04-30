@@ -1,0 +1,89 @@
+<!--pages/mine/personal/personal.wxml-->
+<view class="container">
+  <view class="cells">
+    <view class="cell">
+      <view class="cell_content">
+        <view class="cell_left">头像</view>
+        <view class="cell_right avatar_wrap">
+          <image class="avatar" mode="widthFix" bindtap="changeAvatar"
+                 src="{{personalInfor.Photo ? personalInfor.Photo : '../../../images/avatar.png'}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="cells">
+
+    <view class="cell">
+      <view class="cell_content" bindtap="editName">
+        <view class="cell_left">昵称</view>
+        <view class="cell_right">
+          <text>{{personalInfor.Name ? personalInfor.Name : personalInfor.Phone}}</text>
+          <image class="right" mode="widthFix" src="../../../images/mine_right.png"></image>
+        </view>
+      </view>
+    </view>
+
+    <!-- 弹窗 -->
+    <view class="popup" wx:if="{{changeName}}">
+      <view class="popup_container">
+          <view class="popup_title">昵称</view>
+          <view class="popup_content">
+              <input  bindinput="bindKeyInput" maxlength="8" focus adjust-position="{{true}}"
+                      value="{{name}}" placeholder="请输入2-8位昵称"/>
+          </view>
+          <view class="popup_btn">
+            <text class="btn_no" bindtap="cancel">取消</text>
+            <text class="btn_ok" bindtap="confirm">确定</text>
+          </view>
+      </view>
+    </view>
+
+    <view class="cell">
+      <view class="cell_content">
+        <view class="cell_left">手机号</view>
+        <view class="cell_right">
+          <text>{{personalInfor.Phone}}</text>
+          <image class="right" mode="widthFix" src=""></image>
+        </view>
+      </view>
+    </view>
+
+    <view class="cell">
+      <view class="cell_content" bindtap="editSex">
+        <view class="cell_left">性别</view>
+        <view class="cell_right">
+          <text>{{personalInfor.Sex ? '男' : '女'}}</text>
+          <image class="right" mode="aspectFit" src="../../../images/mine_right.png"></image>
+        </view>
+      </view>
+    </view>
+
+    <view class="cell">
+      <view class="cell_content">
+        <view class="cell_left">生日</view>
+        <view class="cell_right">
+            <!-- <picker mode="date" fields="day" value="{{personalInfor.Birthday}}"  bindchange="bindDateChange">
+                <view class="picker">
+                  <text>{{personalInfor.Birthday}}</text>
+                  <image class="right" mode="widthFix" src="../../../images/mine_right.png"></image>
+                </view>
+            </picker> -->
+            <picker mode="multiSelector" 
+                    value="{{multiIndex}}" 
+                    bindchange="changeDate" 
+                    bindcolumnchange="changeDateColumn" 
+                    range="{{dateArray}}">
+              <view class="picker">
+                  <text>{{personalInfor.Birthday || ''}}</text>
+                  <image class="right" mode="widthFix" src="../../../images/mine_right.png"></image>
+              </view>
+            </picker>
+        </view>
+      </view>
+    </view>
+
+
+  </view>
+
+</view>

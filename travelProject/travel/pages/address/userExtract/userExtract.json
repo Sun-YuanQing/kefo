@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "填写提货联系方式",
+  "usingComponents": {
+    "i-message": "/components/iview/message/index"
+  }
+}

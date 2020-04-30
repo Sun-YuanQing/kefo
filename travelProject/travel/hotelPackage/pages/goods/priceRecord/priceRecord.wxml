@@ -1,0 +1,8 @@
+<!--hotelPackage/pages/goods/priceRecord/priceRecord.wxml-->
+<view class="gray"></view>
+<view class="content">
+	<view class="item-list" wx:for="{{historyData}}" wx:key="index">
+		<view>{{item.Date}}</view>
+		<view class="item-price">¥{{item.Price}}</view>
+	</view>
+</view>

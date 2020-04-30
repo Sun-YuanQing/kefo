@@ -1,0 +1,8 @@
+<!--pages/phone/phone.wxml-->
+<view class="container">
+	<image class="userImg" src="{{userInfo.avatarUrl || '/images/figure.png'}}"></image>
+	<view class="shop-name">{{merchant.Name}} 申请获得以下权限：</view>
+	<view class="sub-name">{{showPower == 1 ? '获得你公开的信息: （昵称、头像等）' : '获得你微信绑定的手机号'}}</view>
+	<button class="blue-btn" open-type="getUserInfo" bindgetuserinfo="toLogin" wx:if="{{showPower == 1}}">确定授权</button>
+	<button type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" wx:else>微信手机号快捷登录</button>
+</view>

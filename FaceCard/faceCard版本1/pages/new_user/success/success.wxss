@@ -1,0 +1,104 @@
+/* pages/new_user/success/success.wxss */
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tip {
+  font-size: 32rpx;
+  color: #666;
+  padding-top: 25rpx;
+}
+
+.button {
+  width: 420rpx;
+  height: 88rpx;
+  background: linear-gradient(90deg, rgba(237, 57, 57, 1) 0%, rgba(255, 93, 82, 1) 100%);
+  box-shadow: 0rpx 12rpx 20rpx 0rpx rgba(255, 209, 206, 1);
+  border-radius: 44rpx;
+  line-height: 88rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #fff;
+}
+
+.animation {
+  position: relative;
+  width: 280rpx;
+  margin: 200rpx 0;
+}
+
+.animation .circle {
+  width: 100%;
+  animation: opacity 3s forwards;
+  opacity: 0;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  50%{
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.m-duigou {
+  width:  104rpx;
+  height: 56rpx;
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  overflow: hidden;
+}
+
+.m-duigou:before, .m-duigou:after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  border-radius: 4rpx;
+}
+
+.m-duigou:before {
+  width: 22rpx;
+  height: 56rpx;
+  left: 0;
+  animation: dgLeft 0.5s linear 0.5s 1 both;
+}
+
+.m-duigou:after {
+  width:  98rpx;
+  height: 22rpx;
+  bottom: 0;
+  animation: dgRight 0.5s linear 1s 1 both;
+}
+
+@keyframes  dgLeft {
+  0% {
+    top: -100%;
+  }
+
+  100% {
+    top: 0%;
+  }
+}
+
+@keyframes  dgRight {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 0%;
+  }
+}

@@ -1,0 +1,34 @@
+<!--hotelPackage/pages/goods/changeTime/changeTime.wxml-->
+<view class="time-line">
+	<view wx:for="{{goodsDetail.MonthPrice}}" wx:key="index" class="month-box {{selIndex == index ? 'sel-month' : ''}}" data-index="{{index}}" bindtap="changeIndex">
+		<view class="month">{{item.MonthIndex}}月</view>
+		<view class="price">¥{{item.MinPrice || 0}}起</view>
+	</view>
+</view>
+<view class="data-line">
+	<view class="red">日</view>
+	<view>一</view>
+	<view>二</view>
+	<view>三</view>
+	<view>四</view>
+	<view>五</view>
+	<view class="red">六</view>
+</view>
+<view class="timeData-box">
+	<view class="data-list">
+		<block wx:if="{{goodsDetail.MonthPrice[selIndex].Location > 0}}">
+			<view class="singleton" wx:for="{{goodsDetail.MonthPrice[selIndex].Location}}" wx:key="index"></view>
+		</block>
+		<view wx:for="{{goodsDetail.MonthPrice[selIndex].Dates}}" wx:key="index" class="singleton {{item.Show ? '' : 'no-singleton'}} {{item.chooseSel ? 'selSingleton' : ''}}" data-index="{{index}}" bindtap="changeDate">
+			<view class="num">{{item.Index}}</view>
+			<view class="price {{item.Show ? '' : 'no-singleton'}}" wx:if="{{item.Price}}">¥{{item.Price}}</view>
+		</view>
+	</view>
+</view>
+<view class="save-box">
+	<view class="save-btn" bindtap="toEdit">确定</view>
+</view>
+<i-message id="message" />
+<view class="container" wx:if="{{loadSpin}}">
+	<i-spin fix></i-spin>
+</view>

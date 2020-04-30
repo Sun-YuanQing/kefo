@@ -1,0 +1,8 @@
+<!--pages/pdfFile/pdfFile.wxml-->
+<!-- <Header navbar-data='{{nvabarData}}'></Header> -->
+<view class="img-box" wx:for="{{imgUrl.Images}}" wx:key="index" data-img="{{item}}" bindtap="previewImg">
+  <image src="{{item}}" mode="widthFix"></image>
+</view>
+<!-- <view class="down-now">
+  <view class="down-btn" bindtap="toDownload">立即下载</view>
+</view> -->

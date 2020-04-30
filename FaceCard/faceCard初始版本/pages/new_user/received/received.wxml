@@ -1,0 +1,11 @@
+<!--pages/new_user/received/received.wxml-->
+<view class="container">
+  <image src="../../../images/received.png" mode="widthFix" style="width: 212rpx;margin: 0 0 60rpx;"></image>
+  <image src="../../../images/received_text.png" mode="widthFix" style="width: 312rpx"></image>
+  <view class="tip">您已是<text>{{siteName}}</text>的会员</view>
+  <view class="tip">快去看看吧～</view>
+  <navigator url="/pages/card_bag/index/index" 
+               open-type="switchTab" 
+               class="button"
+               hover-class="navigator-hover">进入卡包</navigator>
+</view>

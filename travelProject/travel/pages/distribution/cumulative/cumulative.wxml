@@ -1,0 +1,18 @@
+<!--pages/distribution/cumulative/cumulative.wxml-->
+<view class="content-box">
+	<picker mode="date" fields="month" bindchange="getTime">
+		<view class="dataTime"><text>{{timeData || '全部'}}</text></view>
+	</picker>
+	<view class="sell-price">销售额 ¥{{earnData.TotalAmount}} | 收益 ¥{{earnData.TotalDistAmount}}</view>
+</view>
+<view class="gray"></view>
+<view class="list-box">
+	<view class="list-item" wx:for="{{earnList}}" wx:key="index">
+		<view class="item-name">{{item.ProductName}}</view>
+		<view class="price-line">
+			<view class="successPrice">成交<text>¥{{item.ActualAmount}}</text></view>
+			<view class="addPrice">+¥{{item.EstimateAmount}}</view>
+		</view>
+		<view class="timeStyle">{{item.CreateTime}}</view>
+	</view>
+</view>

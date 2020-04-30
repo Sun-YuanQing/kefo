@@ -1,0 +1,16 @@
+<!--pages/card_bag/balance/balance.wxml-->
+<view class="container">
+  <view class="purse">
+      <image src="../../../images/purse.png" mode="widthFix" 
+             style="width: 38rpx;padding-right: 20rpx;"></image>
+      <text>我的余额</text>
+  </view>
+
+  <view class="amount">
+    ￥<text>{{balance}}</text>
+  </view>
+
+  <navigator url="{{'/pages/card_bag/charge/charge?SiteId='+options.SiteId+'&UserId='+options.UserId + '&CardId='+options.CardId}}" class="charge" hover-class="navigator-hover">充值</navigator>
+  <navigator url="{{'/pages/card_bag/bill/bill?SiteId='+options.SiteId+'&UserId='+options.UserId}}" 
+             class="detail" hover-class="navigator-hover">账单明细</navigator>
+</view>

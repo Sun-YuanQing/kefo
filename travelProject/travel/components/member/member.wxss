@@ -1,0 +1,58 @@
+/* components/member/member.wxss */
+
+.merchant-box {
+  background: #f6f9ff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40rpx 0 40rpx 20rpx;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.merchant-name {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  font-weight: 800;
+}
+
+.merchant-name image, .merchant-address image {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 12rpx;
+}
+
+.merchant-address {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 16rpx;
+}
+
+.merchant-phone {
+  height: 68rpx;
+  line-height: 68rpx;
+  border-left: 1rpx solid #c3c3c3;
+  padding: 0 30rpx;
+}
+
+.merchant-phone image {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.adr-line {
+  display: flex;
+  align-items: center;
+}
+
+.address-name {
+  width: 430rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}

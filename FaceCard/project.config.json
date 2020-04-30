@@ -1,0 +1,181 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"uglifyFileName": true,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.9.2",
+	"appid": "wx03cde7ac0414a750",
+	"projectname": "faceCard",
+	"cloudfunctionTemplateRoot": "",
+	"watchOptions": {
+		"ignore": []
+	},
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"scripts": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "商家主页",
+					"pathName": "cardItem/pages/index/index",
+					"query": "siteid=850b43d764b240b3b8ab0261cb6bcaf1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "项目/服务",
+					"pathName": "cardItem/pages/project/project",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "项目/服务详情",
+					"pathName": "cardItem/pages/projectdetail/projectdetail",
+					"query": "serviceid=77662f622fa644c1808c3d187de0fe5f",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "卡项",
+					"pathName": "cardItem/pages/cardlist/cardlist",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "确认订单",
+					"pathName": "cardItem/pages/order/order",
+					"query": "buy=1&cardid=24293715-0761-4bea-934d-6f23e6ea33a1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "支付成功",
+					"pathName": "cardItem/pages/payment/payment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "卡项详情",
+					"pathName": "cardItem/pages/cardDetail/cardDetail",
+					"query": "cardid=682ef30c-6874-488b-8643-0e26e0e8ded3",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "关于菲卡价",
+					"pathName": "cardItem/pages/about/about",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/mine/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "pages/mine/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "有好多卡",
+					"pathName": "pages/feicard/feicard",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单详情",
+					"pathName": "pages/mine/orderDetail/orderDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 12,
+					"name": "卡项权益",
+					"pathName": "cardItem/pages/cardEquity/cardEquity",
+					"query": "cardid=33374a46-5c91-4679-9b5f-247f6ec0669b",
+					"scene": null
+				},
+				{
+					"id": 13,
+					"name": "使用记录",
+					"pathName": "cardItem/pages/userRecord/userRecord",
+					"query": "cardid=7f7350a8-d0f8-43ad-a3c5-cb02426b7358",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "pages/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的收藏",
+					"pathName": "pages/collect/collect",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 16,
+					"name": "菲卡-卡项详情",
+					"pathName": "pages/cardDetail/cardDetail",
+					"query": "cardid=3de82b7d-16e9-4cea-9eae-b3731b663c49",
+					"scene": null
+				}
+			]
+		}
+	}
+}

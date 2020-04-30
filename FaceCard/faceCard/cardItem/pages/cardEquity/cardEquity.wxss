@@ -1,0 +1,308 @@
+/* cardItem/pages/cardEquity/cardEquity.wxss */
+
+page {
+  background: #f5f5f5;
+}
+
+.card_head {
+  width: 100%;
+  position: relative;
+  height: 400rpx;
+  overflow: hidden;
+}
+
+.white_head {
+  width: 100%;
+  height: 284rpx;
+}
+
+.head_box {
+  position: absolute;
+  top: 10rpx;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+
+.head_text {
+  position: relative;
+}
+
+.text_box {
+  position: absolute;
+  top: 52rpx;
+  left: 36rpx;
+  color: #fff;
+  width: 618rpx;
+}
+
+.ci_card {
+  font-size: 40rpx;
+}
+
+.mo_card {
+  width: 100%;
+  height: 388rpx;
+  border-radius: 24rpx;
+}
+
+.head_card_name {
+  font-size: 28rpx;
+}
+
+.fei_card_img {
+  width: 104rpx;
+  height: 28rpx;
+  margin-left: 20rpx;
+}
+
+.content_box {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx 140rpx;
+}
+
+.shop_line {
+  background: #fff;
+  margin-top: 20rpx;
+  border-radius: 40rpx;
+  padding: 10rpx 0;
+  display: flex;
+  align-items: center;
+}
+
+.shop_img {
+  width: 36rpx;
+  height: 34rpx;
+  margin-left: 40rpx;
+}
+
+.shop_text {
+  font-size: 28rpx;
+  margin-left: 16rpx;
+  font-weight: 800;
+}
+
+.card_main_box {
+  margin-top: 20rpx;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10rpx 50rpx 140rpx 40rpx;
+  border-radius: 16rpx;
+}
+
+.withprogress {
+  font-size: 24rpx;
+  padding-top: 60rpx;
+}
+
+.withprogress_red {
+  color: #ff4142;
+}
+
+.withprogress_color {
+  width: 100%;
+  height: 16rpx;
+  border-radius: 30rpx;
+  display: flex;
+  overflow: hidden;
+  margin-top: 12rpx;
+}
+
+.card_main_head {
+  font-size: 32rpx;
+  color: #999;
+  padding: 60rpx 0 20rpx;
+  font-weight: 800;
+}
+
+.card_main_head_black {
+  font-size: 32rpx;
+  color: #000;
+  padding: 60rpx 0 20rpx;
+  font-weight: 800;
+}
+
+.line_project_box {
+  display: flex;
+  padding-top: 30rpx;
+}
+
+.project_box_img {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 16rpx;
+}
+
+.projext_text_box {
+  margin-left: 20rpx;
+  width: calc(100% - 160rpx);
+  border-bottom: 1rpx dashed #f5f5f5;
+  color: #999;
+}
+
+.project_text_title {
+  font-size: 26rpx;
+  margin-top: 4rpx;
+  color: #999;
+}
+
+.project_text_title_black {
+  font-size: 26rpx;
+  margin-top: 4rpx;
+  color: #000;
+}
+
+.project_text_num {
+  font-size: 28rpx;
+  font-weight: 800;
+  margin-top: 10rpx;
+  color: #999;
+}
+
+.project_text_num_black {
+  font-size: 28rpx;
+  font-weight: 800;
+  margin-top: 10rpx;
+  color: #000;
+}
+
+.line_text_nun {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 8rpx;
+  padding-bottom: 20rpx;
+  align-items: center;
+}
+
+.line_text_img {
+  width: 12rpx;
+  height: 24rpx;
+}
+
+.foot_box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1rpx solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+}
+
+.activate {
+  width: 100%;
+  height: 100%;
+  line-height: 100rpx;
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  background: linear-gradient(90deg, rgba(237, 57, 57, 1) 0%, rgba(255, 93, 82, 1) 100%);
+}
+
+.info_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+  padding: 14rpx 0;
+  margin-top: 60rpx;
+  border-radius: 8rpx;
+}
+
+.info_box_red {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff3f3;
+  padding: 14rpx 0;
+  margin-top: 60rpx;
+  border-radius: 8rpx;
+}
+
+.info {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.info_text {
+  font-size: 20rpx;
+  color: #999;
+  margin-left: 16rpx;
+}
+
+.info_text_red {
+  font-size: 20rpx;
+  color: #ff4142;
+  margin-left: 16rpx;
+}
+
+.user_box {
+  text-align: right;
+  margin: 8rpx 0 32rpx 0;
+}
+
+.user_record {
+  font-size: 22rpx;
+  padding: 8rpx 24rpx;
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 30rpx;
+}
+
+.validity {
+  font-size: 24rpx;
+}
+
+.user_red {
+  color: #ff4142;
+}
+
+.discount_num {
+  margin-top: 10rpx;
+  text-align: center;
+  position: relative;
+}
+
+.discount_num image {
+  width: 140rpx;
+  height: 40rpx;
+}
+
+.discount {
+  text-align: center;
+  margin-top: 10rpx;
+  position: relative;
+}
+
+.discount image {
+  width: 234rpx;
+  height: 40rpx;
+}
+
+.discount_small {
+  margin-top: 10rpx;
+  text-align: center;
+  position: relative;
+}
+
+.discount_small image {
+  width: 96rpx;
+  height: 40rpx;
+}
+
+.discount_text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40rpx;
+  text-align: center;
+  line-height: 40rpx;
+  font-size: 28rpx;
+}

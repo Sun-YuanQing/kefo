@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+   "card-list": "/compoment/card_list/card_list"
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "卡包"
+}

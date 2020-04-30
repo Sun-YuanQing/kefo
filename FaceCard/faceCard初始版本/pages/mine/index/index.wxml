@@ -1,0 +1,88 @@
+<!--pages/mine/index/index.wxml-->
+<view class="container">
+  <navigator url="/pages/mine/personal/personal" hover-class="navigator-hover">
+    <view class="header">
+      <view class="header_left">
+        <view class="img_wrap">
+          <image class="avatar" mode="widthFix" src="{{userInfo.Photo ? userInfo.Photo : '../../../images/avatar.png' }}"></image>
+          <image class="sex" mode="widthFix" 
+                 src="{{userInfo.Sex ? '../../../images/sex_boy.png' : '../../../images/sex_girl.png'}}"></image>
+        </view>
+        <view class="name">{{userInfo.Name ? userInfo.Name : userInfo.Phone}}</view>
+      </view>
+      <image class="right" mode="widthFix" src="../../../images/mine_right.png"></image>
+    </view>
+  </navigator>
+
+  <navigator url="/pages/mine/coupon/coupon" hover-class="navigator-hover">
+    <view class="ticket">
+        <view class="title">
+          <image mode="aspectFit" src="../../../images/mine_tiket.png"></image>
+          <text>我的优惠劵<text wx:if="{{other.Count}}">({{other.Count}}张)</text> </text>
+        </view>
+        <view class="content">
+          <text wx:if="{{other.Count}}">{{other.DueTime}}到期</text>
+          <image class="right" mode="widthFix" src="../../../images/mine_right.png"></image>
+        </view>
+    </view>
+  </navigator>
+
+  <view class="cells">
+      <navigator url="/pages/mine/notice/notice" hover-class="navigator-hover">
+           <view class="cell">
+              <image mode="aspectFit" src="../../../images/mine_new.png"></image>
+              <view class="cell_content">
+                  <view class="cell_left">消息中心</view>
+                  <view class="cell_right">
+                      <!-- <text class="info">99</text> -->
+                      <image class="right" mode="widthFix" src="../../../images/mine_right.png"></image>
+                  </view>
+              </view>
+          </view>
+      </navigator>
+   
+    <navigator url="/pages/mine/about/about" hover-class="navigator-hover">
+        <view class="cell">
+          <image mode="aspectFit" src="../../../images/mine_about.png"></image>
+          <view class="cell_content">
+            <view class="cell_left">关于我们</view>
+            <view class="cell_right">
+              <image class="right" mode="widthFix" src="../../../images/mine_right.png"></image>
+              
+            </view>
+          </view>
+        </view>     
+    </navigator>
+   
+      <navigator url="/pages/mine/service/service" hover-class="navigator-hover">
+        <view class="cell">
+          <image mode="aspectFit" src="../../../images/mine_service.png"></image>
+          <view class="cell_content">
+            <view class="cell_left">客服中心</view>
+            <view class="cell_right">
+              <image class="right" mode="widthFix" src="../../../images/mine_right.png"></image>
+            </view>
+          </view>
+        </view>       
+      </navigator>
+      
+
+  </view>
+
+  <!-- <view class="cells">
+    <navigator url="/pages/mine/setting/setting" hover-class="navigator-hover">
+      <view class="cell">
+        <image mode="aspectFit" src="../../../images/mine_set.png"></image>
+        <view class="cell_content">
+          <view class="cell_left">设置</view>
+          <view class="cell_right">
+            <image class="right" mode="widthFix" src="../../../images/mine_right.png"></image>
+          </view>
+        </view>
+      </view>       
+    </navigator>
+</view> -->
+
+<!-- <view class="layout" bindtap="layout">退出登录</view> -->
+
+</view>

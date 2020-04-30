@@ -1,0 +1,14 @@
+<!--pages/mine/about/about.wxml-->
+<view class="container">
+  <view class="content">
+    <view class="logo"><image mode="widthFix" src="../../../images/logo.png"></image></view>
+    <view class="description">
+      <view>科佛科技致力于以先进科技提升美好生活</view>
+      <view >将人工智能技术运用于会员管理</view>
+    </view>
+    <view class="wechat">
+        <text>微信公众号：</text>菲卡时代
+    </view>
+  </view>
+  <view class="footer">深圳市科佛科技有限公司</view>
+</view>

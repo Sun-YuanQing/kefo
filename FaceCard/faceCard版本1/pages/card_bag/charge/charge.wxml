@@ -1,0 +1,61 @@
+<!--pages/card_bag/charge/charge.wxml-->
+<view class="container">
+  <view class="bg">
+    <view class="content">
+      <view class="name">
+        <image src="../../../images/merchant.png" mode="widthFix" style="width: 44rpx; padding-right: 20rpx;"></image>
+        <text>{{cardInfo.SiteName}}</text>
+      </view>
+      <view class="amount">
+        <view>会员卡号：{{cardInfo.CardNo}}</view>
+        <view>余额：{{cardInfo.Amount}}元</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="charge_wrap">
+    <view class="title">
+      <view></view>
+      <text>充值金额</text>
+    </view>
+
+    <view class="charge_list">
+      <block wx:for="{{cardInfo.Preferential}}" wx:key="index">
+        <view class="block" data-index="{{index}}" bindtap="changeToggle">
+          <view class="charge_item" style="background: {{ selectedFlag[index] ? '#FFE6E6' : '#fff'}};border-color: {{ selectedFlag[index] ? '#FF4142' : '#FFE6E6'}}">
+            <view style="font-size: 30rpx;">{{item.Amount}}元</view>
+            <view style="font-size: 24rpx;color: #FF4142">送{{item.PreferentialAmount}}元</view>
+          </view>
+        </view>
+      </block>
+
+      <view class="block" bindtap="otherChoice">
+        <navigator url="{{'/pages/card_bag/charge_auto/charge_auto?SiteId='+options.SiteId+'&UserId='+options.UserId + '&CardId=' + options.CardId + '&array='+ array}}" class="charge_item" style="font-size:32rpx;" hover-class="navigator-hover">其他</navigator>
+      </view>
+
+    </view>
+
+  </view>
+
+  <view class="pay_way">
+    <view class="title">
+      <view></view>
+      <text>支付方式</text>
+    </view>
+    <view class="way_list">
+      <image src="../../../images/weixin.png" mode="widthFix" style="width: 64rpx;padding-right: 20rpx"></image>
+      <text>微信支付</text>
+    </view>
+  </view>
+
+  <view class="btn_wrap">
+    <view class="{{disable ? 'red btn' : 'gray btn' }}" bindtap="charge">充值</view>
+    <view class="agreement">
+      <image src="{{checked ? '../../../images/checked.png' : '../../../images/unchecked.png'}}" mode="widthFix" bindtap="checkboxChange" style="width: 28rpx;padding-right:20rpx;"></image>
+      <view>我已阅读并同意
+        <text style="color: #FF4142" bindtap='goAgreement'>《充值活动协议》</text> </view>
+      <!-- <web-view  src="https://mp.weixin.qq.com/"></web-view> -->
+    </view>
+  </view>
+
+</view>

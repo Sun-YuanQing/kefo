@@ -1,0 +1,376 @@
+/* cardItem/pages/cardDetail/cardDetail.wxss */
+
+page {
+  background: #f5f5f5;
+}
+
+.card_head {
+  width: 100%;
+  height: 422rpx;
+  box-sizing: border-box;
+  padding: 44rpx 52rpx;
+  color: #fff;
+  font-size: 28rpx;
+}
+
+.card_contain {
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40rpx 34rpx;
+}
+
+.card_contain_title {
+  font-size: 32rpx;
+  font-weight: 800;
+}
+
+.card_top_line_money {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16rpx;
+  align-items: baseline;
+}
+
+.yuan_card_money {
+  font-size: 24rpx;
+  font-weight: 800;
+}
+
+.yuan_card_money_big {
+  font-size: 36rpx;
+}
+
+.yuan_pay_out {
+  font-size: 20rpx;
+  color: #666;
+}
+
+.fei_line_money {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.left_fei_line {
+  display: flex;
+  align-items: baseline;
+}
+
+.fei_card_money {
+  font-size: 24rpx;
+  font-weight: 800;
+}
+
+.fei_card_money_big {
+  font-size: 36rpx;
+}
+
+.fei_card_img {
+  width: 104rpx;
+  height: 28rpx;
+  margin-left: 20rpx;
+}
+
+.fei_card_info {
+  width: 26rpx;
+  height: 26rpx;
+  margin-left: 12rpx;
+}
+
+.look_box {
+  background: #fff;
+  margin-top: 20rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 34rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+}
+
+.look_text {
+  color: #ff4142;
+}
+
+.card_main_box {
+  margin-top: 20rpx;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 50rpx 140rpx 40rpx;
+}
+
+.card_main_head_line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70rpx 0 20rpx;
+}
+
+.text_title {
+  margin: 0 10rpx;
+  background: no-repeat;
+  font-size: 32rpx;
+}
+
+.card_main_head_img {
+  width: 34rpx;
+  height: 18rpx;
+}
+
+.discount_num {
+  margin-top: 10rpx;
+  text-align: center;
+  position: relative;
+}
+
+.discount_num image {
+  width: 140rpx;
+  height: 40rpx;
+}
+
+.discount {
+  text-align: center;
+  margin-top: 10rpx;
+  position: relative;
+}
+
+.discount image {
+  width: 234rpx;
+  height: 40rpx;
+}
+
+.discount_small {
+  margin-top: 10rpx;
+  text-align: center;
+  position: relative;
+}
+
+.discount_small image {
+  width: 96rpx;
+  height: 40rpx;
+}
+
+.discount_text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40rpx;
+  text-align: center;
+  line-height: 40rpx;
+  font-size: 28rpx;
+}
+
+.line_project_box {
+  display: flex;
+  padding-top: 30rpx;
+}
+
+.project_box_img {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 16rpx;
+}
+
+.projext_text_box {
+  margin-left: 20rpx;
+  width: calc(100% - 160rpx);
+  border-bottom: 1rpx dashed #f5f5f5;
+}
+
+.project_text_title {
+  font-size: 26rpx;
+  margin-top: 4rpx;
+}
+
+.project_text_num {
+  font-size: 28rpx;
+  font-weight: 800;
+  margin-top: 10rpx;
+}
+
+.line_text_nun {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 8rpx;
+  padding-bottom: 20rpx;
+  align-items: center;
+}
+
+.line_text_img {
+  width: 12rpx;
+  height: 24rpx;
+}
+
+.activate_box {
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40rpx 0 40rpx 54rpx;
+  margin-top: 20rpx;
+}
+
+.line_activate {
+  display: flex;
+  align-items: center;
+}
+
+.time_margin {
+  margin-top: 4rpx;
+}
+
+.activate_img {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.activate_text_time {
+  font-size: 24rpx;
+  color: #666;
+  margin-left: 20rpx;
+}
+
+.shop_info {
+  background: #fff;
+  margin-top: 20rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50rpx 30rpx 150rpx;
+}
+
+.line_shop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.line_subshop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.left_title {
+  font-size: 24rpx;
+  font-weight: 800;
+  width: 620rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-right: 1rpx solid #f0f0f0;
+}
+
+.left_subhead {
+  font-size: 20rpx;
+  color: #666;
+  width: 620rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-right: 1rpx solid #f0f0f0;
+}
+
+.tel_img {
+  width: 24rpx;
+  height: 30rpx;
+}
+
+.local_img {
+  width: 24rpx;
+  height: 30rpx;
+}
+
+.foot_box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1rpx solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+}
+
+.left_shopname {
+  width: 200rpx;
+  text-align: center;
+}
+
+.shop_dian {
+  font-size: 20rpx;
+}
+
+.shop_logo {
+  width: 40rpx;
+  height: 38rpx;
+}
+
+.shop_now {
+  text-align: center;
+  background: linear-gradient(90deg, rgba(237, 57, 57, 1) 0%, rgba(255, 93, 82, 1) 100%);
+  width: calc(100% - 100rpx);
+  height: 100%;
+  line-height: 100rpx;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.buy_text {
+  width: 366rpx;
+  height: 94rpx;
+  line-height: 94rpx;
+  border: 1rpx solid #ccc;
+  font-size: 28rpx;
+  color: #000;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8rpx;
+}
+
+.buy_sel {
+  width: 366rpx;
+  height: 94rpx;
+  line-height: 94rpx;
+  border: 1rpx solid #ff4142;
+  font-size: 28rpx;
+  color: #ff4142;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8rpx;
+  background: #ffe6e6;
+}
+
+.buy_small {
+  font-size: 20rpx;
+}
+
+.buy_big {
+  font-size: 28rpx;
+}
+
+.limit_box {
+  background: #fff3e4;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8rpx 32rpx;
+  font-size: 24rpx;
+  color: #ffb055;
+  display: flex;
+  align-items: center;
+}
+
+.bar_box {
+  display: flex;
+  align-items: center;
+  width: 172rpx;
+  height: 14rpx;
+  border-radius: 16rpx;
+  margin-left: 16rpx;
+  overflow: hidden;
+}

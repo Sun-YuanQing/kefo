@@ -1,0 +1,4 @@
+<!--cardItem/pages/about/about.wxml-->
+<view class="about_box">
+  <image class="about_img" src="/cardItem/images/about.png" mode="widthFix"></image>
+</view>

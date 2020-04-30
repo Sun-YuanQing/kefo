@@ -1,0 +1,27 @@
+<!--hotelPackage/pages/hotelInfo/replenishInfo/replenishInfo.wxml-->
+<view class="content-box">
+	<view class="item-line">
+		<view class="item-label">联系人</view>
+		<input class="items-input" value="{{tourData.Name}}" maxlength="10" bindinput="getName" placeholder="姓名与证件一致，每间房只需填写一人"></input>
+		<view style="padding:0 4rpx;font-size:0;" bindtap="toChoose">
+			<image class="item-person" src="/hotelPackage/images/replenish-info.png"></image>
+		</view>
+	</view>
+	<view class="item-line">
+		<view class="item-label">手机号</view>
+		<input class="item-input" maxlength="11" value="{{tourData.Phone}}" bindinput="getPhone" placeholder="请输入联系人手机号"></input>
+	</view>
+	<view class="item-line">
+		<view class="item-label">身份证号</view>
+		<input class="item-input" maxlength="18" value="{{tourData.IdCard}}" bindinput="getIdCard" placeholder="请输入正确的身份证号码"></input>
+	</view>
+</view>
+<view class="content-box">
+	<view class="item-line">
+		<view class="item-label">订单备注</view>
+		<input class="item-input" value="{{tourData.Remark}}" maxlength="" bindinput="getRemark" placeholder="备注其他需求"></input>
+	</view>
+</view>
+<view class="save-box">
+	<view class="save-btn" bindtap="toSave">提交信息</view>
+</view>

@@ -1,0 +1,22 @@
+<!--pages/mine/notice/notice.wxml-->
+<view class="container list">
+    <!-- 1.充值  2.红包 3. 消费 4.优惠券 -->
+    <block wx:for="{{noticeList}}" wx:key="index">
+        <!-- <view class="list_item"> -->
+        <navigator url="{{item.Type == 4 ? '/pages/mine/coupon/coupon' : '/pages/card_bag/bill/bill?SiteId='+item.SiteId+'&UserId='+item.UserId}}" class="list_item" hover-class="navigator-hover">
+          <view class="icon">
+              <image mode="widthFix" wx:if="{{item.Type == 3}}"  src="../../../images/cost.png"></image>
+              <image mode="widthFix" wx:elif="{{item.Type == 1}}"  src="../../../images/top_up.png"></image>
+              <image mode="widthFix" wx:elif="{{item.Type == 4}}"  src="../../../images/coupon.png"></image>
+              <image mode="widthFix" wx:elif="{{item.Type == 2}}"  src="../../../images/red.png"></image>
+          </view>
+          
+          <view  class="content_wrap">
+            <view class="title">{{item.TypeStr}}</view>
+            <view class="content">{{item.Message}}</view>
+            <view class="other">{{item.CreatedTime}}</view>
+          </view>
+        </navigator>
+        <!-- </view> -->
+    </block>
+</view>

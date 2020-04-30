@@ -1,0 +1,28 @@
+/* pages/distribution/explain/explain.wxss */
+.explain-box {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 60rpx;
+}
+
+.title {
+  font-size: 32rpx;
+  font-weight: 800;
+  margin-top: 60rpx;
+}
+.first-name{
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 28rpx;
+}
+.formula{
+  font-size: 28rpx;
+  font-weight: 800;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.second-name{
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 40rpx;
+}

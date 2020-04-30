@@ -1,0 +1,100 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/statistics/consume/consume",
+    "pages/statistics/index/index",
+    "pages/phone/phone",
+    "pages/face/main/main",
+    "pages/face/guide/guide",
+    "pages/card_bag/index/index",
+    "pages/card_bag/menber_center/menber_center",
+    "pages/card_bag/balance/balance",
+    "pages/card_bag/charge/charge",
+    "pages/card_bag/charge_auto/charge_auto",
+    "pages/card_bag/success/success",
+    "pages/card_bag/rights/rights",
+    "pages/card_bag/bill/bill",
+    "pages/new_user/take/take",
+    "pages/new_user/success/success",
+    "pages/new_user/received/received",
+    "pages/mine/index/index",
+    "pages/mine/coupon/coupon",
+    "pages/mine/notice/notice",
+    "pages/mine/personal/personal",
+    "pages/mine/avatar_cropper/avatar_cropper",
+    "pages/mine/setting/setting",
+    "pages/mine/about/about",
+    "pages/mine/service/service",
+    "pages/order/order",
+    "pages/card_bag/agreement/agreement",
+    "pages/statistics/balance/balance",
+    "pages/statistics/detail/detail",
+    "pages/mine/order/order",
+    "pages/feicard/feicard",
+    "pages/mine/orderDetail/orderDetail",
+    "pages/search/search",
+    "pages/collect/collect",
+    "pages/cardDetail/cardDetail"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "菲卡时代",
+    "navigationBarTextStyle": "black"
+  },
+  "subpackages": [
+    {
+      "root": "cardItem",
+      "pages": [
+        "pages/index/index",
+        "pages/project/project",
+        "pages/projectdetail/projectdetail",
+        "pages/cardlist/cardlist",
+        "pages/order/order",
+        "pages/payment/payment",
+        "pages/cardDetail/cardDetail",
+        "pages/about/about",
+        "pages/cardEquity/cardEquity",
+        "pages/userRecord/userRecord",
+        "pages/cardPrice/cardPrice",
+        "pages/myCoupon/myCoupon"
+      ]
+    }
+  ],
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#FF4142",
+    "list": [
+      {
+        "pagePath": "pages/card_bag/index/index",
+        "text": "卡包",
+        "iconPath": "images/card_bag.png",
+        "selectedIconPath": "images/card_bag_active.png"
+      },
+      {
+        "pagePath": "pages/statistics/index/index",
+        "text": "统计",
+        "iconPath": "images/statistics.png",
+        "selectedIconPath": "images/statistics_active.png"
+      },
+      {
+        "pagePath": "pages/feicard/feicard",
+        "text": "菲卡",
+        "iconPath": "images/activity.png",
+        "selectedIconPath": "images/activity_active.png"
+      },
+      {
+        "pagePath": "pages/mine/index/index",
+        "text": "我的",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

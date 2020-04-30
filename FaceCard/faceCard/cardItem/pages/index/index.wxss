@@ -1,0 +1,321 @@
+swiper {
+  height: 422rpx;
+}
+
+.carousel {
+  width: 100%;
+  height: 422rpx;
+}
+
+.line_box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.all_box {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 15rpx;
+}
+
+.item_box {
+  width: 33%;
+  text-align: center;
+  overflow: hidden;
+  padding: 30rpx 0;
+  font-size: 26rpx;
+}
+
+.item_img {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.project {
+  padding-top: 30rpx;
+}
+
+.line_tui {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 20rpx;
+}
+
+.tui {
+  font-size: 38rpx;
+  font-weight: 800;
+}
+
+.tomore {
+  font-size: 24rpx;
+}
+
+.card_project {
+  margin-bottom: 30rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.21);
+  position: relative;
+}
+
+.num_card {
+  position: absolute;
+  top: 22rpx;
+  left: 28rpx;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.card_img {
+  width: 100%;
+  height: 328rpx;
+}
+
+.title {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 10rpx;
+  font-weight: 800;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.line_time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10rpx 10rpx 32rpx 10rpx;
+  min-height: 110rpx;
+}
+
+.time_box {
+  display: flex;
+  align-items: center;
+}
+
+.time_img {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.time_min {
+  font-size: 20rpx;
+  margin-left: 10rpx;
+  color: #666;
+}
+
+.line_onshop {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.line_yuan {
+  display: flex;
+  font-size: 20rpx;
+  align-items: baseline;
+}
+
+.yuan {
+  font-size: 20rpx;
+  display: flex;
+  align-items: baseline;
+  font-weight: 800;
+}
+
+.yuan_big {
+  font-size: 28rpx;
+}
+
+.old {
+  color: #666;
+  text-decoration: line-through;
+  margin-left: 16rpx;
+}
+
+.lableTag {
+  margin-left: 16rpx;
+  font-size: 20rpx;
+}
+
+.onshop_text {
+  background: #ffe6e6;
+  color: #ff4142;
+  border-radius: 30rpx;
+  border-bottom-left-radius: 0;
+  padding: 4rpx 8rpx;
+}
+
+.subscribe {
+  color: #ff4142;
+  padding: 6rpx 40rpx;
+  border: 1rpx solid #ed3939;
+  border-radius: 44rpx;
+}
+
+.feicard {
+  display: flex;
+  align-items: baseline;
+}
+
+.feicard_img {
+  width: 104rpx;
+  height: 28rpx;
+  margin-left: 12rpx;
+}
+
+.shop_box {
+  padding-top: 150rpx;
+  padding-bottom: 100rpx;
+  position: relative;
+}
+
+.shop_name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left_name {
+  display: flex;
+  align-items: center;
+}
+
+.shop_img {
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 15rpx;
+}
+
+.left_center {
+  margin-left: 10rpx;
+  width: 520rpx;
+  padding-right: 16rpx;
+  border-right: 1rpx solid #f0f0f0;
+}
+
+.head {
+  font-size: 28rpx;
+  font-weight: 800;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.subhead {
+  font-size: 20rpx;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.shop_tel {
+  width: 36rpx;
+  height: 44rpx;
+}
+
+.shop_time {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.shop_address {
+  display: flex;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.shop_time_img {
+  width: 30rpx;
+  height: 30rpx;
+  padding: 5rpx 0;
+}
+
+.shop_address_img {
+  width: 24rpx;
+  height: 30rpx;
+}
+
+.shop_main_data {
+  margin-left: 18rpx;
+  padding-left: 18rpx;
+}
+
+.shop_main_address {
+  margin-left: 24rpx;
+  padding-left: 18rpx;
+}
+
+.shop_main {
+  width: 640rpx;
+  color: #666;
+  font-size: 24rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-left: 1rpx solid #f0f0f0;
+  line-height: 40rpx;
+  height: 40rpx;
+}
+
+.allsubhead {
+  border-radius: 20rpx;
+  border: 1rpx solid #e9e9e9;
+  overflow: hidden;
+  font-size: 20rpx;
+  color: #666;
+  box-sizing: border-box;
+  padding: 20rpx;
+  position: absolute;
+  top: 216rpx;
+  left: 124rpx;
+  background: #fff;
+}
+
+.close_box {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.merchant_box {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 70rpx 30rpx;
+}
+
+.line_merchant {
+  display: flex;
+  justify-content: space-between;
+  background: #f5f5f5;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 24rpx 36rpx 24rpx 48rpx;
+  align-items: center;
+  border-radius: 16rpx;  
+}
+
+.merchant_setting {
+  font-size: 24rpx;
+}
+
+.merchant_project {
+  font-size: 28rpx;
+  color: #9b9b9b;
+}
+
+.merchant_top {
+  margin-top: 16rpx;
+}

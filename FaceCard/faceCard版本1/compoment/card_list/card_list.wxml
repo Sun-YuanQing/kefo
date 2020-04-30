@@ -1,0 +1,39 @@
+<!--compoment/card_list.wxml-->
+<view class="card_list">
+  <view class="nav_bar">
+   <image src="../../images/card_num.png" mode="widthFix" style="width: 50rpx;padding-right: 20rpx;"></image>
+    <view>卡数量：{{totalCards}}张</view>
+  </view>
+<!-- calc(100% - 180rpx) -->
+  <view class="my_card" style='min-height: {{minHeight}};'>
+    <block wx:for="{{cardList}}" wx:for-index="indx" wx:for-item="cardsItem" wx:key="*this">
+        <view class="cards_item">
+          <view class="title_wrap">
+            <view class="title">{{cardsItem.SiteName}}</view>
+            <view class="card_num" data-index="{{indx}}" wx-if="{{cardsItem.Count > 1}}" bindtap="changeToggle">
+              <text>全部（{{cardsItem.Count}}）</text>
+              <image src="{{allFlag[indx] ? '../../images/down.png' : '../../images/up.png'}}"
+                      mode="widthFix"></image>
+            </view>
+          </view>
+          
+          <block wx:for="{{cardsItem.Cards}}"  wx:key="*this">
+            <view data-options="{{item}}" bindtap="navigate" class="card_item" hidden="{{index >= 1 && !allFlag[indx]}}"
+                  style="background: url({{item.PhotoUrl}}) no-repeat center;background-size: container ">
+              <view>{{item.CardNo}}</view>
+              <view class="other_content">
+                <view>{{item.CardName}}</view>
+                <view class="card_money" hover-class="navigator-hover">
+                  <text>余额：{{item.Amount}}元</text>
+                  <image src="../../images/right.png"></image>
+                </view>
+              </view>
+
+            </view>
+          </block>
+        </view>
+      </block>
+
+  </view>
+</view>
+

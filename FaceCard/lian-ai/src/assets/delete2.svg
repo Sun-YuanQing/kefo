@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="22px" viewBox="0 0 24 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>删除</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="开单3" transform="translate(-981.000000, -307.000000)">
+            <g id="分组-8" transform="translate(677.000000, 307.000000)">
+                <g id="删除" transform="translate(304.000000, 0.000000)">
+                    <path d="M0.226932898,-2.84217094e-14 L20,-2.84217094e-14 C22.209139,-2.88275217e-14 24,1.790861 24,4 L24,21.4622764 C13.5597625,17.6732947 5.02574168,9.90953374 0.226946648,2.79978179e-06 Z" id="合并形状" fill="#E4E4E4"></path>
+                    <text id="X" font-family="PingFangSC-Regular, PingFang SC" font-size="10" font-weight="normal" fill="#999999">
+                        <tspan x="13" y="12">X</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

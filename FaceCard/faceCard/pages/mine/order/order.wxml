@@ -1,0 +1,42 @@
+<!--pages/mine/order/order.wxml-->
+<!-- 分类列表头 -->
+<!-- <view class="head_tab">
+  <view class="tab tab_sel">全部</view>
+  <view class="tab">项目/服务</view>
+  <view class="tab">卡项</view>
+</view> -->
+<!-- 项目/服务的订单样式 -->
+<!-- <view class="project_box">
+  <image class="project_img" src="/images/blue.png"></image>
+  <view class="project_right">
+    <view class="wait">待使用</view>
+    <view class="project_title">进口资生堂护理日本进健身卡发卡量克里斯多夫就看快乐十分</view>
+    <view class="line_box">
+      <view>
+        <text class="currentPrice">￥<text class="currentPrice_big">1888.</text>00</text>
+        <text class="originalCost ">¥2888.00</text>
+      </view>
+      <view class="promptly">立即支付</view>
+    </view>
+  </view>
+</view> -->
+<view class="card_box" wx:for="{{orderList}}" wx:key="index" data-id="{{item.CardId}}" bindtap="todetail">
+  <view class="card_top">
+    <image class="card_img" src="{{item.PhotoUrl}}"></image>
+    <view class="card_right">
+      <view class="wait">{{item.IsAct ? '待使用' : '待激活'}}</view>
+      <view class="line_box">
+        <view class="line_title">{{item.CardName}}</view>
+        <!-- <view class="card_promptly">立即支付</view> -->
+      </view>
+    </view>
+  </view>
+  <!-- <view class="money">￥1888.00</view> -->
+  <view class="line_fei">
+    <view class="{{item.FeikaCard ? 'old_price' : 'money'}}">¥{{item.CardPrice}}</view>
+    <view class="line_right" wx:if="{{item.FeiKaPrice > 0 && item.FeikaCard}}">
+      <view class="fei_price">¥{{item.FeiKaPrice}}</view>
+      <image class="fei_img" src="/images/face_money.png"></image>
+    </view>
+  </view>
+</view>

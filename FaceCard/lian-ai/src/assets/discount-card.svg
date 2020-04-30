@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="134px" height="158px" viewBox="0 0 134 158" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>折扣卡</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="106.333687%" x2="27.9682401%" y2="13.6576775%" id="linearGradient-1">
+            <stop stop-color="#5E63DE" offset="0%"></stop>
+            <stop stop-color="#7187E5" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-19.6%" y="-14.6%" width="139.1%" height="129.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="6" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <linearGradient x1="100%" y1="106.333687%" x2="30.1671865%" y2="16.4868404%" id="linearGradient-3">
+            <stop stop-color="#5B5EDD" offset="0%"></stop>
+            <stop stop-color="#7187E5" offset="100%"></stop>
+        </linearGradient>
+        <path d="M8,0 L51,0 C79.1665222,-5.1741062e-15 102,22.8334778 102,51 L102,128 C102,132.418278 98.418278,136 94,136 L8,136 C3.581722,136 5.41083001e-16,132.418278 0,128 L0,8 C-5.41083001e-16,3.581722 3.581722,8.11624501e-16 8,0 Z" id="path-4"></path>
+    </defs>
+    <g id="菲卡时代2.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="卡项管理--选择卡项类型" transform="translate(-446.000000, -305.000000)">
+            <g id="分组-6" transform="translate(446.000000, 305.000000)">
+                <g id="折扣卡" transform="translate(14.000000, 6.000000)">
+                    <g id="%-copy-2">
+                        <path d="M22,17 L60,17 C85.4050985,17 106,37.5949015 106,63 L106,132 C106,136.418278 102.418278,140 98,140 L22,140 C17.581722,140 14,136.418278 14,132 L14,25 C14,20.581722 17.581722,17 22,17 Z" id="Mask" fill="url(#linearGradient-1)" opacity="0.51688058" filter="url(#filter-2)"></path>
+                        <mask id="mask-5" fill="white">
+                            <use xlink:href="#path-4"></use>
+                        </mask>
+                        <use id="Mask" fill="url(#linearGradient-3)" xlink:href="#path-4"></use>
+                        <text id="%" opacity="0.549641927" mask="url(#mask-5)" transform="translate(87.627881, 26.476049) rotate(-56.000000) translate(-87.627881, -26.476049) " font-family="PingFangSC-Medium, PingFang SC" font-size="22" font-weight="400" fill="#FFFFFF">
+                            <tspan x="76.6278814" y="34.4760489">%</tspan>
+                        </text>
+                        <text id="%" opacity="0.444428943" mask="url(#mask-5)" transform="translate(18.375410, 118.900484) rotate(16.000000) translate(-18.375410, -118.900484) " font-family="PingFangSC-Medium, PingFang SC" font-size="60" font-weight="400" fill="#FFFFFF">
+                            <tspan x="-11.6245904" y="140.900484">%</tspan>
+                        </text>
+                        <circle id="椭圆形-copy" fill-opacity="0.114951313" fill="#FFFFFF" mask="url(#mask-5)" cx="0.5" cy="2.5" r="35.5"></circle>
+                    </g>
+                    <text font-family="PingFangSC-Medium, PingFang SC" font-size="22" font-weight="400" fill="#FFFFFF">
+                        <tspan x="18" y="80">折扣卡</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,4 @@
+<!--pages/activity/activity.wxml-->
+  <view class="container">
+    <image src="../../images/activity_page.png" mode="widthFix" style="width: 100%;"></image>
+</view>

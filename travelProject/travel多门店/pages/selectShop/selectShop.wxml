@@ -1,0 +1,17 @@
+<!--pages/selectShop/selectShop.wxml-->
+<view>
+  <view wx:for="{{shopList}}" wx:key="index" class="touch-item" data-index="{{index}}">
+    <view class="cell" style="{{activeIndex===index?list_style:''}}" bindtap="selectShop" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend" data-index="{{index}}">
+      <view class="index">{{index+1}}</view>
+      <view class="content">
+        <view>
+          <view class="name">{{item.siteName}}</view>
+          <view class="time">上次进店时间：{{item.lastDate}}</view>
+        </view>
+        <image src="/images/arrow-right.png"></image>
+      </view>
+    </view>
+    <view class="del" catchtap="delete" data-name="{{item.name}}" 
+    style="{{activeIndex===index?list_style:''}}">{{isSureDelect ? '确定删除' : '删除'}}</view>
+  </view>
+</view>

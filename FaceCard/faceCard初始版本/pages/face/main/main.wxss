@@ -1,0 +1,120 @@
+/* pages/face/main/main.wxss */
+.container{
+  font-size: 28rpx;
+  text-align: center;
+}
+.photo{
+  position: relative;
+  width: 560rpx;
+  height: 560rpx;
+  margin:  160rpx auto 0;
+}
+.border{
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 6rpx;
+}
+.border1,.photo .border2{
+  border-top: 6rpx solid #FF4142;
+  top: 0;
+}
+.border1,.photo .border3{
+  border-left: 6rpx solid #FF4142;
+  left: 0;
+}
+.border3,.photo .border4{
+  border-bottom: 6rpx solid #FF4142;
+  bottom: 0;
+}
+.border2,.photo .border4{
+  border-right: 6rpx solid #FF4142;
+  right: 0;
+}
+
+.camera2{
+  display: block;
+  width: 552rpx;
+  height: 552rpx;
+  margin: 60rpx auto 80rpx;
+}
+.camera2 camera{
+  position: absolute;
+  left: 6rpx;
+  top: 6rpx;
+  width: 552rpx;
+  height: 552rpx;
+}
+.camera2 .wrap{
+  width: 552rpx;
+  height: 552rpx;
+  background: #fff;
+  position: absolute;
+  left: 6rpx;
+  top: 6rpx;
+  z-index: 7;
+}
+.wrap .img{
+  width: 100%;
+}
+.camera2 .box{
+  position: absolute;
+  bottom: 6rpx;
+  left: 6rpx;
+  z-index: 99;
+  width: 552rpx;
+  height: 552rpx;
+  /* animation: myScan 6s infinite alternate; */
+  animation: myScan 2s infinite;
+}
+.box .img{
+  height: 100%;
+  width: 100%;
+}
+.box .line{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 552rpx;
+  height: 6rpx;
+  background: #FF4142;
+}
+@keyframes myScan{
+  from{
+    height: 552rpx
+    }
+  to{
+    height: 6rpx
+    }
+}
+
+.error{
+  margin: 100rpx 0 200rpx;
+}
+.button_wrap{
+  width: 100%;
+  padding: 60rpx 110rpx 80rpx;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 60rpx;
+  left: 0;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.button_wrap image:first-of-type{
+  width: 120rpx;
+  height: 120rpx;
+}
+.button_wrap image:last-of-type{
+  width: 54rpx;
+  height: 44rpx;
+  padding-left: 66rpx;
+}
+.button_wrap text{
+  width: 120rpx;
+  line-height: 120rpx;
+  height: 120rpx;
+  text-align: left
+}

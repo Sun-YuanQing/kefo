@@ -1,0 +1,77 @@
+<!--pages/card_bag/bill/bill.wxml-->
+<!-- <view class="container"> -->
+<!-- <view class="bg">
+      <view class="balance">账户余额</view>
+      <view class="amount"><text>￥</text>{{statistics.Amount}}</view>
+      <view class="total">
+        <text>总消费：￥{{statistics.TotalConsumeAmount}}</text>
+        <text>总充值：￥{{statistics.TotalChargeAmount}}</text>
+      </view>
+  </view> -->
+
+<!-- <view  class="{{scrollTop > height ? 'topFixed month' : 'month'}}"> -->
+<view class="month">
+  <view class="button">
+    <picker mode="date" fields="month" value="{{date}}" bindchange="bindDateChange">
+      <view class="picker">
+        <text>{{date}}</text>
+        <image src="../../../images/down.png"></image>
+      </view>
+    </picker>
+  </view>
+  <view class="detail">
+    <text>消费 ￥{{statistics.ComsumeAmount}}</text>
+    <text>充值 ￥{{statistics.ChargeAmount}}</text>
+    <text>红包 ￥{{statistics.RedAmount}}</text>
+  </view>
+</view>
+<!-- Type 1充值 2商家红包 3消费 -->
+<view class="bill_list">
+  <view class="dataNone" wx:if="{{records.length <=0}}">
+    <image src='/images/nozhang.png'></image>
+    <view class='noName'>哎呀 暂无明细哦~</view>
+  </view>
+  <block wx:for="{{records}}" wx:key="index">
+    <view class="bill_item">
+      <image wx:if="{{item.Type == '3'}}" mode="widthFix" src="../../../images/cost.png"></image>
+      <image wx:elif="{{item.Type == '1'}}" mode="widthFix" src="../../../images/top_up.png"></image>
+      <image wx:else mode="widthFix" src="../../../images/red.png"></image>
+      <view class="bill_content">
+        <view>
+          <view class="weight">{{item.TypeStr}}</view>
+          <view class="font12">{{item.CreatedTime}}</view>
+        </view>
+
+        <view style="text-align: right;display:flex;" data-index="{{index}}" bindtap="changeToggle">
+          <view class="money">
+            <text style="color: {{item.Type==3 ? 'inherit' : '#FF4142'}}">{{item.Detail}}</text>
+            <view class="font12">余额：￥{{item.Amount}}</view>
+          </view>
+          <image wx:if="{{item.Preferential && item.Preferential.PreferentialAmount}}" class="down" src="{{selectedFlag[index] ? '../../../images/down.png' : '../../../images/up.png'}}"></image>
+        </view>
+
+      </view>
+    </view>
+
+    <view wx:if="{{item.Preferential && item.Preferential.PreferentialAmount}}" hidden="{{!selectedFlag[index]}}" class="bill_detail">
+      <view class="way">
+        <text>优惠方式：</text>
+        <view wx:if="{{item.Preferential.Discount}}">
+          <image mode="widthFix" src="../../../images/discount.png"></image>
+          <text>{{item.Preferential.Discount}}折</text>
+        </view>
+        <view wx:if="{{item.Preferential.Coupon}}">
+          <image mode="widthFix" src="../../../images/ticket.png"></image>
+          <text>{{item.Preferential.Coupon}}</text>
+        </view>
+      </view>
+
+      <view>
+        优惠金额：{{item.Preferential.PreferentialAmount}}元
+      </view>
+    </view>
+
+  </block>
+  <view class="dataNone" wx:if="{{isFinish && records.length>=8}}">没有更多数据了</view>
+</view>
+<!-- </view> -->

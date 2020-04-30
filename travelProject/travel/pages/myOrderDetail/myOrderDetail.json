@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "订单详情",
+  "usingComponents": {
+    "i-modal": "/components/iview/modal/index",
+    "i-paySuccess": "/components/paySuccess/paySuccess",
+    "i-spin": "/components/iview/spin/index",
+    "i-message": "/components/iview/message/index"
+  }
+}

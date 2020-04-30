@@ -1,0 +1,28 @@
+<!--pages/card_bag/menber_center/menber_center.wxml-->
+<view class="container">
+  <view class="nav_bar">
+    <view class="nav_bar_left">
+      <image src="../../../images/identify.png"></image>
+      <view>{{cardData.Site.SiteName}}</view>
+    </view>
+    <!-- <image class="nav_bar_right" src="../../../images/right_black.png"></image> -->
+  </view>
+
+  <view class="my_card">
+    <view class="title">我的卡</view>
+    <block wx:for="{{cardData.Cards}}"  wx:key="*this">
+      <view class="card_item" style="background: url({{item.PhotoUrl}}) no-repeat center;background-size: container ">
+        <view>{{item.CardNo}}</view>
+        <view class="other_content">
+          <view>{{item.CardName}}</view>
+          <navigator url="{{'/pages/card_bag/balance/balance?SiteId='+options.SiteId+'&UserId='+options.UserId + '&CardId=' + options.CardId}}" 
+                    class="card_money" hover-class="navigator-hover">
+            <text>余额：{{item.Amount}}元</text>
+            <image src="../../../images/right.png" mode="widthFix"></image>
+          </navigator>
+        </view>
+
+      </view>
+    </block>
+  </view>
+</view>

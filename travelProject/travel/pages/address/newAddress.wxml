@@ -1,0 +1,39 @@
+<!--pages/address/newAddress.wxml-->
+<!-- 新增地址 -->
+<view>
+	<view class="rgbccc"></view>
+	<view class="padding30">
+		<view class="f-row-start  boderBottom-solid1px wh h-center">
+			<view class="address-label">收货人</view>
+			<input class="address-input margin-left64 width10rem" placeholder-class="phcolor" bindinput="bindAddressName" value="{{address.Name}}" placeholder="请输入收货人真实姓名"></input>
+		</view>
+		<view class="f-row-start  boderBottom-solid1px wh h-center">
+			<view class="address-label">手机号</view>
+			<input class="address-input margin-left64 width10rem" placeholder-class="phcolor" maxlength="11" value="{{address.Phone}}" bindinput="bindAddressPhone" placeholder="请输入收货人手机号"></input>
+		</view>
+		<view class="f-row-between  boderBottom-solid1px wh h-center">
+			<view class="f-row-start">
+				<view class="address-label">所在地区</view>
+				<view class="section address-input margin-left36 width10rem">
+					<picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+						<view class="picker" wx:if="{{region}}">
+							{{region.Province}} {{region.City}} {{region.District}}
+						</view>
+						<view class="phcolor" wx:else>
+							获取位置信息失败，请手动选择地址
+						</view>
+					</picker>
+				</view>
+			</view>
+			<image class="image-rigth" src="/images/icon-right.png"></image>
+		</view>
+		<view class="f-row-start boderBottom-solid1px wh h-center">
+			<view class="address-label">详细地址</view>
+			<input class="address-input margin-left36 width10rem" placeholder-class="phcolor" value="{{address.Address}}" placeholder="请输入详细收货地址" bindinput="bindAddressAddress"></input>
+		</view>
+	</view>
+	<view class="purchase-box">
+		<view class="purchase" bindtap="onAddress">提交信息</view>
+	</view>
+	<i-message id="message" />
+</view>

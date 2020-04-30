@@ -1,0 +1,52 @@
+<scroll-view class="head_tabs" scroll-x="true">
+  <view data-id="" bindtap="checktabs" class="item_tabs {{ selId == '' ? 'sel_tabs' : ''}}">全部</view>
+  <block wx:for="{{listtabs}}" wx:key="">
+    <view data-id="{{item.Id}}" bindtap="checktabs" class="item_tabs {{ selId == item.Id ? 'sel_tabs' : ''}}">{{item.Name}}</view>
+  </block>
+</scroll-view>
+<view class="sever_box">
+  <view class="list_box" wx:for="{{listData}}" wx:key="index" data-serviceid="{{item.ServiceId}}" bindtap="todetail">
+    <image class="list_img" src="{{item.ProductPhoto || '/cardItem/images/blue.png'}}"></image>
+    <view class="list_title">{{item.ServiceName}}</view>
+    <view class="list_line">
+      <view class="list_xian">￥{{item.sellmoney}}</view>
+      <view class="list_yuan">￥{{item.ruiling}}</view>
+    </view>
+  </view>
+</view>
+<view class="sever_box">
+  <view class="merchant_list" wx:for="{{listData}}" wx:key="index" data-serviceid="{{item.ServiceId}}" data-serviceid="{{item.ServiceId}}" bindtap="todetail">
+    <image class="merchant_product_img" src="{{item.ProductPhoto || '/cardItem/images/blue.png'}}"></image>
+    <view class="right_merchant_box">
+      <view class="right_merchant_title_box">
+        <view class="red_jian" wx:if="{{item.IsRecom}}">荐</view>
+        <view class="right_merchant_title">{{item.ServiceName}}</view>
+      </view>
+      <view class="line_money">
+        <view class="now_money">¥
+          <view class="now_money_big">{{item.sellHead}}.</view>{{item.sellEnd}}</view>
+        <view class="old_money">¥{{item.ruiling}}</view>
+      </view>
+      <view class="more_box">
+        <view class="clickmore_box" data-cardid="{{item.ServiceId}}" catchtap="toshowMore">
+          <image class="clickmore" src="/cardItem/images/andmore.png"></image>
+          <view class="merchant_recommend" wx:if="{{showRecom == item.ServiceId}}">
+            <view data-recom="{{item.IsRecom ? 0 : 1}}" data-cardid="{{item.ServiceId}}" class="back_recommend_box" catchtap="isrecommend">
+              <image class="back_recommend" src="/cardItem/images/recommend.png"></image>
+              <view class="recommend_text">{{item.IsRecom ?'取消推荐':'推荐'}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- <view class="no_box">
+  <image class="no_img" src="/cardItem/images/kong.png"></image>
+  <view class="no_title">暂无项目哦~</view>
+</view> -->
+<i-modal visible="{{ showModal }}" actions="{{ modalList }}" bind:click="isModal">
+  <view style="font-size:32rpx;color:#000;">是否{{servicedata.recom == 0 ?'取消推荐':'确认推荐'}}到首页？</view>
+</i-modal>
+<i-message id="message" />

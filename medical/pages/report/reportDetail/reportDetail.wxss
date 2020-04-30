@@ -1,0 +1,217 @@
+/* pages/doctor/reportDetail/reportDetail.wxss */
+page {
+  background: rgba(245, 245, 245, 1);
+}
+
+.charts {
+  width: 665rpx;
+  height: 242rpx;
+  background-color: #FFFFFF;
+}
+
+image {
+  width: 10rpx;
+  height: 10rpx;
+}
+
+.f-row-between {
+  display: flex;
+  /* 默认 row水平方向*/
+  flex-direction: row;
+  /*富裕空间平均分配在每两个元素之间*/
+  justify-content: space-between;
+  /*根据侧轴方向上高度居中*/
+  align-items: center;
+}
+
+.f-row-start {
+  display: flex;
+  /* 默认 row水平方向*/
+  flex-direction: row;
+  /*元素在主轴开始位置，富裕空间在主轴的结束位置*/
+  justify-content: flex-start;
+  /*根据侧轴方向上高度居中*/
+  align-items: center;
+}
+
+.f-row-last {
+  display: flex;
+  /* 默认 row水平方向*/
+  flex-direction: row;
+  /*元素在主轴开始位置，富裕空间在主轴的开始位置*/
+  justify-content: flex-end;
+  /*根据侧轴方向上高度居中*/
+  align-items: center;
+}
+
+.f-column-between {
+  display: flex;
+  /* 默认 row水平方向*/
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.f-row {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+
+.f-1 {
+  flex: 1;
+}
+
+.h-center {
+  display: flex;
+  /*根据侧轴方向高度居中*/
+  align-items: center;
+}
+
+.paddingRL30 {
+  padding: 0 30rpx;
+}
+
+.paddingTB28 {
+  padding-bottom: 28rpx;
+  padding-top: 28rpx;
+}
+
+.paddingRL28 {
+  padding: 0 28rpx;
+}
+
+.marginT20 {
+  margin-top: 20rpx;
+}
+
+
+.marginL48 {
+  margin-left: 48rpx;
+}
+
+.marginT28 {
+  margin-top: 28rpx;
+}
+
+.scroll-box {
+  width: 100%;
+  height: 80rpx;
+  white-space: nowrap;
+  background: #fff;
+}
+
+.scroll-item {
+  display: inline-block;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  margin: 0 30rpx;
+}
+
+
+.scroll-sel {
+  height: 74rpx;
+  line-height: 74rpx;
+  font-size: 32rpx;
+  color: #000;
+  font-weight: 800;
+  border-bottom: 6rpx solid #4d85ff;
+  color: #4d85ff;
+}
+
+
+.paddingRL30 {
+  padding: 0 30rpx;
+}
+
+.paddingRL28 {
+  padding: 0 28rpx;
+}
+
+.marginT20 {
+  margin-top: 20rpx;
+}
+
+.marginTB28 {
+  margin-top: 28rpx;
+  margin-bottom: 28rpx;
+}
+
+.marginL48 {
+  margin-left: 48rpx;
+}
+
+.block-box {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 6rpx 6rpx 8rpx 0rpx rgba(234, 234, 234, 0.5);
+  border-radius: 12rpx;
+}
+
+.block-box .block-conter {
+  padding-top: 40rpx;
+  padding-bottom: 28rpx;
+}
+
+.charts-titleY {
+  margin-left: 28rpx;
+  margin-bottom: 20rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  line-height: 34rpx;
+}
+
+.valueBox {
+  padding: 0 28rpx 28rpx 28rpx;
+}
+
+.charts-value {
+  background: rgba(255, 250, 233, 1);
+  border-radius: 16rpx;
+  padding: 24rpx 40rpx;
+  height: 152rpx;
+  box-sizing: border-box;
+}
+
+.valueBox-fontSize {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 40rpx;
+}
+
+.reportDetail-title {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 1);
+  line-height: 40rpx;
+}
+
+.item-lable {
+  height: 40rpx;
+  font-size: 28rpx;
+  color: rgba(153, 153, 153, 1);
+  line-height: 40rpx;
+}
+
+.item-value text {
+  height: 40rpx;
+  font-size: 28rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.determine-title {
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.determine-conter view {
+  font-size: 24rpx;
+  color: #999999;
+}

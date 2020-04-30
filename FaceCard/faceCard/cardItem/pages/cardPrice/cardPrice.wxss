@@ -1,0 +1,155 @@
+/* cardItem/pages/cardPrice/cardPrice.wxss */
+
+page {
+  background: #f5f5f5;
+}
+
+.head_img {
+  width: 100%;
+}
+
+.card_main_box {
+  margin-top: 20rpx;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 50rpx 140rpx 40rpx;
+}
+
+.card_main_head_line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70rpx 0 20rpx;
+}
+
+.text_title {
+  margin: 0 10rpx;
+}
+
+.card_main_head_img {
+  width: 34rpx;
+  height: 18rpx;
+}
+
+.line_project_box {
+  display: flex;
+  padding-top: 30rpx;
+}
+
+.project_box_img {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 16rpx;
+}
+
+.projext_text_box {
+  margin-left: 20rpx;
+  width: calc(100% - 160rpx);
+  border-bottom: 1rpx dashed #f5f5f5;
+}
+
+.project_text_title {
+  font-size: 26rpx;
+  margin-top: 4rpx;
+}
+
+.project_text_num {
+  font-size: 28rpx;
+  font-weight: 800;
+  margin-top: 10rpx;
+}
+
+.line_text_nun {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 8rpx;
+  padding-bottom: 20rpx;
+  align-items: center;
+}
+
+.line_text_img {
+  width: 12rpx;
+  height: 24rpx;
+}
+
+.activate_box {
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40rpx 0 40rpx 54rpx;
+  margin-top: 20rpx;
+}
+
+.line_activate {
+  display: flex;
+  align-items: center;
+}
+
+.time_margin {
+  margin-top: 4rpx;
+}
+
+.activate_img {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.activate_text_time {
+  font-size: 24rpx;
+  color: #666;
+  margin-left: 20rpx;
+}
+
+.shop_info {
+  background: #fff;
+  margin-top: 20rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50rpx 30rpx 150rpx;
+}
+
+.line_shop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.line_subshop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.left_title {
+  font-size: 24rpx;
+  font-weight: 800;
+  width: 620rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-right: 1rpx solid #f0f0f0;
+}
+
+.left_subhead {
+  font-size: 20rpx;
+  color: #666;
+  width: 620rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-right: 1rpx solid #f0f0f0;
+}
+
+.tel_img {
+  width: 24rpx;
+  height: 30rpx;
+}
+
+.local_img {
+  width: 24rpx;
+  height: 30rpx;
+}

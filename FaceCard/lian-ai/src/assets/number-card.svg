@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="134px" height="158px" viewBox="0 0 134 158" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>次卡</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="106.333687%" x2="27.9682401%" y2="13.6576775%" id="linearGradient-1">
+            <stop stop-color="#FEAE94" offset="0%"></stop>
+            <stop stop-color="#FA7A82" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-19.6%" y="-14.6%" width="139.1%" height="129.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="6" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <path d="M8,0 L51,0 C79.1665222,-5.1741062e-15 102,22.8334778 102,51 L102,128 C102,132.418278 98.418278,136 94,136 L8,136 C3.581722,136 5.41083001e-16,132.418278 0,128 L0,8 C-5.41083001e-16,3.581722 3.581722,8.11624501e-16 8,0 Z" id="path-3"></path>
+    </defs>
+    <g id="菲卡时代2.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="卡项管理--选择卡项类型" transform="translate(-305.000000, -305.000000)">
+            <g id="分组-5" transform="translate(305.000000, 305.000000)">
+                <g id="次卡" transform="translate(14.000000, 6.000000)">
+                    <g id="%">
+                        <path d="M22,17 L60,17 C85.4050985,17 106,37.5949015 106,63 L106,132 C106,136.418278 102.418278,140 98,140 L22,140 C17.581722,140 14,136.418278 14,132 L14,25 C14,20.581722 17.581722,17 22,17 Z" id="Mask" fill="url(#linearGradient-1)" opacity="0.51688058" filter="url(#filter-2)"></path>
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <use id="Mask" fill="url(#linearGradient-1)" xlink:href="#path-3"></use>
+                        <text id="-9" opacity="0.549641927" mask="url(#mask-4)" transform="translate(86.996095, 28.907104) rotate(-56.000000) translate(-86.996095, -28.907104) " font-family="PingFangSC-Medium, PingFang SC" font-size="14" font-weight="400" fill="#FFFFFF">
+                            <tspan x="76.9960946" y="31.4071043">-</tspan>
+                            <tspan x="85.4660946" y="31.4071043" font-size="18">9</tspan>
+                        </text>
+                        <text id="-4" opacity="0.44" mask="url(#mask-4)" transform="translate(15.980577, 118.572424) rotate(-19.000000) translate(-15.980577, -118.572424) " font-family="PingFangSC-Medium, PingFang SC" font-size="42" font-weight="400" fill="#FFFFFF">
+                            <tspan x="-13.0194226" y="126.072424">-</tspan>
+                            <tspan x="12.3905774" y="126.072424" font-size="54">4</tspan>
+                        </text>
+                        <circle id="椭圆形" fill-opacity="0.114951313" fill="#FFFFFF" mask="url(#mask-4)" cx="-0.5" cy="2.5" r="35.5"></circle>
+                    </g>
+                    <text font-family="PingFangSC-Medium, PingFang SC" font-size="22" font-weight="400" fill="#FFFFFF">
+                        <tspan x="29" y="80">次卡</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

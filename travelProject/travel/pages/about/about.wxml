@@ -1,0 +1,11 @@
+<!--pages/about/about.wxml-->
+<view class="container">
+  <view class="content">
+    <view class="logo">
+      <image mode="widthFix" src="{{merchant.Logo}}"></image>
+    </view>
+    <view class="siteTitle">{{merchant.SiteTitle}}</view>
+    <view class="description">{{merchant.Description}}</view>
+    <view class="footer">{{merchant.Name}}</view>
+  </view>
+</view>

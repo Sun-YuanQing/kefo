@@ -1,0 +1,77 @@
+/* pages/distribution/clientele/clientele.wxss */
+.clientele-box {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+
+.clientele-list {
+  width: 100%;
+  display: flex;
+  border-bottom: 1rpx solid #F5F5F5;
+  padding: 28rpx 0;
+}
+
+.rankNum {
+  width: 48rpx;
+  height: 58rpx;
+}
+.rankTelNum{
+  width: 48rpx;
+  text-align: center;
+  font-size: 28rpx;
+  font-weight: 800;
+}
+
+.main-box {
+  width: calc(100% - 60rpx);
+  margin-left: 12rpx;
+}
+
+.client-line {
+  display: flex;
+  align-items: center;
+}
+
+.portrait {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+}
+
+.client-name {
+  font-size: 28rpx;
+  margin-left: 12rpx;
+  margin-right: 8rpx;
+  font-weight: 800;
+}
+
+.sexImg {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.phone-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30rpx;
+}
+
+.phone-line .phone {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.phone-line .num {
+  font-size: 32rpx;
+  font-weight: 800;
+}
+
+.pay-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  color: #666;
+}

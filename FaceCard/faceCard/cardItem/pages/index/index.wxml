@@ -1,0 +1,110 @@
+<swiper indicator-dots indicator-color="#FFFFFF" autoplay interval="3000" circular>
+  <block wx:for="{{shopData.Photo}}" wx:key="index">
+    <swiper-item class="swiper_box">
+      <image class="carousel" src="{{item}}" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class="all_box">
+  <view class="line_box">
+    <view class="item_box" bindtap="tocard">
+      <image class="item_img" src="/cardItem/images/card.png"></image>
+      <view>卡项</view>
+    </view>
+    <view class="item_box" bindtap="toproject">
+      <image class="item_img" src="/cardItem/images/project.png"></image>
+      <view>项目/服务</view>
+    </view>
+    <view class="item_box" bindtap="toOrder">
+      <image class="item_img" src="/cardItem/images/booking.png"></image>
+      <view>预约</view>
+    </view>
+  </view>
+  <view class="merchant_box" wx:if="{{projectList.length<=0 || cardList.length<=0}}">
+    <view class="line_merchant" bindtap="toproject" wx:if="{{projectList.length<=0}}">
+      <view class="merchant_project">推荐项目/服务还没有～</view>
+      <view class="merchant_setting">去设置></view>
+    </view>
+    <view class="line_merchant merchant_top" bindtap="tocard" wx:if="{{cardList.length<=0}}">
+      <view class="merchant_project">推荐卡项还没有～</view>
+      <view class="merchant_setting">去设置></view>
+    </view>
+  </view>
+  <view class="project" wx:if="{{projectList.length>0}}">
+    <view class="line_tui">
+      <view class="tui">推荐项目/服务</view>
+      <view class="tomore" bindtap="toproject">更多</view>
+    </view>
+    <view class="card_project" wx:for="{{projectList}}" wx:key="index" data-serviceid="{{item.ServiceId}}" bindtap="toProjectDetail">
+      <image class="card_img" src="{{item.ProductPhoto || '/cardItem/images/project_back.png'}}"></image>
+      <view class="title">{{item.ServiceName}}</view>
+      <view class="line_time">
+        <view>
+          <view class="time_box">
+            <image class="time_img" src="/cardItem/images/time.png"></image>
+            <view class="time_min">{{item.ServiceTime}}分钟</view>
+          </view>
+          <view class="line_onshop">
+            <view class="line_yuan">
+              <view class="yuan">￥
+                <view class="yuan_big">{{item.sellHead}}.</view>{{item.sellEnd}}</view>
+              <view class="old">￥{{item.ruiling}}</view>
+            </view>
+            <view class="lableTag">
+              <view class="onshop_text" wx:if="{{item.AppointmentMode == 0}}">到店付</view>
+              <view class="onshop_text" wx:else>需支付</view>
+            </view>
+          </view>
+        </view>
+        <view class="subscribe">购买</view>
+      </view>
+    </view>
+  </view>
+  <view class="project" wx:if="{{cardList.length>0}}">
+    <view class="line_tui">
+      <view class="tui">推荐卡项</view>
+      <view class="tomore" bindtap="tocard">更多</view>
+    </view>
+    <view class="card_project" wx:for="{{cardList}}" wx:key="index" data-cardid="{{item.CardId}}" bindtap="tocardDetail">
+      <image class="card_img" src="{{item.PhotoUrl || '/cardItem/images/card_back.png'}}"></image>
+      <view class="title">{{item.CardName}}</view>
+      <view class="line_time">
+        <view>
+          <view class="yuan">￥
+            <view class="yuan_big">{{item.nowHead}}.</view>{{item.nowEnd}}</view>
+          <view class="feicard" wx:if="{{item.FeiKaPrice > 0}}">
+            <view class="yuan">￥
+              <view class="yuan_big">{{item.feiHead}}.</view>{{item.feiEnd}}</view>
+            <image class="feicard_img" src="/cardItem/images/face_money.png"></image>
+          </view>
+        </view>
+        <view class="subscribe">购买</view>
+      </view>
+      <view class="num_card">{{item.ClassType}}</view>
+    </view>
+  </view>
+  <view class="shop_box">
+    <view class="shop_name">
+      <view class="left_name">
+        <image class="shop_img" src="{{shopData.Logo || '/cardItem/images/shop_logo.png'}}"></image>
+        <view class="left_center">
+          <view class="head">{{shopData.Name}}</view>
+          <view class="subhead" bindtap="subheadtag">{{shopData.Desc}}</view>
+        </view>
+      </view>
+      <image bindtap="showphone" class="shop_tel" src="/cardItem/images/tel.png"></image>
+    </view>
+    <view class="shop_time">
+      <image class="shop_time_img" src="/cardItem/images/time.png"></image>
+      <view class="shop_main shop_main_data">{{shopData.OpenDate}} {{shopData.OpenHour}}</view>
+    </view>
+    <view class="shop_address" bindtap="getLocaltion">
+      <image class="shop_address_img" src="/cardItem/images/location.png"></image>
+      <view class="shop_main shop_main_address">{{shopData.Address}}</view>
+    </view>
+    <view wx:if="{{showsub}}" bindtap="subheadtag" class="close_box"></view>
+    <view wx:if="{{showsub}}" bindtap="subheadtag" class="allsubhead">{{shopData.Desc}}</view>
+  </view>
+</view>
+<i-action-sheet visible="{{ visible }}" actions="{{ telphone }}" show-cancel bind:cancel="downphone" bind:click="handleClickItem" />
+<i-toast id="toast" />

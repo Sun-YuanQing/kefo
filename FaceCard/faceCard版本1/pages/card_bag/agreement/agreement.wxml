@@ -1,0 +1,2 @@
+<!--pages/card_bag/agreement/agreement.wxml-->
+<web-view  src="https://www.linkedsign.cn/Beauty/agreement_charge.html"></web-view>

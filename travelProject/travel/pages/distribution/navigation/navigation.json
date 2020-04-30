@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我是分销员",
+  "navigationBarBackgroundColor": "#FF583A",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "i-message": "/components/iview/message/index"
+  }
+}

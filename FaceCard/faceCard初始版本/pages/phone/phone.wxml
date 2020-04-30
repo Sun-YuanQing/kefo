@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+    <icon type="info" size="44" color="#09AB41" />
+    <view>为了更好的用户体验，此应用需要您授权获取手机号等信息</view>
+    <button type="primary" open-type="getPhoneNumber" 
+            bindgetphonenumber="getPhoneNumber">确定授权</button>
+</view>

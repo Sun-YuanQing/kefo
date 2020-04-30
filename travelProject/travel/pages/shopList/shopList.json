@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "优选好物",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "Header": "/components/navbar/navbar",
+    "commodity-list": "/components/commodity/commodity",
+    "i-toast": "/components/iview/toast/index",
+    "i-message": "/components/iview/message/index",
+    "i-spin": "/components/iview/spin/index"
+  }
+}

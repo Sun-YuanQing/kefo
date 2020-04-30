@@ -1,0 +1,38 @@
+/* pages/face/guide/guide.wxss */
+.container{
+  font-size: 28rpx;
+  text-align: center;
+  padding: 80rpx 110rpx 0;
+}
+.title text{
+  color: #FF4142;
+}
+.camera1{
+  display: block;
+  width: 430rpx;
+  height: 430rpx;
+  margin: 110rpx auto 0;
+  position: relative;
+}
+.tip{
+  display: flex;
+  width: 100%;
+  margin: 110rpx auto;
+  justify-content: space-between;
+}
+.tip image{
+  width: 124rpx;
+  height: 120rpx;
+}
+
+.button{
+  width: 100%;
+  height: 88rpx;
+  background: linear-gradient(90deg,rgba(237,57,57,1) 0%,rgba(255,93,82,1) 100%);
+  box-shadow: 0rpx 12rpx 20rpx 0rpx rgba(255,209,206,1);
+  border-radius: 44rpx;
+  line-height: 88rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #fff;
+}

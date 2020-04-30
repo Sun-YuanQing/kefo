@@ -1,0 +1,26 @@
+<!--pages/search/search.wxml-->
+<Header navbar-data='{{nvabarData}}'></Header>
+<form bindsubmit="tosearch">
+  <view class="line_head">
+    <view class="input_box">
+      <image class="search_img" src="/images/icon-search.png"></image>
+      <input placeholder="搜索你想找的关键词" bindinput="onInput" confirm-type="search" bindconfirm="tosearch" class="input_text"></input>
+    </view>
+    <button form-type="submit" class="cancel_text">搜索</button>
+  </view>
+</form>
+<view class="hot">
+  <view class="hot_title">热门搜索</view>
+  <view class="lately_content">
+    <view class="lately_name" wx:for="{{7}}" wx:key>烫染剪</view>
+  </view>
+</view>
+<view class="lately">
+  <view class="line_lately">
+    <view class="hot_title">搜索历史</view>
+    <image class="del_img" bindtap="delAll" src="/images/icon-delete.png"></image>
+  </view>
+  <view class="lately_content">
+    <view class="lately_name" wx:for="{{7}}" wx:key="index">1111</view>
+  </view>
+</view>

@@ -1,0 +1,4 @@
+<!--pages/mine/service/service.wxml-->
+<view class="container">
+  客服专线：0755-86967063
+</view>

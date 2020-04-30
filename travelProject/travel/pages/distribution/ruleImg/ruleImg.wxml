@@ -1,0 +1,26 @@
+<!--pages/distribution/ruleImg/ruleImg.wxml-->
+<view class="img-box">
+	<image src="/images/rule-img.png" mode="widthFix" style="width:100%;"></image>
+	<view class="price-text" wx:if="{{appIncome.Profit>0}}">按商品利润的<text>{{appIncome.Profit}}%</text>提成</view>
+	<view class="price-text" wx:else>成为分销商有机会按商品利润百分比提成</view>
+	<view class="last-text">最终解释权归“{{appIncome.SiteName}}”所有</view>
+</view>
+
+<button class="share-btn" open-type='share'>分享</button>
+<view class="null-box"></view>
+<view class="toBe-box">
+	<button bindtap="doModal">成为分销员</button>
+</view>
+<view class="modal-box" wx:if="{{showModal}}" bindtap="doModal">
+	<view class="modalImg-box">
+		<image class="ruleModal-img" catchtap="returnNo" src="/images/rule-modal.png"></image>
+		<image class="close-icon" src="/images/close-icon.png"></image>
+		<view class="rule-content" catchtap="returnNo">
+			<view class="invite-text">我要申请成为分销员赚取收益 ？</view>
+			<view class="invite-btn">
+				<view catchtap="toInvite">提交申请</view>
+			</view>
+		</view>
+	</view>
+</view>
+<i-message id="message" />

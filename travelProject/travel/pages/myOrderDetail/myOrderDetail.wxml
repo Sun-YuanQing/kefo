@@ -1,0 +1,391 @@
+<!--pages/myOrderDetail/myOrderDetail.wxml-->
+<view class="head-box">
+	<view class="travel-img-line">
+		<image class="selIcon" src="/images/orderDetail/order.svg"></image>
+		<image class="{{orderDetail.ProductType == 3 && orderDetail.TakeWay == 2 ? 'arrowLong' : 'arrowStyle'}}" src="{{orderDetail.ProductType == 3 && orderDetail.TakeWay == 2 ? '/images/orderDetail/other/longLine-sel.svg' : '/images/orderDetail/sel-arrows.svg'}}"></image>
+		<image class="selIcon" src="/images/orderDetail/wait-pay.svg"></image>
+		<!-- 其他产品 -->
+		<block wx:if="{{orderDetail.ProductType == 3 && orderDetail.TakeWay == 1}}">
+			<view class="group-box">
+				<block wx:if="{{orderDetail.State == '11' || orderDetail.State == '13'}}">
+					<image class="arrowStyle" src="/images/orderDetail/sel-arrows.svg" wx:if="{{orderDetail.OrderType == 'assem' && (orderDetail.AssemState == 1 || orderDetail.AssemState == 2 ||orderDetail.AssemState == -2)}}"></image>
+					<image class="arrowStyle" src="/images/orderDetail/arrows.svg" wx:else></image>
+					<view class="grouping" wx:if="{{orderDetail.OrderType == 'assem' && orderDetail.AssemState == 1}}">拼团中</view>
+					<view class="grouping" wx:elif="{{orderDetail.OrderType == 'assem' && orderDetail.AssemState == 2}}">拼团成功</view>
+					<view class="grouping" wx:elif="{{orderDetail.OrderType == 'assem' && orderDetail.AssemState == -2}}">拼团失败</view>
+				</block>
+				<block wx:else>
+					<image class="arrowStyle" src="{{orderDetail.State >= '21' ? '/images/orderDetail/sel-arrows.svg' : '/images/orderDetail/arrows.svg'}}"></image>
+				</block>
+			</view>
+			<image class="{{orderDetail.State >= 11 ? 'selIcon' : 'grayIcon'}}" src="{{orderDetail.State >= 11 ? '/images/orderDetail/other/shipments-sel.svg' : '/images/orderDetail/other/shipments.svg'}}"></image>
+			<image class="arrowStyle" src="{{orderDetail.State >= 21 ? '/images/orderDetail/sel-arrows.svg' : '/images/orderDetail/arrows.svg'}}"></image>
+			<image class="{{orderDetail.State >= 21 ? 'selIcon' : 'grayIcon'}}" src="{{orderDetail.State >= 21 ? '/images/orderDetail/other/receiving-sel.svg' : '/images/orderDetail/other/receiving.svg'}}"></image>
+		</block>
+		<block wx:elif="{{orderDetail.ProductType == 3 && orderDetail.TakeWay == 2}}">
+			<view class="group-box">
+				<block wx:if="{{orderDetail.State == '11' || orderDetail.State == '13'}}">
+					<image class="arrowLong" src="/images/orderDetail/other/longLine-sel.svg" wx:if="{{orderDetail.OrderType == 'assem' && (orderDetail.AssemState == 1 || orderDetail.AssemState == 2 ||orderDetail.AssemState == -2)}}"></image>
+					<image class="arrowLong" src="/images/orderDetail/other/longLine.svg" wx:else></image>
+					<view class="grouping" wx:if="{{orderDetail.OrderType == 'assem' && orderDetail.AssemState == 1}}">拼团中</view>
+					<view class="grouping" wx:elif="{{orderDetail.OrderType == 'assem' && orderDetail.AssemState == 2}}">拼团成功</view>
+					<view class="grouping" wx:elif="{{orderDetail.OrderType == 'assem' && orderDetail.AssemState == -2}}">拼团失败</view>
+				</block>
+				<block wx:else>
+					<image class="arrowLong" src="{{orderDetail.State >= '21' ? '/images/orderDetail/other/longLine-sel.svg' : '/images/orderDetail/other/longLine.svg'}}"></image>
+				</block>
+			</view>
+			<image class="{{orderDetail.State >= 21 ? 'selIcon' : 'grayIcon'}}" src="{{orderDetail.State >= 21 ? '/images/orderDetail/other/takeGoods-sel.svg' : '/images/orderDetail/other/takeGoods.svg'}}"></image>
+		</block>
+		<!-- 酒店产品 -->
+		<block wx:elif="{{orderDetail.ProductType == 5}}">
+			<image class="arrowStyle" src="{{orderDetail.State >= '11' ? '/images/orderDetail/sel-arrows.svg' : '/images/orderDetail/arrows.svg'}}"></image>
+			<image class="{{orderDetail.State >= 11 ? 'selIcon' : 'grayIcon'}}" src="{{orderDetail.State >= '11' ? '/images/orderDetail/hotel/notarize-sel.svg' : '/images/orderDetail/hotel/notarize-sel.svg'}}"></image>
+			<view class="group-box">
+				<block wx:if="{{orderDetail.State == '11' || orderDetail.State == '13'}}">
+					<image class="arrowStyle" src="/images/orderDetail/sel-arrows.svg" wx:if="{{orderDetail.OrderType == 'assem' && (orderDetail.AssemState == 1 || orderDetail.AssemState == 2 ||orderDetail.AssemState == -2)}}"></image>
+					<image class="arrowStyle" src="/images/orderDetail/arrows.svg" wx:else></image>
+					<view class="grouping" wx:if="{{orderDetail.OrderType == 'assem' && orderDetail.AssemState == 1}}">拼团中</view>
+					<view class="grouping" wx:elif="{{orderDetail.OrderType == 'assem' && orderDetail.AssemState == 2}}">拼团成功</view>
+					<view class="grouping" wx:elif="{{orderDetail.OrderType == 'assem' && orderDetail.AssemState == -2}}">拼团失败</view>
+				</block>
+				<block wx:else>
+					<image class="arrowStyle" src="{{orderDetail.State >= '21' ? '/images/orderDetail/sel-arrows.svg' : '/images/orderDetail/arrows.svg'}}"></image>
+				</block>
+			</view>
+			<image class="{{orderDetail.State >= 21 ? 'selIcon' : 'grayIcon'}}" src="{{orderDetail.State >= '21' ? '/images/orderDetail/hotel/reside-sel.svg' : '/images/orderDetail/hotel/reside.svg'}}"></image>
+		</block>
+		<!-- 旅游产品 -->
+		<block wx:else>
+			<image class="arrowStyle" src="{{orderDetail.State >= '11' ? '/images/orderDetail/sel-arrows.svg' : '/images/orderDetail/arrows.svg'}}"></image>
+			<image class="{{orderDetail.State >= 11 ? 'selIcon' : 'grayIcon'}}" src="{{orderDetail.State >= '11' ? '/images/orderDetail/travel/audit-sel.svg' : '/images/orderDetail/travel/audit.svg'}}"></image>
+			<view class="group-box">
+				<block wx:if="{{orderDetail.State == '11' || orderDetail.State == '13'}}">
+					<image class="arrowStyle" src="/images/orderDetail/sel-arrows.svg" wx:if="{{orderDetail.OrderType == 'assem' && (orderDetail.AssemState == 1 || orderDetail.AssemState == 2 ||orderDetail.AssemState == -2)}}"></image>
+					<image class="arrowStyle" src="/images/orderDetail/arrows.svg" wx:else></image>
+					<view class="grouping" wx:if="{{orderDetail.OrderType == 'assem' && orderDetail.AssemState == 1}}">拼团中</view>
+					<view class="grouping" wx:elif="{{orderDetail.OrderType == 'assem' && orderDetail.AssemState == 2}}">拼团成功</view>
+					<view class="grouping" wx:elif="{{orderDetail.OrderType == 'assem' && orderDetail.AssemState == -2}}">拼团失败</view>
+				</block>
+				<block wx:else>
+					<image class="arrowStyle" src="{{orderDetail.State >= '21' ? '/images/orderDetail/sel-arrows.svg' : '/images/orderDetail/arrows.svg'}}"></image>
+				</block>
+			</view>
+			<image class="{{orderDetail.State >= 21 ? 'selIcon' : 'grayIcon'}}" src="{{orderDetail.State >= '21' ? '/images/orderDetail/travel/trip-sel.svg' : '/images/orderDetail/travel/trip.svg'}}"></image>
+		</block>
+		<image class="arrowLong" src="{{orderDetail.State >= 30 ? '/images/orderDetail/other/longLine-sel.svg' : '/images/orderDetail/other/longLine.svg'}}" wx:if="{{orderDetail.ProductType == 3 && orderDetail.TakeWay == 2}}"></image>
+		<image class="arrowStyle" src="{{orderDetail.State >= 30 ? '/images/orderDetail/sel-arrows.svg' : '/images/orderDetail/arrows.svg'}}" wx:else></image>
+		<image class="{{orderDetail.State >= 30 ? 'selIcon' : 'grayIcon'}}" src="{{orderDetail.State >= '30' ? '/images/orderDetail/achieve-sel.svg' : '/images/orderDetail/achieve.svg'}}"></image>
+	</view>
+	<view class="travel-text-line">
+		<view class="selText">提交订单</view>
+		<view class="selText">等待付款</view>
+		<!-- 其他产品 -->
+		<block wx:if="{{orderDetail.ProductType == 3}}">
+			<view class="{{orderDetail.State >= 11 ? 'selText' : ''}}" wx:if="{{orderDetail.TakeWay == 1}}">等待发货</view>
+			<view class="{{orderDetail.State >= 21 ? 'selText' : ''}}">{{orderDetail.TakeWay == 1 ? '等待收货' : '等待提货'}}</view>
+		</block>
+		<!-- 酒店产品 -->
+		<block wx:elif="{{orderDetail.ProductType == 5}}">
+			<view class="{{orderDetail.State >= 11 ? 'selText' : ''}}">等待确认</view>
+			<view class="{{orderDetail.State >= 21 ? 'selText' : ''}}">等待入住</view>
+		</block>
+		<!-- 旅游产品 -->
+		<block wx:else>
+			<view class="{{orderDetail.State >= '11' ? 'selText' : ''}}">等待审核</view>
+			<view class="{{orderDetail.State >= '21' ? 'selText' : ''}}">等待出行</view>
+		</block>
+		<view class="{{orderDetail.State >= 30 ? 'selText' : ''}}">交易完成</view>
+	</view>
+</view>
+<view class="content-box">
+	<view class="main-box">
+		<view class="name-top">
+			<view class="type-name" wx:if="{{orderDetail.State == '10'}}">待支付…</view>
+			<view class="type-name" wx:if="{{orderDetail.State == '22'}}">已取消行程，交易关闭</view>
+			<view class="type-name" wx:if="{{orderDetail.State == '30'}}">交易完成！</view>
+			<view class="type-name" wx:if="{{orderDetail.State == '0'}}">未支付，交易关闭！</view>
+			<view class="type-name" wx:if="{{orderDetail.State == '13'}}">确认不通过，交易关闭</view>
+
+
+			<!-- 其他产品  订单状态 -->
+			<block wx:if="{{orderDetail.ProductType == 3}}">
+				<view class="type-name" wx:if="{{orderDetail.State == '11' && !orderDetail.IsFillAddress}}">买家已付款，待补充信息…</view>
+				<view class="type-name" wx:if="{{orderDetail.State == '11' && orderDetail.IsFillAddress}}">买家已付款，等待发货...</view>
+				<view class="type-name" wx:if="{{orderDetail.State == '21'}}">卖家已发货，请耐心等待收货...</view>
+				<view class="type-name" wx:if="{{orderDetail.State == '23'}}">买家已付款，等待取货...</view>
+				<view class="goods-line" wx:if="{{orderDetail.State >= '11'}}">
+					<view class="title">取货方式</view>
+					<view class="content">{{orderDetail.TakeWay == 1 ? '快递配送' : '门店自提'}}</view>
+				</view>
+				<view class="goods-line" wx:if="{{orderDetail.State >= '23' && orderDetail.TakeWay == 2}}">
+					<view class="title">提货码</view>
+					<view class="content-num">{{orderDetail.TakeCode}}</view>
+				</view>
+				<view class="express-box" wx:if="{{orderDetail.State >= '11' && orderDetail.TakeWay == 1 && orderDetail.IsFillAddress}}">
+					<view class="express-line" bindtap="toExpress" wx:if="{{orderDetail.AliYunExpressProcess}}">
+						<view class="express-nowBox">
+							<view class="express-name">{{orderDetail.AliYunExpressProcess.status}}</view>
+							<view class="express-subhead">{{orderDetail.AliYunExpressProcess.time}}</view>
+						</view>
+						<image class="express-img" src="/images/right-icon.png"></image>
+					</view>
+					<view class="address-box">
+						<view class="address-name"><text>{{orderDetail.TraveAddressResult.Name}}</text><text>{{orderDetail.TraveAddressResult.Phone}}</text></view>
+						<view class="address">{{orderDetail.TraveAddressResult.Province}} {{orderDetail.TraveAddressResult.City}} {{orderDetail.TraveAddressResult.District}} {{orderDetail.TraveAddressResult.Address}}</view>
+					</view>
+				</view>
+				<view class="take-box" wx:if="{{orderDetail.State >= '11' && orderDetail.TakeWay == 2}}">
+					<view class="goods-line">
+						<view class="title">门店名称</view>
+						<view class="content">{{merchantInfo.Name}}</view>
+					</view>
+					<view class="goods-line">
+						<view class="title">联系方式</view>
+						<view class="content">{{merchantInfo.Tel}}</view>
+					</view>
+					<view class="goods-line">
+						<view class="title">提货地址</view>
+						<view class="content">{{merchantInfo.Province}}{{merchantInfo.City}}{{merchantInfo.Area}}{{merchantInfo.Address}}</view>
+					</view>
+				</view>
+			</block>
+			<!-- 酒店产品  订单状态 -->
+			<block wx:elif="{{orderDetail.ProductType == 5}}">
+				<view class="type-name" wx:if="{{orderDetail.State == '11' && !orderDetail.IsFill}}">待补充信息…</view>
+				<view class="type-name" wx:if="{{orderDetail.State == '11' && orderDetail.IsFill}}">确认中…</view>
+				<view class="type-name" wx:if="{{orderDetail.State == '21'}}">确认通过，待入住…</view>
+				<view class="subName-line" wx:if="{{orderDetail.State == '11'}}">
+					<view class="subName-left">{{orderDetail.IsFill ? '商家将在24小时以内为您反馈审核信息～' : '请尽快补充入住人信息～'}}</view>
+				</view>
+				<view class="subName-line" wx:if="{{orderDetail.State == '30'}}">
+					<view class="subName-left">如有疑问，请联系商家～</view>
+				</view>
+			</block>
+			<!-- 旅游产品  订单状态 -->
+			<block wx:else>
+				<view class="type-name" wx:if="{{orderDetail.State == '11' && !orderDetail.IsFill}}">买家已付款，待补充信息…</view>
+				<view class="type-name" wx:if="{{orderDetail.State == '11' && orderDetail.IsFill}}">审核中…</view>
+				<view class="type-name" wx:if="{{orderDetail.State == '21'}}">审核通过，待出行…</view>
+
+				<view class="subName-line" wx:if="{{orderDetail.State == '11'}}">
+					<view class="subName-left">{{userType == 1 ? '商家将在24小时以内为您反馈审核信息～' : '店长正在为你的客户审核中'}}</view>
+				</view>
+				<view class="subName-line" wx:if="{{orderDetail.State == '21'}}">
+					<view class="subName-left">出发日期为</view>
+					<view class="subName-right">{{orderDetail.DepartuDate}}</view>
+					<view class="subName-left">请注意不要错过时间～</view>
+				</view>
+				<view class="subName-line" wx:if="{{orderDetail.State == '30'}}">
+					<view class="subName-left">如有疑问，请联系商家～</view>
+				</view>
+			</block>
+
+			<view class="subName-line" wx:if="{{orderDetail.State == '10'}}">
+				<view class="subName-left">订单将为{{userType == 1 ? '您' : '您的客户'}}保留至</view>
+				<view class="subName-right">{{holdTime}}</view>
+			</view>
+			<view class="subName-line" wx:if="{{orderDetail.State == '13'}}">
+				<view class="subName-left">{{orderDetail.AuditFailReason}}</view>
+			</view>
+			<view class="subName-line" wx:if="{{orderDetail.State == '22'}}">
+				<view class="subName-left">您已取消行程，退款金额已原路退回！若未收到退款金额，请及时联系商家～</view>
+			</view>
+		</view>
+		<view class="gray-line" wx:if="{{orderDetail.ProductType == 3 && orderDetail.IsFillAddress}}"></view>
+		<view class="main-type">
+			<view class="type-line">
+				<view class="title">产品名称</view>
+				<view class="content">{{orderDetail.ProductName}}</view>
+			</view>
+			<block wx:if="{{orderDetail.ProductType == '1' || orderDetail.ProductType == '2'}}">
+				<view class="type-line">
+					<view class="title">出游类别</view>
+					<view class="content">{{orderDetail.TraveType}}</view>
+				</view>
+				<view class="type-line">
+					<view class="title">游客类型</view>
+					<view class="content">
+						<text class="tourist" wx:for="{{orderDetail.OrderPriceList}}" wx:key="index">{{item.ItemName}}<text wx:if="{{item.MinAge && item.MaxAge}}">（ {{item.MinAge}}-{{item.MaxAge}}岁）</text> x{{item.ItemNum}}</text>
+					</view>
+				</view>
+				<view class="type-line">
+					<view class="title">出发日期</view>
+					<view class="content">{{orderDetail.DepartuDate}}</view>
+				</view>
+			</block>
+			<block wx:if="{{orderDetail.ProductType == '3'}}">
+				<view class="type-line">
+					<view class="title">类型与数量</view>
+					<view class="content">
+						<text class="tourist" wx:for="{{orderDetail.OrderPriceList}}" wx:key="index">{{item.ItemName}} x{{item.ItemNum}}</text>
+					</view>
+				</view>
+				<view class="type-line" wx:if="{{orderDetail.State == '10'}}">
+					<view class="title">取货方式</view>
+					<view class="content" wx:if="{{orderDetail.TakeWay == 1}}">快递配送 {{orderDetail.IsFreeShip ? '包邮' : '¥'+orderDetail.ExpressAmount}}</view>
+					<view class="content" wx:else>门店自提</view>
+				</view>
+				<view class="type-line" wx:if="{{orderDetail.State != '10' && orderDetail.TakeWay == 1}}">
+					<view class="title">订单备注</view>
+					<view class="content">{{orderDetail.UserRemark || '无'}}</view>
+				</view>
+			</block>
+			<block wx:if="{{orderDetail.ProductType == 5}}">
+				<view class="type-line">
+					<view class="title">产品分类</view>
+					<view class="content">{{orderDetail.HotelClassName}}</view>
+				</view>
+				<view class="type-line">
+					<view class="title">房间数量</view>
+					<view class="content">x{{orderDetail.RoomNum}}</view>
+				</view>
+				<view class="type-line">
+					<view class="title">产品类型</view>
+					<view class="content">{{orderDetail.HotelTypeName}}</view>
+				</view>
+				<view class="type-line">
+					<view class="title">入住时间</view>
+					<view class="content">
+						<text class="tourist" wx:for="{{orderDetail.Checkin}}" wx:key="index">{{item.Date}}<text>（ {{item.WeekDay}} )</text></text>
+					</view>
+				</view>
+			</block>
+			<view class="type-line">
+				<view class="title">{{orderDetail.State == '10' ? '待付金额' : '已付金额'}}</view>
+				<view class="content">
+					<text class="price">¥{{orderDetail.ActualAmount}}</text>
+					<text class="particulars" bindtap="changeDetail">明细</text>
+				</view>
+			</view>
+			<view class="shop-line">
+				<view class="shop-item" bindtap="downphone">
+					<image src="/images/chat-shop.png"></image>
+					<view>联系商家</view>
+				</view>
+				<view class="shop-item" bindtap="toShop">
+					<image src="/images/shop-detail.png"></image>
+					<view>产品详情</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="order-box" wx:if="{{orderDetail.OrderUserBookList.length > 0 && orderDetail.ProductType == 5}}">
+		<view class="order-title">入住信息</view>
+		<view class="order-line" wx:if="{{orderDetail.OrderUserBookList[0].Name}}">
+			<view class="order-name">联系人</view>
+			<view class="order-info">{{orderDetail.OrderUserBookList[0].Name}}</view>
+		</view>
+		<view class="order-line" wx:if="{{orderDetail.OrderUserBookList[0].Phone}}">
+			<view class="order-name">手机号</view>
+			<view class="order-info">{{orderDetail.OrderUserBookList[0].Phone}}</view>
+		</view>
+		<view class="order-line" wx:if="{{orderDetail.OrderUserBookList[0].IdCard}}">
+			<view class="order-name">证件号</view>
+			<view class="order-info">{{orderDetail.OrderUserBookList[0].IdCard}}</view>
+		</view>
+		<view class="order-line">
+			<view class="order-name">特殊需求</view>
+			<view class="order-info">{{orderDetail.OrderUserBookList[0].Remark || '无'}}</view>
+		</view>
+	</view>
+	<view class="order-box">
+		<view class="order-title">订单信息</view>
+		<view class="order-line">
+			<view class="order-name">订单号</view>
+			<view class="order-info">{{orderDetail.OrderNo}}</view>
+		</view>
+		<view class="order-line">
+			<view class="order-name">下单时间</view>
+			<view class="order-info">{{orderDetail.CreateTime}}</view>
+		</view>
+		<view class="order-line" wx:if="{{orderDetail.AuditTime}}">
+			<view class="order-name">{{orderDetail.ProductType == '3' ? '发货时间' : '确认时间'}}</view>
+			<view class="order-info">{{orderDetail.AuditTime}}</view>
+		</view>
+		<view class="order-line" wx:if="{{orderDetail.PayTime}}">
+			<view class="order-name">付款时间</view>
+			<view class="order-info">{{orderDetail.PayTime}}</view>
+		</view>
+		<view class="order-line" wx:if="{{orderDetail.OrderDoneTime}}">
+			<view class="order-name">成交时间</view>
+			<view class="order-info">{{orderDetail.OrderDoneTime}}</view>
+		</view>
+		<view class="order-line" wx:if="{{orderDetail.ProductType == 3}}">
+			<view class="order-name">商家门店</view>
+			<view class="order-info">{{merchantInfo.Name}}</view>
+		</view>
+	</view>
+</view>
+<view class="foot-box" wx:if="{{orderDetail.State == '0' && userType == 1}}">
+	<view class="foot-title" bindtap="toShop">再次购买</view>
+</view>
+<view class="foot-box" wx:if="{{orderDetail.State == '10' && userType == 1}}">
+	<view class="foot-title" bindtap="toPay">立即支付</view>
+</view>
+<view class="foot-box" wx:if="{{orderDetail.State == '11' && userType == 1 && !orderDetail.IsFill && orderDetail.ProductType == 5}}">
+	<view class="foot-title" bindtap="toEditInfo">去填写信息</view>
+</view>
+<view class="foot-box" wx:if="{{orderDetail.State == '11' && userType == 1 && !orderDetail.IsFillAddress && orderDetail.ProductType == 3 && orderDetail.TakeWay == 1}}">
+	<view class="foot-title" bindtap="toEditAddress">去填写收货信息</view>
+</view>
+<view class="foot-box" wx:if="{{orderDetail.State == '23' && userType == 1 && !orderDetail.IsFillAddress && orderDetail.ProductType == 3 && orderDetail.TakeWay == 2}}">
+	<view class="foot-title" bindtap="toEditPhone">去填写联系方式</view>
+</view>
+<view class="foot-box" wx:if="{{orderDetail.State == '21' && userType == 1 && orderDetail.ProductType == 3}}">
+	<view class="foot-title" bindtap="toTakeGoods">确认收货</view>
+</view>
+<view class="detail-modal" wx:if="{{showDetail}}" bindtap="changeDetail">
+	<view class="detail-box">
+		<view class="del-box">
+			<image src="/images/delete.png"></image>
+		</view>
+		<view class="detail-content">
+			<view class="detail-title">待付金额明细</view>
+			<view class="detail-main">
+				<block wx:if="{{orderDetail.ProductType == '5'}}">
+					<view class="detail-line" wx:for="{{orderDetail.OrderPriceList}}" wx:key="index">
+						<view>{{item.DepartuDate}} <text>{{item.ItemName}}</text></view>
+						<view>¥{{item.ItemPrice}} x{{item.ItemNum}}</view>
+					</view>
+				</block>
+				<block wx:else>
+					<view class="detail-line" wx:for="{{orderDetail.OrderPriceList}}" wx:key="index">
+						<view>{{item.ItemName}}
+							<text wx:if="{{item.MinAge}}">{{item.MinAge}}-{{item.MaxAge}}岁</text>
+							<text> x{{item.ItemNum}}</text>
+						</view>
+						<view>¥{{item.ItemPrice}}</view>
+					</view>
+					<view class="detail-line" wx:if="{{orderDetail.ProductType == 3 && !orderDetail.IsFreeShip && orderDetail.TakeWay != 2}}">
+						<view>运费</view>
+						<view>{{orderDetail.ExpressAmount}}</view>
+					</view>
+				</block>
+				<!-- <view class="detail-line" wx:if="{{!orderDetail.IsSparerpart}}">
+          <view>不拼房</view>
+          <view>¥{{orderDetail.SparpartPrice}}</view>
+        </view> -->
+				<!-- <view class="detail-line">
+          <view>优惠券</view>
+          <view>-¥50</view>
+        </view> -->
+			</view>
+		</view>
+	</view>
+</view>
+<i-modal visible="{{ showTel }}" ok-text="拨打" bind:ok="makeCall" bind:cancel="downphone">
+	<view>{{merchantInfo.Tel}}</view>
+</i-modal>
+<!-- 支付成功 -->
+<view wx:if="{{showSuccess}}">
+	<i-paySuccess bind:toOrderDetail="toOrderDetail" />
+</view>
+<view class="container" wx:if="{{loadSpin}}">
+	<i-spin fix></i-spin>
+</view>
+<!-- 确认收货 -->
+<i-modal title="确认收货" visible="{{ showTake }}" actions="{{ doTake }}" bind:click="doTakeGoods">
+	<view>是否确认收货？</view>
+</i-modal>
+<i-message id="message" />

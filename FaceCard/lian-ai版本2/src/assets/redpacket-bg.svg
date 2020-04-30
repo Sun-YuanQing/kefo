@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="309px" height="307px" viewBox="0 0 309 307" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>红包</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="294" height="214" rx="17.006976"></rect>
+        <linearGradient x1="1.79153094%" y1="0%" x2="77.3170297%" y2="84.7377232%" id="linearGradient-3">
+            <stop stop-color="#F76141" offset="0%"></stop>
+            <stop stop-color="#E94E27" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iPad-Copy-10" transform="translate(-25.000000, -144.000000)">
+            <g id="分组-6" transform="translate(26.000000, 144.000000)">
+                <g id="红包">
+                    <rect id="矩形" fill="#F5704F" x="0" y="38" width="307" height="234" rx="17.006976"></rect>
+                    <g id="分组" transform="translate(7.000000, 0.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#FFFFFF" xlink:href="#path-1"></use>
+                        <g mask="url(#mask-2)" font-family="PingFangSC-Medium, PingFang SC" font-weight="400" opacity="0.05">
+                            <g transform="translate(2.000000, -26.000000)">
+                                <text id="$" transform="translate(44.526757, 46.390268) rotate(24.000000) translate(-44.526757, -46.390268) " font-size="60">
+                                    <tspan x="26.5267572" y="68.3902681" fill="#F5C274">$</tspan>
+                                </text>
+                                <text id="$-copy-4" transform="translate(134.526757, 50.539105) rotate(24.000000) translate(-134.526757, -50.539105) " font-size="60">
+                                    <tspan x="116.526757" y="72.5391053" fill="#F5C274">$</tspan>
+                                </text>
+                                <text id="$-copy-8" transform="translate(233.526757, 61.191186) rotate(24.000000) translate(-233.526757, -61.191186) " font-size="60">
+                                    <tspan x="215.526757" y="83.1911865" fill="#F5C274">$</tspan>
+                                </text>
+                                <text id="$-copy-3" transform="translate(49.526757, 159.446082) rotate(24.000000) translate(-49.526757, -159.446082) " font-size="60">
+                                    <tspan x="31.5267572" y="181.446082" fill="#F5C274">$</tspan>
+                                </text>
+                                <text id="$-copy-5" transform="translate(139.526757, 163.594919) rotate(24.000000) translate(-139.526757, -163.594919) " font-size="60">
+                                    <tspan x="121.526757" y="185.594919" fill="#F5C274">$</tspan>
+                                </text>
+                                <text id="$-copy-9" transform="translate(238.526757, 174.247000) rotate(24.000000) translate(-238.526757, -174.247000) " font-size="60">
+                                    <tspan x="220.526757" y="196.247" fill="#F5C274">$</tspan>
+                                </text>
+                                <text id="$-copy" transform="translate(22.351171, 117.719093) rotate(24.000000) translate(-22.351171, -117.719093) " font-size="40">
+                                    <tspan x="10.3511715" y="131.719093" fill="#F5C274">$</tspan>
+                                </text>
+                                <text id="$-copy-6" transform="translate(112.351171, 121.867931) rotate(24.000000) translate(-112.351171, -121.867931) " font-size="40">
+                                    <tspan x="100.351171" y="135.867931" fill="#F5C274">$</tspan>
+                                </text>
+                                <text id="$-copy-10" transform="translate(211.351171, 132.520012) rotate(24.000000) translate(-211.351171, -132.520012) " font-size="40">
+                                    <tspan x="199.351171" y="146.520012" fill="#F5C274">$</tspan>
+                                </text>
+                                <text id="$-copy-2" transform="translate(78.351171, 86.602814) rotate(24.000000) translate(-78.351171, -86.602814) " font-size="40">
+                                    <tspan x="66.3511715" y="100.602814" fill="#F5C274">$</tspan>
+                                </text>
+                                <text id="$-copy-7" transform="translate(168.351171, 90.751652) rotate(24.000000) translate(-168.351171, -90.751652) " font-size="40">
+                                    <tspan x="156.351171" y="104.751652" fill="#F5C274">$</tspan>
+                                </text>
+                                <text id="$-copy-11" transform="translate(267.351171, 101.403733) rotate(24.000000) translate(-267.351171, -101.403733) " font-size="40">
+                                    <tspan x="255.351171" y="115.403733" fill="#F5C274">$</tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                    <rect id="矩形" stroke="#F5C274" stroke-width="0.919296" x="13.459648" y="6.459648" width="280.080704" height="232.080704" rx="13.78944"></rect>
+                    <path d="M0,174 L100.938134,174 L119.491018,177.8 C127.1478,180.673256 133.317461,182.887594 138,184.443015 C142.682539,185.998435 147.849206,187.177187 153.5,187.979271 L168.588453,186.244444 L184.751497,177.8 L203.405811,174 L307,174 L307,289.993024 C307,299.385717 299.385717,307 289.993024,307 L17.006976,307 C7.61428251,307 8.25570056e-15,299.385717 7.10542736e-15,289.993024 L0,174 Z" id="矩形" fill="url(#linearGradient-3)"></path>
+                    <path d="M1,174.802601 C63.5808006,173.967983 100.151429,173.967983 110.711886,174.802601 C126.552571,176.054528 132.940715,187 154.332666,187 C175.724618,187 176.219477,176.407803 196.311004,174.802601 C209.705355,173.732466 246.268353,173.732466 306,174.802601" id="直线" stroke="#F5C274" stroke-width="2.757888" stroke-linecap="square"></path>
+                    <text id="规则说明" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="130" y="213">规则说明</tspan>
+                    </text>
+                    <g id="分组-4" transform="translate(184.000000, 205.000000)">
+                        <rect id="矩形" stroke="#FFFFFF" transform="translate(3.535534, 3.535534) rotate(45.000000) translate(-3.535534, -3.535534) " x="1.53553391" y="1.53553391" width="4" height="4"></rect>
+                        <rect id="矩形" fill="#FFFFFF" x="6" y="3" width="46" height="1"></rect>
+                    </g>
+                    <g id="分组-4-copy" transform="translate(98.000000, 209.000000) scale(-1, 1) translate(-98.000000, -209.000000) translate(72.000000, 205.000000)">
+                        <rect id="矩形" stroke="#FFFFFF" transform="translate(3.535534, 3.535534) rotate(45.000000) translate(-3.535534, -3.535534) " x="1.53553391" y="1.53553391" width="4" height="4"></rect>
+                        <rect id="矩形" fill="#FFFFFF" x="6" y="3" width="46" height="1"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

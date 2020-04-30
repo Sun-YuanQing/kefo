@@ -1,0 +1,20 @@
+<!--pages/activity/activity.wxml-->
+<!-- <Header navbar-data='{{nvabarData}}'></Header> -->
+<view class="tabs-box">
+  <view wx:for="{{activityList}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}" bindtap="changeAct">
+    <image class="tabs-img" src="{{item.imgUrl}}"></image>
+    <view class="tabs-div {{selAct == item.id ? 'tabs-sel':''}}">{{item.name}}</view>
+  </view>
+</view>
+<block wx:if="{{seckKillData.length>0}}">
+  <view class="grad-box"></view>
+  <view class="content-main">
+    <i-seckill wx:for="{{seckKillData}}" wx:key="index" wx:for-item="seckillList" seckill="{{seckillList}}" showSet="{{showSet}}" setting="1" bind:showModal="showModal" bind:toRecommend="toRecommend" bind:sellFail="sellFail" />
+  </view>
+</block>
+<i-toast id="toast" />
+<i-message id="message" />
+<view class="no-box" wx:if="{{noGoods}}">
+  <image class="no-img" src="/images/none-goods.png"></image>
+  <view class="no-text">哎呀～还没有商品哦～</view>
+</view>

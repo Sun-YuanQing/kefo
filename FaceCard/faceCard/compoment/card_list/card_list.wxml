@@ -1,0 +1,63 @@
+<!--compoment/card_list.wxml-->
+<view class="head_card">
+  <view class="now_user {{tabs == '0' ? 'user_sel' : ''}}" data-tabid="0" bindtap="touser">使用中</view>
+  <view class="now_user {{tabs == '1' ? 'user_sel' : ''}}" data-tabid="1" bindtap="touser">已失效</view>
+</view>
+<view class="card_list">
+  <view class="nav_bar">
+    <image src="../../images/card_num.png" mode="widthFix" style="width: 50rpx;padding-right: 20rpx;"></image>
+    <view>卡数量：{{totalCards}}张</view>
+  </view>
+  <!-- calc(100% - 180rpx) -->
+  <view class="my_card" style='min-height: {{minHeight}};'>
+    <block wx:for="{{cardList}}" wx:for-index="indx" wx:for-item="cardsItem" wx:key="*this">
+      <block wx:if="{{(tabs == '0' && cardsItem.VipList.length>0) || (tabs == '1' && cardsItem.CardProjectList.length>0)}}">
+        <view class="cards_item">
+          <view class="title_wrap">
+            <view class="title" data-siteid="{{cardsItem.SiteId}}" bindtap="toCard">{{cardsItem.SiteName}}</view>
+            <view class="card_num" data-index="{{indx}}" wx-if="{{cardsItem.TotalCount > 1}}" bindtap="changeToggle">
+              <text>全部（{{cardsItem.TotalCount}}）</text>
+              <image src="{{allFlag[indx] ? '../../images/down.png' : '../../images/up.png'}}" mode="widthFix"></image>
+            </view>
+          </view>
+          <block wx:for="{{cardsItem.VipList}}" wx:key="*this">
+            <view data-options="{{item}}" bindtap="navigate" class="card_item" hidden="{{index >= 1 && !allFlag[indx]}}" style="background: url({{item.PhotoUrl}}) no-repeat center;background-size:100% 100%;">
+              <view>{{item.CardNo}}</view>
+              <view class="other_content">
+                <view>{{item.CardName}}</view>
+                <view class="card_money" hover-class="navigator-hover">
+                  <text>余额：{{item.Money}}元</text>
+                  <image src="../../images/right.png"></image>
+                </view>
+              </view>
+            </view>
+          </block>
+          <block wx:if="{{(tabs=='0'&& allFlag[indx]) || tabs=='1'}}">
+            <block wx:for="{{cardsItem.CardProjectList}}" wx:key="*this">
+              <view data-options="{{item}}" bindtap="toequity" class="card_item" hidden="{{index >= 1 && !allFlag[indx]}}" style="background: url({{item.PhotoUrl}}) no-repeat center;background-size:100% 100%;">
+                <view class="other_detail">
+                  <view>
+                    <view class="class_box">
+                      <text class="className">{{item.ClassType}}</text>
+                      <text wx:if="{{item.IsForever}}">永久到期</text>
+                      <text wx:if="{{!item.IsForever && item.IsAct}}">（还剩<text class="className">{{item.HaveDay}}</text>天到期）</text>
+                    </view>
+                    <view class="childName">{{item.CardName}}</view>
+                  </view>
+                  <view class="card_money" hover-class="navigator-hover">
+                    <text>卡项权益</text>
+                    <image src="../../images/right.png"></image>
+                  </view>
+                </view>
+                <block wx:if="{{item.IsCover}}">
+                  <image wx:if="{{item.IsDone}}" class="finish_img" src="/images/finish.png"></image>
+                  <image wx:else class="finish_img" src="/images/finish_no.png"></image>
+                </block>
+              </view>
+            </block>
+          </block>
+        </view>
+      </block>
+    </block>
+  </view>
+</view>

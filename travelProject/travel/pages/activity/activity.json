@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "活动",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "Header": "/components/navbar/navbar",
+    "i-seckill": "/components/seckillList/seckillList",
+    "i-toast": "/components/iview/toast/index",
+    "i-message": "/components/iview/message/index"
+  }
+}

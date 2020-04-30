@@ -1,0 +1,29 @@
+/* pages/mine/orderDetail/orderDetail.wxss */
+
+page {
+  background: #f5f5f5;
+}
+
+.order_box {
+  background: #fff;
+  margin: 20rpx 30rpx;
+  height: calc(100% - 40rpx);
+  width: calc(100% - 60rpx);
+  box-sizing: border-box;
+  padding: 50rpx 60rpx 0;
+}
+
+.line_box {
+  display: flex;
+  margin-bottom: 28rpx;
+}
+
+.line_title {
+  font-size: 28rpx;
+  color: #999;
+}
+.right_text{
+  font-size: 28rpx;
+  margin-left: 40rpx;
+  width: calc(100% - 150rpx);
+}

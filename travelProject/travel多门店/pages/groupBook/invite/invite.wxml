@@ -1,0 +1,140 @@
+<!--pages/groupBuying/groupBuying.wxml-->
+<!-- ActivitState 0 未开始 1 进行中 -2 已结束   State  1 上架  2 下架   -->
+<!-- LaunchState 1、未参团  2、已参团  3、拼团成功-团内人员  4拼团成功-团外人员 5、拼团失败-团内人员  6、拼团失败-团外人员 -->
+<view class="group-buying">
+	<view class="header">
+		<image src="{{groupDetail.LaunchUserPhoto}}"></image>
+		<view class="user-wrap">
+			<view class="user-name">{{groupDetail.LaunchUserName}}</view>
+			<view class="watchword">「我发现了一件好货，一起来拼团吧~」</view>
+		</view>
+	</view>
+
+	<view class="product">
+		<image src="{{groupDetail.Coverphoto[0]}}"></image>
+		<view class="product-detail">
+			<view class="name">{{groupDetail.Name}}</view>
+			<view class="price">
+				<view>
+					<text class="curren-price">￥<text>{{groupDetail.KillPrice}}</text></text>
+					<text class="riginal-cost">￥<text>{{groupDetail.Price}}</text></text>
+				</view>
+				<view>仅剩{{groupDetail.StockNum}}件</view>
+			</view>
+		</view>
+	</view>
+	<block wx:if="{{groupDetail.State == '1'}}">
+		<view class="countdown" wx:if="{{ groupDetail.ActivitState == '-2' || groupDetail.LaunchState == 5 || groupDetail.LaunchState == 6}}"><text class="title">拼团活动已结束</text></view>
+		<view class="countdown" wx:else>
+			<text class="title">拼团倒计时</text>
+			<text class="time">{{getTime.hour}}</text>
+			<text>:</text>
+			<text class="time">{{getTime.minute}}</text>
+			<text>:</text>
+			<text class="time">{{getTime.second}}</text>
+		</view>
+	</block>
+	<view class="countdown" wx:if="{{groupDetail.State == '0'}}"><text class="title">拼团活动已关闭</text></view>
+	<view class="departure-text" wx:if="{{groupDetail.DepartureDate}}">出发日期 {{groupDetail.DepartureDate}}</view>
+	<view class="other">
+		<view class="amount" wx:if="{{groupDetail.State == '1'}}">
+			<block wx:if="{{groupDetail.ActivitState == '1' }}">
+				<view class="number" wx:if="{{groupDetail.LaunchState == 1 || groupDetail.LaunchState == 2}}"><text>{{groupDetail.AssemNum}}人团</text>拼团中...</view>
+			</block>
+			<block wx:if="{{groupDetail.ActivitState == '-2'}}">
+				<block wx:if="{{groupDetail.LaunchState == 5 || groupDetail.LaunchState == 2}}">
+					<view class="number"><text>{{groupDetail.AssemNum}}人团</text>拼团失败～联系商家退款～</view>
+					<view class="link" wx:if="{{merchant.Tel}}">联系商家<text>{{merchant.Tel}}</text></view>
+				</block>
+				<view class="number" wx:if="{{groupDetail.LaunchState == 6 || groupDetail.LaunchState == 1 }}"><text>{{groupDetail.AssemNum}}人团</text>拼团已结束～</view>
+			</block>
+			<view class=" number" wx:if="{{groupDetail.LaunchState == 3 || groupDetail.LaunchState == 4}}"><text>{{groupDetail.AssemNum}}人团</text>拼团成功～</view>
+		</view>
+		<view class="amount" wx:if="{{groupDetail.State == '0'}}">
+			<view class="number" wx:if="{{groupDetail.LaunchState == 3}}"><text>{{groupDetail.AssemNum}}人团</text>拼团成功～</view>
+			<block wx:else>
+				<view class="number"><text>{{groupDetail.AssemNum}}人团</text>拼团已关闭～联系商家退款～</view>
+				<view class="link" wx:if="{{merchant.Tel}}">联系商家<text>{{merchant.Tel}}</text></view>
+			</block>
+		</view>
+
+		<view wx:if="{{groupDetail.State == '1' && groupDetail.LaunchState == 1 && groupDetail.ActivitState == '1' || groupDetail.State == '1' && groupDetail.LaunchState == 2 && groupDetail.ActivitState == '1' }}" style="display: flex; flex-direction: column; align-items: center;">
+			<view class="short-number">还差<text>{{groupDetail.HaveNum}}名</text>好友，超值好物马上到手！</view>
+			<view class="tip">
+				<text>— 商品非常抢手</text>
+				<text>库存紧张</text>
+				<text>手快有</text>
+				<text>手慢无 —</text>
+			</view>
+		</view>
+
+		<view class="friend-list">
+			<view class="item" wx:for="{{groupDetail.AssemNum}}" wx:key="index">
+				<image src="{{groupDetail.AssemOpenDetailItem[index].FollowUserPhoto || '/images/friend.png'}}"></image>
+				<text wx:if="{{groupDetail.AssemOpenDetailItem[index].IsLaunch}}">团长</text>
+			</view>
+		</view>
+
+		<view class="button-wrap">
+			<block wx:if="{{token && groupDetail.State == '1'}}">
+				<block wx:if="{{groupDetail.ActivitState == '1'}}">
+					<button wx:if="{{groupDetail.LaunchState == 1}}" bindtap="toAssem">我要参团</button>
+					<button open-type="share" wx:if="{{groupDetail.LaunchState == 2}}">邀请好友参团</button>
+				</block>
+				<block wx:if="{{groupDetail.ActivitState == '-2'}}">
+					<button wx:if="{{groupDetail.LaunchState == 1 || groupDetail.LaunchState == 6}}" bindtap="toDetail">查看更多拼团商品</button>
+					<button wx:if="{{groupDetail.LaunchState == 2 || groupDetail.LaunchState == 5}}" bindtap="toDetail">拼团已超时，重新开团</button>
+				</block>
+				<button wx:if="{{groupDetail.LaunchState == 3}}" bindtap="toOrderDetail">查看订单</button>
+				<button wx:if="{{groupDetail.LaunchState == 4}}" bindtap="toDetail">来晚了，此团已满，重新开团</button>
+			</block>
+			<block wx:elif="{{token && groupDetail.State == '0'}}">
+				<button wx:if="{{groupDetail.LaunchState == 3}}" bindtap="toOrderDetail">查看订单</button>
+				<button wx:else>拼团已关闭</button>
+			</block>
+			<button open-type="getUserInfo" bindgetuserinfo="toLogin" wx:else>用户登录</button>
+		</view>
+		<view class="rule" bindtap="changeActive">活动规则 ></view>
+	</view>
+
+	<view class="modal-wrap" wx-if="{{showModal}}">
+		<view class="modal">
+			<image class="close" src="/images/close-icon.png" bindtap="closeModal"></image>
+			<image class="success" src="/images/success.png"></image>
+			<view>恭喜啦！你已参团成功~</view>
+		</view>
+	</view>
+
+</view>
+
+<view class="modal-box" wx:if="{{ showActive }}" bindtap="changeActive">
+	<view class="order-box">
+		<view class="order-title">拼团活动规则</view>
+		<view class="order-text">
+			<view>1、不定期更新，限量发送，活动有效期内售完即止</view>
+			<view>2、在拼图商品活动页面中选择商品，点击购买进入支付页</view>
+			<view>3、限时拼团仅支持在线预定，电话下单无效</view>
+			<view>4、限时拼团产品资源特殊，付款成功后不可取消和退款</view>
+			<view>5、开团成功后，可将拼团信息分享给好友，指定时间内邀请到成团人数的好友享拼团价，即为拼团成功；否则，拼团失败，联系商家退款</view>
+			<view>6、拼团商品不与其他优惠福利同享</view>
+			<view>7、拼团商品不可使用优惠券</view>
+			<view>8、同一登录账户、同一手机号、同一终端设备号、同一支付账户等合理显示为同一用户的情形，均视为同一用户</view>
+			<view>9、通过不正当手段参与秒杀活动，本平台有撤销相关订单的权利</view>
+		</view>
+		<view class="order-know">
+			<text>知道了</text>
+		</view>
+	</view>
+</view>
+<!-- 支付成功 -->
+<view class="pay-success" wx:if="{{showSuccess}}">
+	<view class="success-box">
+		<image class="success-img" src="/images/success-pay.png"></image>
+		<view class="success-text">支付成功!</view>
+		<view class="line-btn">
+			<view bindtap="toOffered">查看拼团</view>
+			<view bindtap="toOrderDetail">查看订单</view>
+		</view>
+	</view>
+</view>
+<i-message id="message" />

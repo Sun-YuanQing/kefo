@@ -1,0 +1,142 @@
+<!--pages/mine/coupon/coupon.wxml-->
+<view class="container">
+  <!-- 导航栏 -->
+  <view class="navbar">
+    <block wx:for="{{navbarTitle}}" wx:key="index">
+      <view class="navbar_item {{navbarActiveIndex === index ? 'navbar_item_active' : ''}}" data-navbar-index="{{index}}" catchtap="onNavBarTap">
+        <text>{{item}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view class="content_wrap">
+    <!-- 未使用 -->
+    <swiper current="{{navbarActiveIndex}}" bindchange="indexChange" style="height: {{swiperHeight + 'px'}}">
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}">
+          <view class="swiper_item">
+            <block wx:if="{{unUseList.length>0}}">
+              <block wx:for="{{unUseList}}" wx:for-index="key" wx:for-item="list" wx:key="key">
+                <view class="block block_fresh">
+                  <view class="title">{{list.SiteName}}</view>
+
+                  <block wx:for="{{list.Coupons}}" wx:key="index">
+                    <view class="detail">
+
+                      <view class="detail_left">
+                        <view>
+                          <text class="small">￥</text>
+                          <text class="big">{{item.PreferentialAmount}}</text>
+                        </view>
+                        <view>到店使用</view>
+                      </view>
+
+                      <view class="detail_right">
+                        <view class="usage">满{{item.Amount}}元减{{item.PreferentialAmount}}元</view>
+                        <view class="validity">有效期：{{item.DueTime == null ? "一直有效" : item.StartTime + "至" + item.DueTime}}</view>
+                        <view class="remain" wx:if="{{item.Days < 31}}">
+                          {{item.Days == 0 ? "今天到期" : item.Days + "天后到期"}}</view>
+                      </view>
+
+                      <image wx:if="{{item.isNew}}" class="new" mode="widthFix" src="../../../images/new.png"></image>
+
+                    </view>
+                  </block>
+
+                </view>
+              </block>
+            </block>
+            <view class='noBox' wx:else>
+              <image class='noImg' src='/images/noCoupon.png'></image>
+              <view class='noName'>哎呀 还没有优惠券哦~</view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+
+      <!-- 已使用 -->
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}">
+          <view class="swiper_item">
+            <block wx:if="{{usedList.length>0}}">
+              <block wx:for="{{usedList}}" wx:for-index="key" wx:for-item="list" wx:key="key">
+                <view class="block block_used">
+                  <view class="title">{{list.SiteName}}</view>
+
+                  <block wx:for="{{list.Coupons}}" wx:key="index">
+                    <view class="detail">
+
+                      <view class="detail_left">
+                        <view>
+                          <text class="small">￥</text>
+                          <text class="big">{{item.PreferentialAmount}}</text>
+                        </view>
+                        <view>到店使用</view>
+                      </view>
+
+                      <view class="detail_right">
+                        <view class="usage">满{{item.Amount}}元减{{item.PreferentialAmount}}元</view>
+                        <view class="validity">使用时间：{{item.UsedTime}}</view>
+                      </view>
+
+                      <image class="used" mode="widthFix" src="../../../images/used.png"></image>
+
+                    </view>
+                  </block>
+
+                </view>
+              </block>
+            </block>
+            <view class='noBox' wx:else>
+              <image class='noImg' src='/images/noCoupon.png'></image>
+              <view class='noName'>哎呀 还没有优惠券哦~</view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+
+      <!-- 已过期 -->
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}">
+          <view class="swiper_item">
+            <block wx:if="{{overdueList.length>0}}">
+              <block wx:for="{{overdueList}}" wx:for-index="key" wx:for-item="list" wx:key="key">
+                <view class="block block_expire">
+                  <view class="title">{{list.SiteName}}</view>
+
+                  <block wx:for="{{list.Coupons}}" wx:key="index">
+                    <view class="detail">
+
+                      <view class="detail_left">
+                        <view>
+                          <text class="small">￥</text>
+                          <text class="big">{{item.PreferentialAmount}}</text>
+                        </view>
+                        <view>到店使用</view>
+                      </view>
+
+                      <view class="detail_right">
+                        <view class="usage">满{{item.Amount}}元减{{item.PreferentialAmount}}元</view>
+                        <view class="validity">有效期：{{item.DueTime == null ? "一直有效" : item.StartTime + "至" + item.DueTime}}</view>
+                      </view>
+
+                      <image class="used" mode="widthFix" src="../../../images/overdue.png"></image>
+
+                    </view>
+                  </block>
+
+                </view>
+              </block>
+            </block>
+            <view class='noBox' wx:else>
+              <image class='noImg' src='/images/noCoupon.png'></image>
+              <view class='noName'>哎呀 还没有优惠券哦~</view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+
+    </swiper>
+  </view>
+
+</view>

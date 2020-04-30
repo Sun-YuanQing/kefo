@@ -1,0 +1,13 @@
+<!--pages/service/service.wxml-->
+<view class="container">
+  <view class="main-box">
+    <image class="tel-img" src="/images/service.png"></image>
+    <view class="tel-text">服务热线：{{telphone}}</view>
+    <view class="tel-btn">
+      <text bindtap="downphone">联系客服</text>
+    </view>
+  </view>
+</view>
+<i-modal visible="{{ showTel }}" ok-text="拨打" bind:ok="makeCall" bind:cancel="downphone">
+  <view>{{telphone}}</view>
+</i-modal>

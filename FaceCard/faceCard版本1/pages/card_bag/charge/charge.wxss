@@ -1,0 +1,127 @@
+/* pages/card_bag/charge/charge.wxss */
+.container{
+  width: 100%;
+  padding-bottom: 60rpx;
+}
+.bg{
+  width: 100%;
+  height: 284rpx;
+  background: url(http://www.linkedsign.cn/Beauty/Pic/charge.png) no-repeat center;
+  background-size: 100% 100%;
+  position: relative;
+}
+.content{
+  width: calc(100% - 60rpx);
+  height: 232rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 16rpx;
+  border: 1px solid #F5F5F5;
+  position: absolute;
+  left: 50%;
+  top: 60rpx;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.content .name{
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+.content .amount{
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+  color: #666;
+  border-radius: 30rpx;
+  background: #f5f5f5;
+  padding: 16rpx 30rpx;
+  margin-top: 30rpx;
+}
+.charge_wrap{
+  padding: 60rpx 18rpx 60rpx 32rpx;
+}
+.title{
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  font-weight: 700;
+  margin-bottom: 35rpx;
+}
+.title view{
+  width: 6rpx;
+  height: 32rpx;
+  background:#FF4142;
+  border-radius: 6rpx;
+  margin-right: 20rpx;
+}
+.charge_list{
+  display: flex;
+  flex-wrap: wrap;
+}
+.block{
+  width: 33.3333%;
+  height: 124rpx;
+  box-sizing: border-box;
+  padding: 0 16rpx;
+  margin-bottom: 30rpx;
+}
+.charge_item{
+  width: 100%;
+  height: 123rpx;
+  box-sizing: border-box;
+  border-radius:8px;
+  border: 1px solid #FFE6E6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  line-height: 1.4;
+}
+.block:nth-of-type(3n+1){
+  padding-left: 0;
+}
+
+.pay_way{
+  padding:  0 32rpx;
+}
+.way_list{
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+}
+.btn_wrap{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.btn_wrap .btn{
+  width: 568rpx;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  font-size: 32rpx;
+  margin-top: 80rpx;
+  border-radius: 44rpx;
+}
+.red{
+  background: linear-gradient(90deg,rgba(237,57,57,1) 0%,rgba(255,93,82,1) 100%);
+  box-shadow: 0rpx 12rpx 20rpx 0rpx rgba(255,209,206,1);
+  color: #fff;
+}
+.gray{
+  background: #f0f0f0;
+  color: #D4D4D4;
+}
+.agreement{
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 34rpx;
+}

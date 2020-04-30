@@ -1,0 +1,40 @@
+<!--pages/distribution/navigation/navigation.wxml-->
+<image src="/images/red-back.png" style="width:100%;" mode="widthFix"></image>
+<view class="top-box">
+	<view class="total-box">
+		<view class="total-nei">
+			<view class="earnings" bindtap="toCumulative">累计收益(元) ></view>
+			<view class="earnings-price" bindtap="toCumulative">{{priceData.TotalDistAmount}}</view>
+			<view class="sell-price">总销售额(元)<text>{{priceData.TotalAmount}}</text>
+			</view>
+		</view>
+	</view>
+	<view class="list-box">
+		<view class="list-item" style="background:#FEF0EB;" bindtap="toSetting">
+			<image class="list-img" src="/images/icon-setting.png"></image>
+			<view class="list-name">店铺设置</view>
+			<view class="subname">店铺基本信息设置</view>
+		</view>
+		<view class="list-item" style="background:#FDF3DD;" bindtap="toClient">
+			<image class="list-img" src="/images/icon-client.png"></image>
+			<view class="list-name">我的客户</view>
+			<view class="subname">共有{{priceData.CustomerNumber}}个客户</view>
+		</view>
+		<view class="list-item" style="background:#F1FAFF;" bindtap="toMyOrder">
+			<image class="list-img" src="/images/icon-order.png"></image>
+			<view class="list-name">客户订单</view>
+			<view class="subname">每笔交易一目了然</view>
+		</view>
+		<view class="list-item" style="background:#EEFEF8;" bindtap="toExplain">
+			<image class="list-img" src="/images/icon-earn.png"></image>
+			<view class="list-name">收益说明</view>
+			<view class="subname">了解收益规则</view>
+		</view>
+		<view class="list-item" style="background:#F1F2FF;" bindtap="toShare">
+			<image class="list-img" src="/images/icon-qrcode.png"></image>
+			<view class="list-name">店铺二维码</view>
+			<view class="subname">分销员专属二维码</view>
+		</view>
+	</view>
+</view>
+<i-message id="message" />

@@ -1,0 +1,14 @@
+<!--pages/statistics/balance/balance.wxml-->
+<view class="container">
+  <block wx:for="{{siteAmount}}" wx:key="index">
+    <!-- <navigator url="/pages/card_bag/balance/balance" class="item" hover-class="navigator-hover"> -->
+    <view class="item" bindtap='toBalance' data-options="{{item}}">
+      <view class="left">
+        <view>{{item.SiteName}}</view>
+        <view>会员卡号：{{item.CardNo}}</view>
+      </view>
+      <view>￥{{item.Amount}}</view>
+    </view>
+    <!-- </navigator> -->
+  </block>
+</view>

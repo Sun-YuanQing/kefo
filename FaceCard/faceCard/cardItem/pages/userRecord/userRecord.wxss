@@ -1,0 +1,84 @@
+/* cardItem/pages/userRecord/userRecord.wxss */
+
+page {
+  background: #f5f5f5;
+}
+
+.record_box {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx 0;
+}
+
+.user_box {
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 18rpx;
+  position: relative;
+}
+
+.line_content {
+  display: flex;
+  border-bottom: 1rpx solid #f0f0f0;
+  padding-bottom: 8rpx;
+  margin-bottom: 8rpx;
+}
+
+.mo_img {
+  width: 114rpx;
+  height: 114rpx;
+}
+
+.line_name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 128rpx);
+  margin-left: 14rpx;
+}
+
+.title {
+  font-size: 28rpx;
+  font-weight: 800;
+}
+
+.money_text {
+  font-size: 24rpx;
+  font-weight: 800;
+}
+
+.ren_right {
+  width: 8rpx;
+  height: 16rpx;
+  margin-left: 10rpx;
+}
+
+.line_time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left_time {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.center_num {
+  color: #ff4142;
+  font-size: 24rpx;
+}
+
+.right_money {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.zeng_img {
+  width: 74rpx;
+  height: 36rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}

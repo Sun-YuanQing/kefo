@@ -1,0 +1,161 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<!-- <Header navbar-data='{{nvabarData}}'></Header> -->
+<view>
+  <view class="content-box">
+    <view class="divide-box">
+      <view class="divide-line">
+        <image src="{{orderData.CoverPhoto}}"></image>
+        <view class="divide-left">
+          <view class="title">{{orderData.ProductName}}</view>
+          <view class="divide-contet">
+            <text class="rmb">¥</text>
+            <text class="price">{{orderData.MinPrice || 0}}</text>
+            <text class="rise"> 起</text>
+          </view>
+        </view>
+      </view>
+      <view class="type-box">
+      <block wx:if="{{orderData.ProductType == '1' || orderData.ProductType == '2'}}">
+        <view class="type-line">
+          <view class="title">出游类型</view>
+          <view class="content">{{orderData.TraveType}}</view>
+        </view>
+        <view class="type-line">
+          <view class="title">游客类型</view>
+          <view class="content">
+            <text class="tourist" wx:if="{{unify == 1}}">统一售价  x{{orderData.OrderPriceList[0].ItemNum}}</text>
+            <block wx:else>
+              <text class="tourist" wx:for="{{orderData.OrderPriceList}}" wx:key="index">{{item.ItemName}}<text wx:if="{{item.MinAge}}">（ {{item.MinAge}}-{{item.MaxAge}}岁）</text> x{{item.ItemNum}}</text>
+            </block>
+          </view>
+        </view>
+        <view class="type-line">
+          <view class="title">出发日期</view>
+          <view class="content">{{orderData.DepartuDate}}</view>
+        </view>
+        </block>
+        <view class="type-line" wx:if="{{orderData.ProductType == '3'}}">
+          <view class="title">类型与数量</view>
+          <view class="other-content">
+            <text class="tourist" wx:if="{{unify == 1}}">统一售价  x{{orderData.OrderPriceList[0].ItemNum}}</text>
+            <block wx:else>
+              <text class="tourist" wx:for="{{orderData.OrderPriceList}}" wx:key="index">{{item.ItemName}}<text wx:if="{{item.MinAge}}">（ {{item.MinAge}}-{{item.MaxAge}}岁）</text> x{{item.ItemNum}}</text>
+            </block>
+          </view>
+        </view>
+        <!-- <view class="type-line">
+          <view class="title">是否拼房</view>
+          <view class="content" wx:if="{{orderData.IsSparerpart}}">拼房
+            <text class="room">如拼房失败，需补交房差¥{{orderData.SparpartPrice}}</text>
+          </view>
+          <view class="content" wx:else>不拼房</view>
+        </view> -->
+      </view>
+    </view>
+    <view class="waitPrice">
+      <view class="waitPrice-title">优惠信息</view>
+      <!-- <view class="discount-line">
+        <view class="title">会员折扣</view>
+        <view class="discount">9.5折</view>
+      </view> -->
+      <view class="discount-line">
+        <view class="title">优惠券</view>
+        <view class="coupon-line">
+          <view class="name">无可用</view>
+          <image src="/images/icon-right.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="waitPrice">
+      <view class="waitPrice-title">待付金额</view>
+      <view class="amount-line">
+        <view class="title">总计</view>
+        <view class="amount-price">
+          <view class="price">￥{{orderData.ActualAmount}}</view>
+          <view class="particulars" bindtap="changeDetail">明细</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="foot-box">
+    <view class="bottom-box">
+      <view class="left-shopname">
+        <image src="/images/icon-phone.png"></image>
+        <view class="shop-dian">电话咨询</view>
+      </view>
+      <view class="shop-now" bindtap="changePay">立即支付</view>
+    </view>
+  </view>
+</view>
+<view class="detail-modal" wx:if="{{showDetail}}" bindtap="changeDetail">
+  <view class="detail-box">
+    <view class="del-box">
+      <image src="/images/delete.png"></image>
+    </view>
+    <view class="detail-content">
+      <view class="detail-title">待付金额明细</view>
+      <view class="detail-main">
+        <view class="detail-line" wx:for="{{orderData.OrderPriceList}}" wx:key="index">
+          <view wx:if="{{unify == 1}}">统一售价</view>
+          <view wx:else>{{item.ItemName}}
+            <text wx:if="{{item.MinAge}}">{{item.MinAge}}-{{item.MaxAge}}岁</text>
+            <text> x{{item.ItemNum}}</text>
+          </view>
+          <view>¥{{item.ItemPrice}}</view>
+        </view>
+        <!-- <view class="detail-line" wx:if="{{!orderData.IsSparerpart}}">
+          <view>不拼房</view>
+          <view>¥{{orderData.SparpartPrice}}</view>
+        </view> -->
+        <!-- <view class="detail-line">
+          <view>优惠券</view>
+          <view>-¥50</view>
+        </view> -->
+      </view>
+    </view>
+  </view>
+</view>
+<view class="detail-modal" wx:if="{{showPay}}" bindtap="changePay">
+  <view class="pay-box">
+    <view class="need-line">
+      <view class="title">需支付</view>
+      <view class="need-price">
+        <text>¥</text>
+        <text>{{orderData.TotalAmount}}</text>
+      </view>
+    </view>
+    <view class="pay-method">
+      <view class="method">请选择支付方式</view>
+      <radio-group>
+        <!-- <view class="pay-between">
+          <view class="card-box">
+            <text>会员卡支付</text>
+            <text>余额 ¥18302</text>
+          </view>
+          <radio class="radio"></radio>
+        </view> -->
+        <view class="wxpay-between">
+          <view class="wx-pay">微信支付</view>
+          <radio class="radio" checked></radio>
+        </view>
+      </radio-group>
+    </view>
+    <view class="gray-line"></view>
+    <view class="pay-submit">
+      <view class="cancel-text" catchtap="changePay">取消</view>
+      <view class="shu-box"></view>
+      <view class="true-text" bindtap="toPay">确认</view>
+    </view>
+  </view>
+</view>
+<!-- 支付成功 -->
+<view class="pay-success" wx:if="{{showSuccess}}">
+  <view class="success-box">
+    <image class="success-img" src="/images/success-pay.png"></image>
+    <view class="success-text">支付成功!</view>
+    <view class="line-btn">
+      <view bindtap="toHome">回到首页</view>
+      <view bindtap="toOrderDetail">查看订单</view>
+    </view>
+  </view>
+</view>

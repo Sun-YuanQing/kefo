@@ -1,0 +1,12 @@
+<!--pages/card_bag/rights/rights.wxml-->
+<view class="container">
+    <block wx:for="{{dataList}}" wx:key="index">
+      <view class="data_list">
+        <image src="{{item.img}}"></image>
+        <view class="content">
+          <text>{{item.title}}</text>
+          <view>{{item.content}}</view>
+        </view>
+      </view>
+    </block>
+</view>

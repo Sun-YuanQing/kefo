@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的优惠券",
+  "usingComponents": {
+    "i-message": "/cardItem/compoment/iview/message/index"
+  }
+}

@@ -1,0 +1,83 @@
+<!--cardItem/pages/order/order.wxml-->
+
+<view class="shop_info">
+  <view class="line_shop">
+    <view class="left_title">{{detailList.SiteName}}</view>
+    <image class="tel_img" bindtap="showphone" src="/cardItem/images/tel.png"></image>
+  </view>
+  <view class="line_subshop">
+    <view class="left_subhead">{{detailList.Address || ' '}}</view>
+    <image class="local_img" bindtap="getLocaltion" src="/cardItem/images/location.png"></image>
+  </view>
+</view>
+<view class="member_tel">
+  <view>会员手机号</view>
+  <view>{{detailList.UserPhone}}</view>
+</view>
+<view class="card_detail_box">
+  <view class="top_card_detail">
+    <view class="top_img_text">
+      <image class="top_card_img" src="{{detailList.CardProjectPhoto}}"></image>
+      <view class="top_card_text">{{detailList.ClassType}}</view>
+    </view>
+    <view class="top_card_name">{{detailList.CardProjectName}}</view>
+  </view>
+  <view class="bottom_card_detail">
+    <text class="{{allData.buy==1 ? 'feicard_left' : 'bottom_left'}}">¥<text class="bottom_left_big">{{detailList.cardHead}}.</text>{{detailList.cardEnd}}</text>
+    <view class="bottom_right" wx:if="{{detailList.FeikaPrice > 0}}">
+      <text class="{{allData.buy==1 ? 'bottom_left' : 'feicard_left'}}">¥<text class="bottom_left_big">{{detailList.feiHead}}.</text>{{detailList.feiEnd}}</text>
+      <image class="bottom_right_money" src="/cardItem/images/face_money.png"></image>
+      <image class="bottom_right_info" bindtap="toabout" src="/cardItem/images/info.png"></image>
+    </view>
+  </view>
+</view>
+<view class="line_way">
+  <view class="pay_away">购买方式</view>
+  <view class="card_pay">{{allData.buy==1 ? '菲卡价' :'卡售价'}}</view>
+</view>
+<view class="line_way" bindtap="tocoupon">
+  <view class="pay_away">优惠券</view>
+  <view class="coupon_sel">
+    <view>{{myCouponIndex ? '满'+myCoupon.Amount+'元减'+myCoupon.PreferentialAmount+'元' : '请选择优惠券'}}</view>
+    <image src="/cardItem/images/toroght.png"></image>
+  </view>
+</view>
+
+<view class="bottom_foot">
+  <view class="coupon_box" wx:if="{{detailList.Collect.Discount}}">
+    <view class="left_coupon_box">
+      优惠明细：
+      <view class="left_rount">折</view>会员折扣{{detailList.Collect.Discount}}折</view>
+    <view class="coupon_pay">-¥{{discount}}</view>
+  </view>
+  <view class="line_pay">
+    <view class="left_all">
+      <view class="summation">合计：</view>
+      <view class="pay_all">￥
+        <view class="pay_all_big">{{headall}}.</view>{{endall}}
+      </view>
+    </view>
+    <view class="payment" bindtap="openPay">付款</view>
+  </view>
+</view>
+<i-action-sheet visible="{{ visible }}" actions="{{ telphone }}" show-cancel bind:cancel="downphone" bind:click="handleClickItem" />
+<i-action-sheet visible="{{ showPayWay }}" actions="{{ payList }}" show-cancel bind:cancel="closeaway" bind:click="trueaway" mask-closable="{{ false }}">
+  <view slot="header" style="padding: 40rpx 0;">
+    <view style="font-size: 28rpx;">购买方式</view>
+  </view>
+</i-action-sheet>
+<i-message id="message" />
+<!-- 支付成功 -->
+<block wx:if="{{success}}">
+  <view class="payment_box">
+    <image class="success_img" src="/cardItem/images/green_yes.png"></image>
+    <view class="success_text">支付成功</view>
+    <view class="line_money">￥
+      <view class="line_money_big">{{headall}}.</view>{{endall}}
+    </view>
+    <view class="line_return">
+      <view class="item_return" bindtap="toHome">回到首页</view>
+      <view class="item_return" bindtap="toDetail">查看订单</view>
+    </view>
+  </view>
+</block>

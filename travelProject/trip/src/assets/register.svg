@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="65px" height="66px" viewBox="0 0 65 66" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="注册账号" transform="translate(-248.000000, -113.000000)">
+            <g id="Group" transform="translate(248.000000, 114.000000)">
+                <circle id="椭圆形-copy-5" stroke="#0899AC" fill="#FFFFFF" cx="32.5" cy="32" r="32"></circle>
+                <g id="分组-3-copy" transform="translate(16.500000, 15.000000)" stroke-width="2">
+                    <g id="分组-2" transform="translate(24.000000, 24.000000)" stroke="#3275F5" stroke-linecap="round">
+                        <path d="M0.196428571,3.90614741 L7.26785714,3.90614741" id="直线-8"></path>
+                        <path d="M3.73214286,0.370433122 L3.73214286,7.44186169" id="直线-8"></path>
+                    </g>
+                    <circle id="椭圆形" stroke="#0899AC" cx="14.5" cy="9.5" r="8.5"></circle>
+                    <path d="M25.0436341,22.3813455 C24.4000253,21.7245359 23.6910683,21.1278436 22.9267854,20.6009275 C20.551846,18.9635841 17.6426795,18 14.5,18 C6.49187113,18 -8.10018719e-13,24.2567894 -8.10018719e-13,31.9749302" id="路径" stroke="#0899AC" stroke-linecap="round"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

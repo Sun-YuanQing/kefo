@@ -1,0 +1,47 @@
+/* cardItem/pages/payment/payment.wxss */
+
+.payment_box {
+  text-align: center;
+}
+
+.success_img {
+  width: 244rpx;
+  height: 236rpx;
+  margin-top: 110rpx;
+}
+
+.success_text {
+  font-size: 36rpx;
+  margin-top: 64rpx;
+  font-weight: 800;
+}
+
+.line_money {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  font-size: 20rpx;
+  font-weight: 800;
+  margin-top: 24rpx;
+}
+
+.line_money_big {
+  font-size: 32rpx;
+}
+
+.line_return {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100rpx;
+}
+
+.item_return {
+  font-size: 32rpx;
+  color: #666;
+  border-radius: 44rpx;
+  background: #f0f0f0;
+  width: 240rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+}

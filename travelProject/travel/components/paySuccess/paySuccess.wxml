@@ -1,0 +1,14 @@
+<!--components/paySuccess/paySuccess.wxml-->
+<view class="pay-success">
+  <view class="success-box">
+    <image class="success-img" src="/images/success-pay.png"></image>
+    <view class="success-text">支付成功!</view>
+    <view class="line-btn">
+      <view bindtap="toHome" wx:if="{{ type != 3 }}">回到首页</view>
+      <view bindtap="toHotel" wx:if="{{ type == 5 }}">补充入住信息</view>
+      <view bindtap="toOrderDetail" wx:else>查看订单</view>
+      <view bindtap="toSubmitAddress" wx:if="{{ type == 3 && takeWay == '1' }}" >填写收货信息</view>
+      <view bindtap="toUserExtract" wx:elif="{{type == 3 && takeWay == '2'}}">填写提货信息</view>
+    </view>
+  </view>
+</view>

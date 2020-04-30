@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="90px" height="90px" viewBox="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>分组 2 copy 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="45" cy="45" r="45"></circle>
+        <linearGradient x1="94.0681552%" y1="97.9400925%" x2="22.5293753%" y2="30.1946368%" id="linearGradient-3">
+            <stop stop-color="#E3E5EB" offset="0%"></stop>
+            <stop stop-color="#D1D6DF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="资料" transform="translate(-283.000000, -1104.000000)">
+            <g id="分组-2-copy-3" transform="translate(283.000000, 1104.000000)">
+                <g id="椭圆形">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#F3F6F8" xlink:href="#path-1"></use>
+                    <path d="M44,110 C65.5391052,110 79.414388,101.045695 79.414388,90 C79.414388,78.954305 65.5391052,61 44,61 C22.4608948,61 8.2249349,78.954305 8.2249349,90 C8.2249349,101.045695 22.4608948,110 44,110 Z" fill="url(#linearGradient-3)" mask="url(#mask-2)"></path>
+                </g>
+                <circle id="椭圆形" fill="url(#linearGradient-3)" cx="44.5" cy="37.5" r="18.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

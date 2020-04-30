@@ -1,0 +1,119 @@
+/* pages/shopMall/shopList/shopList.wxss */
+
+.tabs-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #fff;
+  padding: 20rpx 0 40rpx;
+}
+
+.tabs-div {
+  color: #999;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.tabs-div image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.tabs-sel {
+  font-weight: 800;
+  color: #000;
+}
+
+.scroll-box {
+  width: 100%;
+  height: 76rpx;
+  white-space: nowrap;
+  background: #fff;
+}
+
+.scroll-boxs {
+  width: 100%;
+  white-space: nowrap;
+  background: #fff;
+  padding: 30rpx 0;
+}
+
+.scroll-item {
+  display: inline-block;
+  height: 76rpx;
+  line-height: 76rpx;
+  font-size: 28rpx;
+  color: #999;
+  margin: 0 16rpx;
+}
+
+.scroll-sub {
+  font-size: 24rpx;
+  color: #999;
+  border: 1rpx solid #999;
+  display: inline-block;
+  padding: 10rpx 44rpx;
+  border-radius: 30rpx;
+  margin: 0 16rpx;
+}
+
+.scroll-item:first-of-type,
+.scroll-sub:first-of-type {
+  margin-left: 30rpx;
+}
+
+.scroll-sel {
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  color: #000;
+  font-weight: 800;
+  border-bottom: 6rpx solid #4d85ff;
+  color: #4d85ff;
+}
+
+.scroll-tab {
+  color: #4D85FF;
+  border: 1rpx solid #4D85FF;
+}
+
+.goods_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx;
+  background: #f5f5f5;
+  min-height: 900rpx;
+}
+
+.goods-listBox {
+  display: flex;
+  flex-wrap: wrap;
+  width: 334rpx;
+}
+
+.goods_item {
+  width: 334rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+  border-radius: 12rpx;
+}
+
+.no-box {
+  width: 100%;
+  text-align: center;
+  margin-top: 204rpx;
+}
+
+.no-img {
+  width: 462rpx;
+  height: 256rpx;
+}
+
+.no-text {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 24rpx;
+}

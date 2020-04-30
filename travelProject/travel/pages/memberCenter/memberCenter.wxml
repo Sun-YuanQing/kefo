@@ -1,0 +1,47 @@
+<!--pages/memberCenter/memberCenter.wxml-->
+<Header navbar-data='{{nvabarData}}'></Header>
+<view class="memberCenterContainer">
+  <view class="member-user">
+    <image class="img-bg" src="/assets/pageImages/memberCenter/member-bg.png"></image>
+    <view class="user-containter">
+      <view class="member-user-top">
+        <image class="img" src="/assets/pageImages/mine/user_icon.png"></image>
+        <view class="user-type">普通会员</view>
+      </view>
+      <view class="user-bottom-time">
+        <text>有效期：</text>
+        <text>永久有效</text>
+      </view>
+    </view>
+  </view>
+  <view class="member-feature">
+    <view class="member-feature-header">
+      <view class="header-left">
+        <image class="img" src="/assets/pageImages/memberCenter/icon1.png"></image>
+      </view>
+      <view class="header-right">
+        <text class="header-right-top">会员专享权益</text>
+        <text class="header-right-bottom">该等级可享以下4项基本权益</text>
+      </view>
+    </view>
+    <view class="member-feature-body">
+      <view class="body-list first">
+        <view class="body-list-header">1.会员折扣</view>
+        <view class="body-list-content;">消费满10000元赠送200元优惠券，领券后15天有效，领取次数不限</view>
+      </view>
+      <view class="body-list">
+        <view class="body-list-header">2.消费满减券</view>
+        <view class="body-list-content;">消费满10000元赠送200元优惠券，领券后15天有效，领取次数不限</view>
+      </view>
+      <view class="body-list">
+        <view class="body-list-header">3.消费满赠红包</view>
+        <view class="body-list-content;">消费满10000元赠送200元优惠券，领券后15天有效，领取次数不限</view>
+      </view>
+      <view class="body-list">
+        <view class="body-list-header">4.充值满赠</view>
+        <view class="body-list-content;">消费满10000元赠送200元优惠券，领券后15天有效，领取次数不限</view>
+      </view>
+    </view>
+  </view>
+
+</view>

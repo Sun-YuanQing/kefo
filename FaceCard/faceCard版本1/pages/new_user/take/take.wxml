@@ -1,0 +1,17 @@
+<!--pages/new_user/take/take.wxml-->
+<view class="container">
+  <image src="../../../images/new_user.png" mode="widthFix" style="width: 240rpx"></image>
+  <view class="tip">免费领取会员卡 享更多优惠哦～</view>
+
+  <image src="../../../images/new_bg.png" mode="widthFix" 
+         style="width: 526rpx;margin: 100rpx 0"></image>
+
+  <view>
+    <view class="name">{{siteName}}</view>
+    <navigator url="/pages/face/guide/guide" 
+               open-type="redirectTo" 
+               class="button"
+               hover-class="navigator-hover">免费领卡</navigator>
+  </view>
+
+</view>

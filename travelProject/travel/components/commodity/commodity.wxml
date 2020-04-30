@@ -1,0 +1,39 @@
+<!--components/commodity/commodity.wxml-->
+<view bindtap="toShopDetail">
+	<view class="back_img" style="background: url({{goods.CoverPhoto}}) no-repeat center;background-size: cover">
+		<!-- 跟团游   自由行 -->
+		<view class="package" wx:if="{{goods.TravelTypeName}}">{{goods.TravelTypeName}}</view>
+	</view>
+	<view class="commodity_box">
+		<view class="info-line" wx:if="{{isAdmin && setting == 1}}">
+			<view class="info-content" wx:if="{{goods.Recommend}}">已推荐至首页</view>
+			<view class="info-content" wx:if="{{goods.SecKill}}">秒杀活动中…</view>
+			<view class="info-content" wx:if="{{goods.Assem}}">拼团活动中…</view>
+		</view>
+		<view class="commodity_title">{{goods.Name}}</view>
+		<view class="commodity_line">
+			<view>
+				<text class="commodity_left">¥<text>{{goods.MinPrice}}</text>起</text>
+				<!-- <text class="commodity_old_text">¥517</text> -->
+			</view>
+			<view class="commodity_right">已售{{goods.SaleNum}}</view>
+		</view>
+		<view class="dot-box" wx:if="{{isAdmin && setting == 1}}">
+			<view class="dotImg-box">
+				<image class="dot-img" src="/images/shop-dot.png" catchtap="showModal"></image>
+			</view>
+			<view class="setting-box" wx:if="{{showSet == goods.Id}}">
+				<view class="setting-content">
+					<view catchtap="toRecommend">{{goods.Recommend ? '取消推荐' : '首页推荐'}}</view>
+					<view catchtap="toSeckill" data-type="seckill">{{goods.SecKill ? '秒杀活动中' : '秒杀'}}</view>
+					<view catchtap="toSeckill" data-type="assem">{{goods.Assem ? '拼团活动中' : '拼团'}}</view>
+				</view>
+				<view class="slot-jiao"></view>
+			</view>
+		</view>
+		<view class="earn-line" wx:if="{{(goods.DistDiscount > 0 || goods.DistCommission > 0) && MyDistId}}">
+			<view class="earn-content" wx:if="{{goods.DistDiscount > 0}}">专享优惠 ¥{{goods.DistDiscount}}起</view>
+			<view class="earn-content" wx:if="{{goods.DistCommission > 0}}">预估收益 ¥{{goods.DistCommission}}起</view>
+		</view>
+	</view>
+</view>

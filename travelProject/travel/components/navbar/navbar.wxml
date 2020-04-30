@@ -1,0 +1,12 @@
+<!--components/navbar/navbar.wxml-->
+<view class="navbar_line" style='height: {{allheight.height + allheight.top}}px;'>
+  <view class="navbat_content_box" style="margin-top:{{allheight.top}}px;">
+    <view style='height:{{allheight.height}}px;line-height:{{allheight.height}}px;' class="navbar_title">{{navbarData.title}}</view>
+    <view class='nav_capsule' style='height: {{allheight.height}}px;'>
+      <image bindtap="toSearch" class="navtar_img" wx:if='{{navbarData.showCapsule == 1 && !share}}' src="/images/search.png"></image>
+      <image bindtap="toBack" class="navtar_left_arrow" wx:if='{{navbarData.showCapsule == 0 && !share}}' src="/images/left-arrow.png"></image>
+      <image bindtap="toHome" class="navtar_left_arrow" wx:if='{{share}}' src="/images/home.png"></image>
+    </view>
+  </view>
+</view>
+<view style="width:100%;height:{{allheight.height + allheight.top}}px"></view>

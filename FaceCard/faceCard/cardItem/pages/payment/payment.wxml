@@ -1,0 +1,12 @@
+<!--cardItem/pages/payment/payment.wxml-->
+<view class="payment_box">
+  <image class="success_img" src="/cardItem/images/green_yes.png"></image>
+  <view class="success_text">支付成功</view>
+  <view class="line_money">￥
+    <view class="line_money_big">{{amountHead}}.</view>{{amountEnd}}
+  </view>
+  <view class="line_return">
+    <view class="item_return" bindtap="toHome">回到首页</view>
+    <view class="item_return" bindtap="toDetail">查看订单</view>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+<!--cardItem/pages/feicard/feicard.wxml-->
+<view class="head_tab">
+  <view wx:for="{{listTab}}" wx:key="index" class="{{typeid == item.id ? 'tab_sel' : ''}}" data-id="{{item.id}}" bindtap="changTab">{{item.name}}</view>
+</view>
+<view class="find_box">
+  <view class="input_box" bindtap="tosearch">
+    <image class="search_img" src="/images/search.png"></image>
+    <view class="find_input">搜索你想找的关键词</view>
+  </view>
+  <view class="my_like" bindtap="toCollect">
+    <image src="/images/my_love.png"></image>
+  </view>
+</view>
+<view class="contain_box">
+  <view class="card_item" wx:for="{{detailList}}" wx:key="index" data-cardid="{{item.CardId}}" bindtap="todetail">
+    <image class="back_img" src="{{item.PhotoUrl}}"></image>
+    <view class="sub_card">
+      <view class="sub_title">{{item.CardName}}</view>
+      <view class="line_fei">
+        <text class="line_money">￥<text class="money_big">{{item.feiHead}}.</text>{{item.feiEnd}}</text>
+        <image class="fei_img" src="/images/face_money.png"></image>
+      </view>
+      <view class="line_sub" catchtap="changecollect" data-cardid="{{item.CardId}}" data-collect="{{!item.IsCollect}}">
+        <view class="enshrine">{{item.CollectNum}}人收藏</view>
+        <image class="collect_img" src="{{item.IsCollect ? '/images/collect_sel.png': '/images/collect.png'}}"></image>
+      </view>
+    </view>
+    <view class="card_class">{{item.ClassType}}</view>
+  </view>
+</view>
+<view class="reset_box" bindtap="toreset" wx:if="{{resetImage}}">
+  <image class="reset_img" src="/images/reset.png"></image>
+</view>
+<view class="modal_box" wx:if="{{firstShow}}" style="background: url(/images/back_modal.png) no-repeat center; background-size: contain; ">
+  这里可以查看我喜欢的内容哦～
+</view>

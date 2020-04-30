@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>分组 4</title>
+    <desc>Created with Sketch.</desc>
+    <g id="赣州国旅项目" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="其他产品-状态进度-" transform="translate(-248.000000, -47.000000)">
+            <g id="分组-4" transform="translate(249.000000, 48.000000)">
+                <circle id="椭圆形-copy-3" stroke="#999999" cx="14" cy="14" r="14"></circle>
+                <path d="M11,12.5 L16.7268962,12.5" id="直线-2-copy-2" stroke="#979797" stroke-linecap="round"></path>
+                <path d="M7.25041689,10.9 L20.7935617,10.9" id="直线-2-copy-3" stroke="#979797" stroke-linecap="round"></path>
+                <path d="M15.5,17.2511071 C15.5,19.3267992 17.1109833,21.0022141 19.0877303,21.0022141 C21.0644773,21.0022141 22.6754606,19.3267992 22.6754606,17.2511071 C22.6754606,15.1754149 21.0644773,13.5 19.0877303,13.5 C17.1109833,13.5 15.5,15.1754149 15.5,17.2511071 Z" id="路径-copy-4" stroke="#979797" fill-rule="nonzero"></path>
+                <g id="分组-2-copy-4" transform="translate(16.700000, 16.600000)" fill="#999999">
+                    <circle id="椭圆形" cx="0.6" cy="0.6" r="1"></circle>
+                    <circle id="椭圆形-copy-6" cx="2.4" cy="0.6" r="1"></circle>
+                    <circle id="椭圆形-copy-7" cx="4.2" cy="0.6" r="1"></circle>
+                </g>
+                <path d="M15.1996961,20.4841872 L9,20.4841872 C7.8954305,20.4841872 7,19.5887567 7,18.4841872 L7,11.2663775 C7,10.9595747 7.0705839,10.6568847 7.20629048,10.3817272 L8.5706567,7.61534969 C8.90747757,6.93241455 9.60288825,6.5 10.3643662,6.5 L17.6356338,6.5 C18.3971117,6.5 19.0925224,6.93241455 19.4293433,7.61534969 L20.7937095,10.3817272 C20.9294161,10.6568847 21,10.9595747 21,11.2663775 L21,12.6765802" id="路径" stroke="#979797" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

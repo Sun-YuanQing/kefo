@@ -1,0 +1,49 @@
+<!--cardItem/pages/cardlist/cardlist.wxml-->
+<view class="head_tabs">
+  <block wx:for="{{listtabs}}" wx:key="">
+    <view data-id="{{item.id}}" bindtap="checktabs" class="item_tabs {{ selId == item.id ? 'sel_tabs' : ''}}">{{item.name}}</view>
+  </block>
+</view>
+<view class="main_box">
+  <view class="card_box" wx:for="{{cardList}}" wx:key="index" data-cardid="{{item.CardId}}" bindtap="todetail">
+    <image class="card_img_back" src="{{item.PhotoUrl}}"></image>
+    <view class="title_box">
+      <!-- <view class="card_title">{{item.CardName}}</view> -->
+      <view class="merchant_line">
+        <view class="merchant_card_title">{{item.CardName}}</view>
+        <view class="more_img_box" data-cardid="{{item.CardId}}" catchtap="toshowMore">
+          <image class="more_img" src="/cardItem/images/andmore.png"></image>
+          <view class="merchant_recommend" wx:if="{{showCard == item.CardId}}">
+            <view class="back_recommend_box" data-recom="{{item.IsRecom ? 0 : 1}}" data-cardid="{{item.CardId}}" class="back_recommend_box" catchtap="isrecommend">
+              <image class="back_recommend" src="/cardItem/images/recommend.png"></image>
+              <view class="recommend_text">{{item.IsRecom ?'取消推荐':'推荐'}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="card_line_box">
+        <text class="left_card_money">￥<text class="left_card_big">{{item.cardHead}}.</text>{{item.cardEnd}}</text>
+        <view wx:if="{{item.ClassType != '折扣卡' && item.FeiKaPrice>0}}">
+          <text class="right_card_money">￥<text class="right_card_big">{{item.feicardHead}}.</text>{{item.feicardEnd}}</text>
+          <image class="right_face_img" src="/cardItem/images/face_money.png"></image>
+          <!-- <image class="right_face_img" src="/cardItem/images/no_face_card.png"></image> -->
+        </view>
+      </view>
+    </view>
+    <view class="top_name">{{item.ClassType}}</view>
+    <view class="top_right_box" wx:if="{{item.IsSellRes}}">
+      <view class="text_nei_box">
+        <image class="top_right_back" src="/cardItem/images/rectangle.png"></image>
+        <view class="top_right_text">已售罄</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="no_box" wx:if="{{showNo}}">
+  <image class="no_card_img" src="/cardItem/images/no_card.png"></image>
+  <view class="no_card_text">暂无卡哦~</view>
+</view>
+<i-modal visible="{{ showModal }}" actions="{{ modalList }}" bind:click="isModal">
+  <view style="font-size:32rpx;color:#000;">是否{{servicedata.recom == 0 ?'取消推荐':'确认推荐'}}到首页？</view>
+</i-modal>
+<i-message id="message" />

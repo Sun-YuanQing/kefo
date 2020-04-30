@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="16px" viewBox="0 0 9 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>箭头</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="今日会员-copy-3" transform="translate(-649.000000, -416.000000)">
+            <g id="箭头" transform="translate(654.000000, 424.000000) scale(1, -1) rotate(-180.000000) translate(-654.000000, -424.000000) translate(645.000000, 415.000000)">
+                <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="18" height="18"></rect>
+                <path d="M12.4998047,16.3177734 C12.2677734,16.3177734 12.0375,16.2298828 11.8599609,16.0505859 L5.23476562,9.36738281 C4.88144531,9.01230469 4.88144531,8.43398437 5.23476562,8.07890625 L11.8599609,1.3921875 C12.2132813,1.03535156 12.7845703,1.03535156 13.1378906,1.3921875 C13.4912109,1.74726563 13.4912109,2.32558594 13.1378906,2.68066406 L7.15253906,8.72226563 L13.1378906,14.7621094 C13.4912109,15.1189453 13.4912109,15.6955078 13.1378906,16.0505859 C12.9621094,16.228125 12.7300781,16.3177734 12.4998047,16.3177734 Z" id="路径" fill="#999999"></path>
+            </g>
+        </g>
+    </g>
+</svg>

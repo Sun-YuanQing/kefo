@@ -1,0 +1,15 @@
+<!--pages/distribution/setting/setting.wxml-->
+<view class="topHead">分销员可编辑属于自己的店名与门店宣言</view>
+<view class="content-box">
+	<view class="content-list">
+		<view class="title">店名</view>
+		<view class="subhead">{{shopData.SiteName || '无'}}</view>
+	</view>
+	<view class="content-list">
+		<view class="title">门店宣言</view>
+		<view class="subhead">{{shopData.SiteDesc || '无'}}</view>
+	</view>
+</view>
+<view class="bottom-box">
+	<view class="bootom-btn" bindtap="toEdit">编辑</view>
+</view>

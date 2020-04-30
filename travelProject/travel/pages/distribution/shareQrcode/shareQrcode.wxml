@@ -1,0 +1,15 @@
+<!--pages/distribution/shareQrcode/shareQrcode.wxml-->
+<view class="share-box">
+  <view class="share-subtext">将生成的二维码保存至相册再分享至朋友圈，或打印张贴在店铺显眼处，顾客扫码即可进入小程序。</view>
+  <image class="share-img" bindtap='preview' wx:if="{{shareImg}}" src="{{shareImg}}" mode="widthFix"></image>
+</view>
+<view class="save-box">
+  <view class="saveImg-box" bindtap='saveImg'>
+    <image src="/images/download.png"></image>
+    <text>保存图片</text>
+  </view>
+</view>
+<i-modal visible="{{ visible }}" actions="{{ actions }}" bind:click="getAuth">
+  <view>暂无相册的写入权限。</view>
+</i-modal>
+<i-message id="message" />

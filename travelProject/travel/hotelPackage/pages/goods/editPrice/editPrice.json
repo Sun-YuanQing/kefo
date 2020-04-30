@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "编辑价格",
+  "usingComponents": {
+    "i-switch": "../../../components/iview/switch/index"
+  }
+}

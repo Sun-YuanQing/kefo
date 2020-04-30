@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "确认订单",
+  "usingComponents": {
+    "Header": "/components/navbar/navbar",
+    "i-radio-group": "/components/iview/radio-group/index",
+    "i-radio": "/components/iview/radio/index",
+    "i-paySuccess":"/components/paySuccess/paySuccess",
+    "i-message": "/components/iview/message/index"
+  }
+}

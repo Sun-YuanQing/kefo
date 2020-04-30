@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "累计收益明细",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true,
+  "usingComponents": {}
+}

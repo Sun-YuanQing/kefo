@@ -1,0 +1,55 @@
+<!-- <Header navbar-data='{{nvabarData}}'></Header> -->
+<view class="orderTitle-line">
+  <view wx:for="{{orderTitle}}" wx:key="index" class="{{selOrder == item.id ? 'sel-orderTitle' : ''}}" data-state="{{item.id}}" bindtap="changeTab">{{item.title}}</view>
+</view>
+<view class="myOrder-list" wx:if="{{orderDetail.length > 0}}">
+  <block wx:for="{{orderDetail}}" wx:key="index">
+    <view class="myOrder-box" data-orderid="{{item.TraveOrderId}}" data-state="{{item.State}}" bindtap="toOrderDetail">
+      <view class="wait-pay" wx:if="{{item.State == '10'}}">待支付</view>
+      <view class="wait-pay" wx:if="{{item.State == '11'}}">待审核</view>
+      <view class="wait-pay" wx:if="{{item.State == '21'}}">待出行</view>
+      <!-- <view class="wait-pay" wx:if="{{item.State == '0'}}">取消/退款中</view> -->
+      <view class="pay-success" wx:if="{{item.State == '30'}}">交易完成</view>
+      <view class="pay-close" wx:if="{{item.State == '0'}}">交易关闭</view>
+      <view class="myOrder-content">
+        <image class="order-img" src="{{item.Photo}}"></image>
+        <view class="myOrder-right">
+          <view class="myOrder-title {{item.State == '0' ? 'typeClose' : '' }}">{{item.ProductName}}</view>
+          <view wx:if="{{item.IsSeck}}">
+            <text class="myOrder-yuan">¥ </text>
+            <text class="myOrder-price">{{item.TotalAmount}}</text>
+            <!-- <text class="myOrder-open">起</text>
+            <text class="seckill-old">¥2688</text> -->
+          </view>
+          <view class="price-pay" wx:else>
+            <view class="{{item.State == '0' ? 'typeClose' : '' }}">
+              <text class="myOrder-yuan">¥ </text>
+              <text class="myOrder-price">{{item.TotalAmount}}</text>
+            </view>
+            <view class="myOrder-pay" wx:if="{{item.State == '10'}}" data-amount="{{item.TotalAmount}}" data-orderid="{{item.TraveOrderId}}" catchtap="toPay">去支付 ></view>
+          </view>
+        </view>
+      </view>
+      <view class="seckill-end" wx:if="{{item.IsSeck && item.State == '10'}}">
+        <view class="seckill-box">
+          <view class="end-line">
+            <text class="form-end">距结束</text>
+            <text class="black">{{item.getTime.hour}}</text>
+            <text>：</text>
+            <text class="black">{{item.getTime.minute}}</text>
+            <text>：</text>
+            <text class="black">{{item.getTime.second}}</text>
+          </view>
+          <view class="myOrder-pay" data-amount="{{item.TotalAmount}}" data-orderid="{{item.TraveOrderId}}" catchtap="toPay">去支付 ></view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class="no-box" wx:if="{{noGoods}}">
+  <image class="no-img" src="/images/none-order.png"></image>
+  <view class="no-text">哎呀～还没有订单哦～</view>
+</view>
+<view class="container" wx:if="{{loadSpin}}">
+  <i-spin fix></i-spin>
+</view>

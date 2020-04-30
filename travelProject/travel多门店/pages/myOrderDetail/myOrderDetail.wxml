@@ -1,0 +1,142 @@
+<!--pages/myOrderDetail/myOrderDetail.wxml-->
+<view class="head-box" wx:if="{{orderDetail.ProductType != 3}}">
+	<image class="head-img" src="/images/waitPay.png" wx:if="{{orderDetail.State == '10'}}"></image>
+	<block wx:if="{{orderDetail.State == '11'}}">
+		<image class="head-img" src="/images/waitAuditAssem.png" wx:if="{{orderDetail.OrderType == 'assem' && orderDetail.AssemState == 1}}"></image>
+		<image class="head-img" src="/images/waitAuditSuccess.png" wx:elif="{{orderDetail.OrderType == 'assem' && orderDetail.AssemState == 2}}"></image>
+		<image class="head-img" src="/images/waitAuditFalse.png" wx:elif="{{orderDetail.OrderType == 'assem' && orderDetail.AssemState == -2}}"></image>
+		<image class="head-img" src="/images/waitAudit.png" wx:else></image>
+	</block>
+	<image class="head-img" src="/images/waitTrip.png" wx:if="{{orderDetail.State == '21'}}"></image>
+	<image class="head-img" src="/images/orderSuccess.png" wx:if="{{orderDetail.State == '12' || orderDetail.State == '22' || orderDetail.State == '30' || orderDetail.State == '0'}}"></image>
+</view>
+<view class="content-box">
+	<view class="main-box">
+		<view class="name-top">
+			<view class="type-name" wx:if="{{orderDetail.State == '10'}}">待支付…</view>
+			<view class="type-name" wx:if="{{orderDetail.State == '11'}}">审核中…</view>
+			<view class="type-name" wx:if="{{orderDetail.State == '21'}}">审核通过，待出行…</view>
+			<view class="type-name" wx:if="{{orderDetail.State == '12'}}">行程取消/退款中…</view>
+			<view class="type-name" wx:if="{{orderDetail.State == '22'}}">已取消行程，交易关闭</view>
+			<view class="type-name" wx:if="{{orderDetail.State == '30'}}">交易完成！</view>
+			<view class="type-name" wx:if="{{orderDetail.State == '0'}}">未支付，交易关闭！</view>
+			<view class="subName-line" wx:if="{{orderDetail.State == '10'}}">
+				<view class="subName-left">订单将为您保留至</view>
+				<view class="subName-right">{{holdTime}}</view>
+			</view>
+			<view class="subName-line" wx:if="{{orderDetail.State == '11' || orderDetail.State == '12'}}">
+				<view class="subName-left">商家将在24小时以内为您反馈审核信息～</view>
+			</view>
+			<view class="subName-line" wx:if="{{orderDetail.State == '21'}}">
+				<view class="subName-left">出发日期为</view>
+				<view class="subName-right">{{orderDetail.DepartuDate}}</view>
+				<view class="subName-left">请注意不要错过时间～</view>
+			</view>
+			<view class="subName-line" wx:if="{{orderDetail.State == '30'}}">
+				<view class="subName-left">如有疑问，请联系商家～</view>
+			</view>
+			<view class="subName-line" wx:if="{{orderDetail.State == '22'}}">
+				<view class="subName-left">您已取消行程，退款金额已原路退回！若未收到退款金额，请及时联系商家～</view>
+			</view>
+		</view>
+		<view class="type-line">
+			<view class="title">产品名称</view>
+			<view class="content">{{orderDetail.ProductName}}</view>
+		</view>
+		<block wx:if="{{orderDetail.ProductType == '1' || orderDetail.ProductType == '2'}}">
+			<view class="type-line">
+				<view class="title">出游类别</view>
+				<view class="content">{{orderDetail.TraveType}}</view>
+			</view>
+			<view class="type-line">
+				<view class="title">游客类型</view>
+				<view class="content">
+					<text class="tourist" wx:for="{{orderDetail.OrderPriceList}}" wx:key="index">{{item.ItemName}}<text wx:if="{{item.MinAge && item.MaxAge}}">（ {{item.MinAge}}-{{item.MaxAge}}岁）</text> x{{item.ItemNum}}</text>
+				</view>
+			</view>
+			<view class="type-line">
+				<view class="title">出发日期</view>
+				<view class="content">{{orderDetail.DepartuDate}}</view>
+			</view>
+		</block>
+		<view class="type-line" wx:if="{{orderDetail.ProductType == '3'}}">
+			<view class="title">类型与数量</view>
+			<view class="content">
+				<text class="tourist" wx:for="{{orderDetail.OrderPriceList}}" wx:key="index">{{item.ItemName}} x{{item.ItemNum}}</text>
+
+			</view>
+		</view>
+		<!-- <view class="type-line">
+      <view class="title">是否拼房</view>
+      <view class="content" wx:if="{{orderDetail.IsSparerpart}}">拼房
+        <text class="room">如拼房失败，需补交房差¥{{orderDetail.SparpartPrice || 0}}</text>
+      </view>
+      <view class="content" wx:else>不拼房</view>
+    </view> -->
+		<view class="type-line">
+			<view class="title">待付金额</view>
+			<view class="content">
+				<text class="price">￥{{orderDetail.TotalAmount}}</text>
+				<text class="particulars" bindtap="changeDetail">明细</text>
+			</view>
+		</view>
+		<view class="shop-line">
+			<view class="shop-item" bindtap="downphone">
+				<image src="/images/chat-shop.png"></image>
+				<view>联系商家</view>
+			</view>
+			<view class="shop-item" bindtap="toShop">
+				<image src="/images/shop-detail.png"></image>
+				<view>产品详情</view>
+			</view>
+		</view>
+	</view>
+	<view class="order-box">
+		<view class="order-title">订单信息</view>
+		<view class="order-line">
+			<view class="order-name">订单号</view>
+			<view class="order-info">{{orderDetail.OrderNo}}</view>
+		</view>
+		<view class="order-line">
+			<view class="order-name">下单时间</view>
+			<view class="order-info">{{orderDetail.CreateTime}}</view>
+		</view>
+		<view class="order-line">
+			<view class="order-name">支付方式</view>
+			<view class="order-info">{{orderDetail.PayType}}</view>
+		</view>
+	</view>
+</view>
+<view class="foot-box" wx:if="{{orderDetail.State == '10'}}">
+	<view class="foot-title" bindtap="toPay">立即支付</view>
+</view>
+<view class="detail-modal" wx:if="{{showDetail}}" bindtap="changeDetail">
+	<view class="detail-box">
+		<view class="del-box">
+			<image src="/images/delete.png"></image>
+		</view>
+		<view class="detail-content">
+			<view class="detail-title">待付金额明细</view>
+			<view class="detail-main">
+				<view class="detail-line" wx:for="{{orderDetail.OrderPriceList}}" wx:key="index">
+					<view>{{item.ItemName}}
+						<text wx:if="{{item.MinAge}}">{{item.MinAge}}-{{item.MaxAge}}岁</text>
+						<text> x{{item.ItemNum}}</text>
+					</view>
+					<view>¥{{item.ItemPrice}}</view>
+				</view>
+				<!-- <view class="detail-line" wx:if="{{!orderDetail.IsSparerpart}}">
+          <view>不拼房</view>
+          <view>¥{{orderDetail.SparpartPrice}}</view>
+        </view> -->
+				<!-- <view class="detail-line">
+          <view>优惠券</view>
+          <view>-¥50</view>
+        </view> -->
+			</view>
+		</view>
+	</view>
+</view>
+<i-modal visible="{{ showTel }}" ok-text="拨打" bind:ok="makeCall" bind:cancel="downphone">
+	<view>{{merchantInfo.Tel}}</view>
+</i-modal>

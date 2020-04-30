@@ -1,0 +1,143 @@
+/* pages/doctor/reportList/reportList.wxss */
+page {
+  background: rgba(245, 245, 245, 1);
+}
+
+image {
+  width: 10rpx;
+  height: 10rpx;
+}
+
+.f-row-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.f-row-last {
+  display: flex;
+  /* 默认 row水平方向*/
+  flex-direction: row;
+  /*元素在主轴开始位置，富裕空间在主轴的开始位置*/
+  justify-content: flex-end;
+  /*根据侧轴方向上高度居中*/
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.h-center {
+  display: flex;
+  /*根据侧轴方向高度居中*/
+  align-items: center;
+}
+
+.paddingRL30 {
+  padding: 0 30rpx;
+}
+
+.scroll-box {
+  width: 100%;
+  height: 80rpx;
+  white-space: nowrap;
+  background: #fff;
+}
+
+.scroll-item {
+  display: inline-block;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  margin: 0 30rpx;
+}
+
+.scroll-sel {
+  height: 74rpx;
+  line-height: 74rpx;
+  font-size: 32rpx;
+  color: #000;
+  font-weight: 800;
+  border-bottom: 6rpx solid #4d85ff;
+  color: #4d85ff;
+}
+
+.list-block {
+  background: rgba(255, 255, 255, 1);
+  border-radius: 12rpx;
+  display: flex;
+  /* 默认 row水平方向*/
+  flex-direction: row;
+  /*元素在主轴开始位置，富裕空间在主轴的结束位置*/
+  justify-content: flex-start;
+  /*根据侧轴方向上高度居中*/
+  align-items: center;
+  padding: 40rpx 20rpx;
+  margin-top: 20rpx;
+}
+
+.imageView {
+  width: 144rpx;
+  height: 140rpx;
+  background: rgb(250, 248, 248);
+  box-sizing: border-box;
+  border-radius: 12rpx;
+}
+
+.imageView .image {
+  width: 144rpx;
+  height: 140rpx;
+  border-radius: 12rpx;
+}
+
+.info-text {
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.conter-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(100% - 170rpx);
+  margin-left: 24rpx;
+  height: 140rpx;
+}
+
+
+.info-time {
+  font-size: 24rpx;
+  color: #666666;
+}
+
+.info-btn {
+  width: 152rpx;
+  height: 48rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 25rpx;
+  border: 1rpx solid #4D85FF;
+  color: #4D85FF;
+  font-size: 24rpx;
+}
+
+.backHome {
+  position: fixed;
+  bottom: 38rpx;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  background: rgba(77, 133, 255, 1);
+  box-shadow: 0rpx 2rpx 20rpx 0rpx rgba(124, 165, 255, 1);
+}
+
+.backHome image {
+  width: 40rpx;
+  height: 40rpx;
+}

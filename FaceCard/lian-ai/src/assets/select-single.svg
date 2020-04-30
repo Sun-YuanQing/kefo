@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-使用卡项-单选</title>
+    <desc>Created with Sketch.</desc>
+    <g id="菲卡时代2.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="使用卡项-默认推荐卡项" transform="translate(-30.000000, -321.000000)">
+            <g id="icon-使用卡项-单选" transform="translate(30.000000, 321.000000)">
+                <circle id="椭圆形" fill="#333333" cx="8" cy="8" r="8"></circle>
+                <g id="勾选-(2)-copy" transform="translate(3.000000, 4.000000)" fill="#FFFFFF">
+                    <path d="M0,3.82535505 L0.63772579,3.15097078 L3.57181317,5.88961264 C3.57181317,5.88961264 5.75203859,3.67328506 9.74287481,0 L10,0.706406288 C10,0.706406288 6.67341145,4.2384126 3.55574,8 L0,3.82535505 Z" id="路径"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

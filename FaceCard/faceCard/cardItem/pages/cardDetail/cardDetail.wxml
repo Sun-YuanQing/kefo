@@ -1,0 +1,166 @@
+<!--cardItem/pages/cardDetail/cardDetail.wxml-->
+<view class="card_head" style="background:url({{cardData.PhotoUrl}}) no-repeat center center;background-size:100% 100%;">
+  {{cardData.ClassType}}
+</view>
+<view class="limit_box" wx:if="{{cardData.IsLimitNum}}">
+  <view>限量{{cardData.Num}}张</view>
+  <view class="bar_box">
+    <view style="width:{{(cardData.SellNum + cardData.SellFeikaNum) / cardData.Num *100}}%;height:100%;background: #FFB055;"></view>
+    <view style="width:{{100 -((cardData.SellNum + cardData.SellFeikaNum) / cardData.Num *100)}}%;height:100%;background: #FFDCB5;"></view>
+  </view>
+</view>
+<view class="card_contain">
+  <view class="card_contain_title">{{cardData.Name}}</view>
+  <view class="card_top_line_money">
+    <text class="yuan_card_money">¥<text class="yuan_card_money_big">{{cardData.cardHead}}.</text>{{cardData.cardEnd}}</text>
+    <view class="yuan_pay_out">已售{{cardData.SellNum}}</view>
+  </view>
+  <view class="fei_line_money" wx:if="{{cardData.FeiKaPrice>0}}">
+    <view class="left_fei_line">
+      <text class="fei_card_money">¥<text class="fei_card_money_big">{{cardData.feiHead}}.</text>{{cardData.feiEnd}}</text>
+      <image class="fei_card_img" src="/cardItem/images/face_money.png"></image>
+      <image class="fei_card_info" bindtap="toInfo" src="/cardItem/images/redinfo.png"></image>
+    </view>
+    <view class="yuan_pay_out">已售{{cardData.SellFeikaNum}}</view>
+  </view>
+</view>
+<view class="look_box" bindtap="toCardPrice">
+  <view>“菲卡价”购买此卡如何使用？</view>
+  <view class="look_text">去看看 ></view>
+</view>
+<view class="card_main_box">
+  <block wx:if="{{cardData.CardRightsItems.Project.length>0 || (cardData.ClassType == '折扣卡' && cardData.IsUnionDisc)}}">
+    <view class="card_main_head_line">
+      <image class="card_main_head_img" src="/cardItem/images/left_sign.png"></image>
+      <view class="text_title">项目/服务权益</view>
+      <image class="card_main_head_img" src="/cardItem/images/right_sign.png"></image>
+    </view>
+    <view class="discount_num" wx:if="{{cardData.ChildType == '多项有限次'}}">
+      <image src="/cardItem/images/discount_num.png"></image>
+      <view class="discount_text">共{{cardData.ToTalNum}}次</view>
+    </view>
+    <block wx:if="{{cardData.ClassType == '折扣卡' && cardData.IsUnionDisc}}">
+      <view class="discount">
+        <image src="/cardItem/images/discount.png"></image>
+        <view class="discount_text">全店项目/服务</view>
+      </view>
+      <view class="discount_small">
+        <image src="/cardItem/images/discount_small.png"></image>
+        <view class="discount_text">{{cardData.Discount}}折</view>
+      </view>
+    </block>
+    <block wx:if="{{cardData.CardRightsItems.Project.length>0}}">
+      <view class="line_project_box" wx:for="{{cardData.CardRightsItems.Project}}" wx:key="index" data-severid="{{item.ItemId}}" bindtap="toproject">
+        <image class="project_box_img" src="{{item.PhotoUrl}}"></image>
+        <view class="projext_text_box">
+          <view class="project_text_title">{{item.ItemName}}</view>
+          <view class="project_text_num" wx:if="{{cardData.ChildType != '多项有限次'}}">{{item.ItemNum}}{{item.ItemUnit}}</view>
+          <view class="line_text_nun">
+            <view>¥{{item.ItemPrice}}/{{item.ItemUnit}}</view>
+            <image class="line_text_img" src="/cardItem/images/toroght.png"></image>
+          </view>
+        </view>
+      </view>
+    </block>
+  </block>
+  <block wx:if="{{cardData.CardRightsItems.Product.length>0 || (cardData.ClassType == '折扣卡' && cardData.IsUnionDisc)}}">
+    <view class="card_main_head_line">
+      <image class="card_main_head_img" src="/cardItem/images/left_sign.png"></image>
+      <view class="text_title">产品权益</view>
+      <image class="card_main_head_img" src="/cardItem/images/right_sign.png"></image>
+    </view>
+    <block wx:if="{{cardData.ClassType == '折扣卡' && cardData.IsUnionDisc}}">
+      <view class="discount">
+        <image src="/cardItem/images/discount.png"></image>
+        <view class="discount_text">全店产品</view>
+      </view>
+      <view class="discount_small">
+        <image src="/cardItem/images/discount_small.png"></image>
+        <view class="discount_text">{{cardData.Discount}}折</view>
+      </view>
+    </block>
+    <view class="line_project_box" wx:for="{{cardData.CardRightsItems.Product}}" wx:key="index">
+      <image class="project_box_img" src="{{item.PhotoUrl}}"></image>
+      <view class="projext_text_box">
+        <view class="project_text_title">{{item.ItemName}}</view>
+        <view class="project_text_num">{{item.ItemNum}}{{item.ItemUnit}}</view>
+        <view class="line_text_nun">
+          <view>¥{{item.ItemPrice}}/{{item.ItemUnit}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{cardData.CardGivingItems.Project.length>0}}">
+    <view class="card_main_head_line">
+      <image class="card_main_head_img" src="/cardItem/images/left_sign.png"></image>
+      <view class="text_title">赠送权益</view>
+      <image class="card_main_head_img" src="/cardItem/images/right_sign.png"></image>
+    </view>
+    <view class="line_project_box" wx:for="{{cardData.CardGivingItems.Project}}" wx:key="index" data-severid="{{item.ItemId}}" bindtap="toproject">
+      <image class="project_box_img" src="{{item.PhotoUrl}}"></image>
+      <view class="projext_text_box">
+        <view class="project_text_title">{{item.ItemName}}</view>
+        <view class="project_text_num">{{item.ItemNum}}{{item.ItemUnit}}</view>
+        <view class="line_text_nun">
+          <view>¥{{item.ItemPrice}}/{{item.ItemUnit}}</view>
+          <image class="line_text_img" src="/cardItem/images/toroght.png"></image>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{cardData.CardGivingItems.Product.length>0}}">
+    <view class="card_main_head_line">
+      <image class="card_main_head_img" src="/cardItem/images/left_sign.png"></image>
+      <view class="text_title">赠送产品</view>
+      <image class="card_main_head_img" src="/cardItem/images/right_sign.png"></image>
+    </view>
+    <view class="line_project_box" wx:for="{{cardData.CardGivingItems.Product}}" wx:key="index">
+      <image class="project_box_img" src="{{item.PhotoUrl}}"></image>
+      <view class="projext_text_box">
+        <view class="project_text_title">{{item.ItemName}}</view>
+        <view class="project_text_num">{{item.ItemNum}}{{item.ItemUnit}}</view>
+        <view class="line_text_nun">
+          <view>¥{{item.ItemPrice}}/{{item.ItemUnit}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class="activate_box">
+  <view class="line_activate">
+    <image class="activate_img" src="/cardItem/images/share.png"></image>
+    <view class="activate_text_time">激活：第一次到店使用即激活或到期自动激活</view>
+  </view>
+  <view class="line_activate time_margin">
+    <image class="activate_img" src="/cardItem/images/bag.png"></image>
+    <view class="activate_text_time">有效时间：自激活日起35天内有效（其中包含赠送的5天）</view>
+  </view>
+</view>
+<view class="shop_info">
+  <view class="line_shop">
+    <view class="left_title">{{siteData.Name}}</view>
+    <image class="tel_img" bindtap="showphone" src="/cardItem/images/tel.png"></image>
+  </view>
+  <view class="line_subshop">
+    <view class="left_subhead">{{siteData.Address}}</view>
+    <image class="local_img" bindtap="getLocaltion" src="/cardItem/images/location.png"></image>
+  </view>
+</view>
+<view class="foot_box">
+  <view class="left_shopname">
+    <image class="shop_logo" src="/cardItem/images/shop.png"></image>
+    <view class="shop_dian">店铺</view>
+  </view>
+  <view class="shop_now" bindtap="toNowPay">立即购买</view>
+</view>
+<i-action-sheet visible="{{ visible }}" actions="{{ telphone }}" show-cancel bind:cancel="downphone" bind:click="handleClickItem" />
+<i-modal title="选择购买方式" visible="{{ showways }}" bind:ok="tobuy" bind:cancel="showclose">
+  <view class="buy_box" data-buyid="0" bindtap="changeBuy">
+    <text class="{{chooseBuy== 0 ? 'buy_sel' : 'buy_text'}}">卡售价 <text class="buy_small">¥<text class="buy_big">{{cardData.cardHead}}.</text>{{cardData.cardEnd}}</text>
+    </text>
+  </view>
+  <view class="buy_box" style="margin-top: 30rpx;" data-buyid="1" bindtap="changeBuy">
+    <text class="{{chooseBuy== 1 ? 'buy_sel' :'buy_text'}}">菲卡价 <text class="buy_small">¥<text class="buy_big">{{cardData.feiHead}}.</text>{{cardData.feiEnd}}</text>
+    </text>
+  </view>
+</i-modal>

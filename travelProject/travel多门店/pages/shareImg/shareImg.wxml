@@ -1,0 +1,15 @@
+<!--pages/shareImg/shareImg.wxml-->
+<view class="share-box">
+  <image class="share-img" bindtap='preview' wx:if="{{shareImg}}" src="{{shareImg}}" mode="widthFix"></image>
+  <view class="share-subtext">保存图片到相册并和好友分享吧～</view>
+</view>
+<view class="save-box">
+  <view class="saveImg-box" bindtap='saveImg'>
+    <image src="/images/download.png"></image>
+    <text>保存图片</text>
+  </view>
+</view>
+<i-modal visible="{{ visible }}" actions="{{ actions }}" bind:click="getAuth">
+  <view>暂无相册的写入权限。</view>
+</i-modal>
+<i-message id="message" />

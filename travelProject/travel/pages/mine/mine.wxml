@@ -1,0 +1,142 @@
+<!-- <Header navbar-data='{{nvabarData}}'></Header> -->
+<view class="author-box">
+	<view class="figure-sex">
+		<image class="figure-img" src="{{userInfo.avatarUrl || '/images/figure.png'}}" bindtap="toLogin"></image>
+		<image class="sex-img" wx:if="{{userInfo.gender == 1}}" src="/images/mine-boy.png"></image>
+		<image class="sex-img" wx:if="{{userInfo.gender == 2}}" src="/images/mine-girl.png"></image>
+	</view>
+	<view class="author-content">
+		<view class="author-name" bindtap="toLogin">{{userInfo.nickName || '用户登录'}}</view>
+		<view class="author-card">普通会员 ></view>
+	</view>
+</view>
+<view class="classify-box">
+	<view class="balance-line">
+		<view class="classify-item">
+			<view class="number">{{myDetail.Balance || 0}}</view>
+			<view class="name">我的余额(元)</view>
+		</view>
+	</view>
+	<view class="classify-item">
+		<view class="number">{{myDetail.Collect || 0}}</view>
+		<view class="name">收藏</view>
+	</view>
+	<view class="classify-item">
+		<view class="number">{{myDetail.Footprint || 0}}</view>
+		<view class="name">足迹</view>
+	</view>
+	<view class="classify-item">
+		<view class="number">{{myDetail.Coupon || 0}}</view>
+		<view class="name">优惠券</view>
+	</view>
+</view>
+<view class="distribution-box" wx:if="{{myDetail.MyDistribution.Status != 1 && myDetail.MyDistribution.Status != 2}}">
+	<view class="distribution-between">
+		<view>
+			<view class="purse-line">
+				<image class="distribution-purse" src="/images/purse.png"></image>
+				<view>
+					<text class="purse-owns" wx:if="{{myDetail.MyDistribution.Status == 0}}">很抱歉，你暂时还不能成为分销员～</text>
+					<text class="purse-owns" wx:if="{{myDetail.MyDistribution.Status == -1}}">成为分销员正在审核中…</text>
+					<block wx:if="{{myDetail.MyDistribution.Status == null}}">
+						<text class="purse-owns">我要赚钱</text>
+						<text class="purse-toBe">成为分销员可以赚取收益哦～</text>
+					</block>
+				</view>
+			</view>
+			<view class="purse-because" wx:if="{{myDetail.MyDistribution.Status == 0 && myDetail.MyDistribution.Reason}}">原因：{{myDetail.MyDistribution.Reason}}</view>
+		</view>
+		<image class="distribution-right" wx:if="{{myDetail.MyDistribution.Status == null || myDetail.MyDistribution.Status == 2}}" src="/images/toRight.png" bindtap="toNavigation"></image>
+	</view>
+</view>
+<view class="gray-line"></view>
+<view class="order-box">
+	<view class="orderTitle-line">
+		<view class="myOrder">我的订单</view>
+		<view class="order-look" bindtap="toMyOrder">查看全部 ></view>
+	</view>
+	<view class="orderImg-line">
+		<view class="orderImg-item" data-index="11" bindtap="toMyOrder">
+			<view class="orderImg-box">
+				<image class="orderImg" src="/images/mine-audit.png"></image>
+				<view class="badge" wx:if="{{myDetail.InAudit > 0}}">{{myDetail.InAudit}}</view>
+			</view>
+			<view class="title">审核中</view>
+		</view>
+		<view class="orderImg-item" data-index="10" bindtap="toMyOrder">
+			<view class="orderImg-box">
+				<image class="orderImg" src="/images/mine-pay.png"></image>
+				<view class="badge" wx:if="{{myDetail.ToBePay > 0}}">{{myDetail.ToBePay}}</view>
+			</view>
+			<view class="title">待支付</view>
+		</view>
+		<view class="orderImg-item" data-index="21" bindtap="toMyOrder">
+			<view class="orderImg-box">
+				<image class="orderImg" src="/images/mine-trip.png"></image>
+				<view class="badge" wx:if="{{myDetail.ToTrave > 0}}">{{myDetail.ToTrave}}</view>
+			</view>
+			<view class="title">待出行</view>
+		</view>
+		<view class="orderImg-item" data-index="0,12,22" bindtap="toMyOrder">
+			<view class="orderImg-box">
+				<image class="orderImg" src="/images/mine-cancel.png"></image>
+				<view class="badge" wx:if="{{myDetail.CancelOrRefund > 0}}">{{myDetail.CancelOrRefund}}</view>
+			</view>
+			<view class="title">取消/退款</view>
+		</view>
+	</view>
+</view>
+<block wx:if="{{myDetail.MyActivitResultVx.length > 0}}">
+	<view class="gray-line"></view>
+	<view class="order-box">
+		<view class="orderTitle-line">
+			<view class="myOrder">我的活动</view>
+			<!-- <view class="order-look" bindtap="toMyOrder">查看全部 ></view> -->
+		</view>
+		<view class="activity-box">
+			<block wx:for="{{myDetail.MyActivitResultVx}}" wx:key="index">
+				<i-seckill wx:if="{{index < 4}}" seckill="{{item}}" showSet="{{showSet}}" setting="2" bind:showModal="showModal" bind:toRecommend="toRecommend" />
+			</block>
+		</view>
+	</view>
+</block>
+<view class="gray-line"></view>
+<view class="other-list">
+	<view class="other-item">
+		<image src="/images/mine-member.png"></image>
+		<view>会员中心</view>
+	</view>
+	<view class="other-item" bindtap="toMedical" wx:if="{{true == true}}">
+		<image src="/images/mine-medical.png"></image>
+		<view>其它应用</view>
+	</view>
+	<view class="other-item" bindtap="toEarn" wx:if="{{myDetail.MyDistribution.Status == 1 || myDetail.MyDistribution.Status == 2}}">
+		<image src="/images/distribution.png"></image>
+		<view>我是分销员</view>
+	</view>
+	<view class="other-item">
+		<image src="/images/mine-info.png"></image>
+		<view>消息中心</view>
+	</view>
+	<view class="other-item" bindtap="toAbout">
+		<image src="/images/mine-about.png"></image>
+		<view>关于我们</view>
+	</view>
+	<view class="other-item" bindtap="toKeFu">
+		<image src="/images/mine-service.png"></image>
+		<view>客服中心</view>
+	</view>
+	<view class="other-item" bindtap="toOtherShop" wx:if="{{shopList && shopList.length > 1}}">
+		<image src="/images/mine-other-shop.png"></image>
+		<view>看看别的店</view>
+	</view>
+	<!-- <view class="other-item">
+    <image src="/images/mine-setting.png"></image>
+    <view>设置</view>
+  </view> -->
+	<view class="other-item" bindtap="toHotelInfo">
+		<image src="/images/mine-hotelInfo.png"></image>
+		<view>入住信息</view>
+	</view>
+</view>
+<i-message id="message" />

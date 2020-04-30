@@ -1,0 +1,50 @@
+<!--pages/card_bag/bill/bill.wxml-->
+<view class="month">
+  <view class="button">
+    <picker mode="date" fields="month" value="{{date}}" bindchange="bindDateChange">
+      <view class="picker">
+        <text>{{date || "时间"}}</text>
+        <image src="../../../images/down.png"></image>
+      </view>
+    </picker>
+  </view>
+  <view class="button" style="margin-left: 20rpx;">
+    <view class="picker" bindtap="showType">
+      <text>{{item || "全部类别"}}</text>
+      <image src="../../../images/down.png"></image>
+    </view>
+  </view>
+</view>
+<!-- Type 1充值 2商家红包 3消费 -->
+<view class="bill_list">
+  <view class="noBox" wx:if="{{records.length <=0}}">
+    <image class='noImg' src='/images/nozhang.png'></image>
+    <view class='noName'>哎呀 暂无明细哦~~</view>
+  </view>
+  <block wx:for="{{records}}" wx:key="index">
+    <view class="item" data-id='{{item.Id}}' bindtap='toDetail'>
+      <view class="left">
+        <view>{{item.SiteName}}</view>
+        <view>{{item.CreatedTime}}</view>
+      </view>
+      <view>{{item.Amount}}</view>
+    </view>
+  </block>
+  <view class="dataNone" wx:if="{{isFinish && records.length>=8}}">没有更多数据了</view>
+</view>
+<view class="typeBox" bindtap='closeClass' wx:if="{{isShowTypes}}">
+  <view class="typeWrap" catchtap="allNo">
+    <view class="header">
+      <view catchtap='closeClass'>取消</view>
+      <view catchtap='closeTrue'>确认</view>
+    </view>
+    <view class="content">
+      <view class="title">选择行业类别</view>
+      <view class="list">
+        <block wx:for="{{typeList}}" wx:key="index">
+          <view catchtap='choseItem' data-index='{{index}}' class="itemclass {{seltype == index? 'selItem':''}}">{{item}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,119 @@
+/* pages/address/userExtract/userExtract.wxss */
+
+.f-row-between {
+  display: flex;
+  /* 默认 row水平方向*/
+  flex-direction: row;
+  /*富裕空间平均分配在每两个元素之间*/
+  justify-content: space-between;
+  /*根据侧轴方向上文字的基线对齐*/
+  align-items: baseline;
+}
+
+.f-row-start {
+  display: flex;
+  /* 默认 row水平方向*/
+  flex-direction: row;
+  /*元素在主轴开始位置，富裕空间在主轴的结束位置*/
+  justify-content: flex-start;
+  /*根据侧轴方向上文字的基线对齐*/
+  align-items: baseline;
+}
+
+.address-label {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  line-height: 40rpx;
+}
+
+.address-way {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 40rpx;
+}
+
+.address-input {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 40rpx;
+}
+
+.address-input.width10rem {
+  width: 11rem;
+}
+
+.address-input .phcolor {
+  color: rgba(187, 187, 187, 1);
+}
+
+.margin-left36 {
+  margin-left: 36rpx;
+}
+.margin-left64 {
+  margin-left: 64rpx;
+}
+.margin-top28 {
+  margin: 28rpx 0 0 0;
+}
+
+.margin-top28:nth-of-type(1) {
+  margin: 0;
+}
+
+.image-rigth {
+  width: 12rpx;
+  height: 24rpx;
+}
+
+.boderBottom-solid1px {
+  border-bottom: 2rpx rgba(245, 245, 245, 1) solid;
+}
+
+.boderBottom-solid1px:nth-of-type(1) {
+}
+
+.padding30 {
+  padding: 0 30rpx;
+}
+
+.wh {
+  height: 96rpx;
+}
+
+.h-center {
+  display: flex;
+  align-items: center;
+}
+
+.rgbccc {
+  height: 20rpx;
+  background: rgba(245, 245, 245, 1);
+}
+
+.purchase-box {
+  position: fixed;
+  bottom: 0rpx;
+  border-top: 1rpx solid #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+  width: 100%;
+}
+
+.purchase {
+  background: #4d85ff;
+  color: #fff;
+  font-size: 28rpx;
+  padding: 16rpx 144rpx;
+  border-radius: 36rpx;
+}

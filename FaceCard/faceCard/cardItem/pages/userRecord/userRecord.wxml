@@ -1,0 +1,21 @@
+<!--cardItem/pages/userRecord/userRecord.wxml-->
+<view class="record_box" wx:for="{{detailData}}" wx:key="">
+  <view class="user_box">
+    <view class="line_content">
+      <image class="mo_img" src="{{item.PhotoUrl || '/cardItem/images/blue.png'}}"></image>
+      <view class="line_name">
+        <view class="title">{{item.ItemName}}</view>
+        <view>
+          <text class="money_text">¥{{item.ItemPrice}}</text>
+          <image class="ren_right" src="/cardItem/images/toroght.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="line_time">
+      <view class="left_time">{{item.CreateTime}}</view>
+      <view class="center_num">{{item.ClassType == '折扣卡' ? item.ItemNum : 'x' + item.ItemNum}} {{item.ItemUnit}}</view>
+      <view class="right_money" wx:if="{{item.Price>0}}">支付：¥{{item.Price}}</view>
+    </view>
+    <image wx:if="{{item.DetailType == 2}}" class="zeng_img" src="/cardItem/images/zeng.png"></image>
+  </view>
+</view>

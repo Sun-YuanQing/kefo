@@ -1,0 +1,17 @@
+<!--pages/face/face.wxml-->
+<view class="container">
+    <view class="title"><text>* </text>请提供一张正脸照片，为你定制专属会员卡</view>
+    <image class="camera1" src="../../../images/main_face.png"></image>
+    <view class="tip">
+      <view>
+        <image src="../../../images/face1.png"></image>
+        <view>正对手机</view>
+      </view>
+      <view>
+        <image src="../../../images/face2.png"></image>
+        <view>光线充足</view>
+      </view>
+    </view>
+      
+    <view class="button" bindtap="toPhoto">开始拍照</view>
+</view>

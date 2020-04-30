@@ -1,0 +1,39 @@
+/* pages/card_bag/rights/rights.wxss */
+page{
+  background: #f5f5f5;
+  padding: 20rpx 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+.container{
+  background: #fff;
+  border-radius: 16rpx;
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  padding: 40rpx 50rpx 40rpx 40rpx;
+}
+.data_list{
+  display: flex;
+  margin-bottom: 40rpx;
+}
+.data_list image{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 26rpx;
+}
+.content{
+  width: 520rpx;
+}
+.content text{
+  display: block;
+  font-size: 30rpx;
+  line-height: 1.8;
+  font-weight: 700;
+  margin-bottom: 10rpx;
+}
+.content view{
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.6;
+}

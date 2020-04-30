@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>等待提货-灰</title>
+    <desc>Created with Sketch.</desc>
+    <g id="赣州国旅项目" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="其他产品-状态进度-" transform="translate(-223.000000, -766.000000)">
+            <g id="等待提货-灰" transform="translate(224.000000, 767.000000)">
+                <path d="M20.5,13.294546 C20.5,12.7450691 20.5,12.3193403 20.5,11.2203863 C20.5,10.478847 19.98,9.83 19.148,9.83 L8.852,9.83 C8.124,9.83 7.5,10.478847 7.5,11.2203863 L7.5,20.2115514 C7.5,20.9530907 8.124,21.5092453 8.852,21.5092453 C11.9095762,21.5092453 13.6214978,21.5092453 15.1502859,21.5092453" id="路径" stroke="#979797" stroke-linecap="round" fill-rule="nonzero"></path>
+                <path d="M11,11.9150943 L11,8.40251572 C11,7.43968535 11.4668924,6.5 12.3384091,6.5 L15.7015909,6.5 C16.5731076,6.5 17.04,7.43968535 17.04,8.40251572 L17.04,11.9150943" id="路径" stroke="#979797" stroke-linecap="round" fill-rule="nonzero"></path>
+                <circle id="椭圆形-copy-3" stroke="#999999" cx="14" cy="14" r="14"></circle>
+                <path d="M15.5,18.2511071 C15.5,20.3267992 17.1109833,22.0022141 19.0877303,22.0022141 C21.0644773,22.0022141 22.6754606,20.3267992 22.6754606,18.2511071 C22.6754606,16.1754149 21.0644773,14.5 19.0877303,14.5 C17.1109833,14.5 15.5,16.1754149 15.5,18.2511071 Z" id="路径-copy-5" stroke="#979797" fill-rule="nonzero"></path>
+                <g id="分组-2-copy-5" transform="translate(16.700000, 17.700000)" fill="#999999">
+                    <circle id="椭圆形" cx="0.6" cy="0.6" r="1"></circle>
+                    <circle id="椭圆形-copy-6" cx="2.4" cy="0.6" r="1"></circle>
+                    <circle id="椭圆形-copy-7" cx="4.2" cy="0.6" r="1"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

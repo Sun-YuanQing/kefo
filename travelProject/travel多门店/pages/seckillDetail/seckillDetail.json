@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText":"商品详情",
+  "usingComponents": {
+    "Header": "/components/navbar/navbar",
+    "i-input-number": "/components/iview/input-number/index",
+    "member-info":"/components/member/member",
+    "i-message": "/components/iview/message/index",
+    "i-spin": "/components/iview/spin/index"
+  }
+}

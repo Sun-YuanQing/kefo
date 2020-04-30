@@ -1,0 +1,177 @@
+<!--pages/groupBook/groupDetail/groupDetail.wxml-->
+<view class="head-box">
+  <swiper autoplay interval="3000" circular bindchange="currentChange">
+    <block wx:for="{{seckillDetail.DisplayPhoto}}" wx:key="index">
+      <swiper-item>
+        <image class="carousel" src="{{item}}" mode="widthFix"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="top-swiper">
+    <view class="head-share">{{detailIndex}}/{{seckillDetail.DisplayPhoto.length}}</view>
+    <view class="head-share" bindtap='shareshare'>
+      <image src="/images/icon-share.png"></image>
+      <text>推荐好物</text>
+    </view>
+  </view>
+  <view class="activity" bindtap="changeActive">活动规则</view>
+</view>
+<view class="seckill-time">
+  <image src="/images/seckill-back.png"></image>
+  <view class="seckill-box">
+    <view class="seckill-left-box">
+      <view class="price-line">
+        <text class="currenPrice">¥<text>{{seckillDetail.KillPrice}}</text></text>
+        <text class="riginalCost">¥{{seckillDetail.Price}}</text>
+      </view>
+      <view class="only-box">
+        <view class="schedule-box">
+          <text style="width:{{seckillDetail.SellNum / seckillDetail.StockNum * 100}}%;"></text>
+        </view>
+        <text class="only-leave">仅剩{{seckillDetail.StockNum - seckillDetail.SellNum}}件</text>
+      </view>
+    </view>
+    <view class="outtime">
+      <view class="outtime-end">距结束仅剩</view>
+      <view class="outtime-time">
+        <text class="bleak">{{getTime.hour}}</text>
+        <text>：</text>
+        <text class="bleak">{{getTime.minute}}</text>
+        <text>：</text>
+        <text class="bleak">{{getTime.second}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="title-box">{{seckillDetail.Name}}</view>
+<view class="detail-box">
+  <member-info bind:noneAddr="noneAddr"></member-info>
+  <view class="img-text-detail">
+    <view class="img-text-title">活动规格</view>
+    <view>
+      <view class="detail-text">出游类别</view>
+      <view>自由行</view>
+    </view>
+    <view>
+      <view class="detail-text">游客类型</view>
+      <view>成人</view>
+    </view>
+    <view>
+      <view class="detail-text">出发日期</view>
+      <view>2019.11.03 - 2019.11.09</view>
+    </view>
+  </view>
+  <view class="img-text-detail" wx:if='{{seckillDetail.TravelProfile}}'>
+    <view class="img-text-title">产品介绍</view>
+    <view class="detail-text">{{seckillDetail.TravelProfile}}</view>
+  </view>
+  <view class="pdf-box" bindtap="toLookPDF" wx:if="{{seckillDetail.ExistTravelPdf}}">
+    <image src="/images/icon-pdf.png"></image>
+    <view class="pdf-text">
+      <view class="pdf-open">打开PDF文件可查看商品详情</view>
+      <view class="pdf-look">
+        <text>去看看</text>
+      </view>
+    </view>
+  </view>
+  <block wx:for="{{seckillDetail.TravelPhoto}}" wx:key="index">
+    <image class="contain-box" src="{{item}}" mode="widthFix"></image>
+  </block>
+</view>
+<view class="foot-box">
+  <view class="bottom-box">
+    <view class="left-shopname" bindtap="goHome">
+      <image src="/images/icon-shop.png"></image>
+      <view class="shop-dian">店铺</view>
+    </view>
+    <view class="shop-now" bindtap="toNowPay">马上抢</view>
+  </view>
+</view>
+<view class="modal-box" wx:if="{{ showActive }}" bindtap="changeActive">
+  <image src="/images/active.png" mode="widthFix"></image>
+</view>
+
+<!-- 购买弹窗 -->
+<view class="modal-pay" wx:if="{{showPay}}">
+  <view class="modal-white">
+    <view class="del-box">
+      <image catchtap="closePay" src="/images/delete.png"></image>
+    </view>
+    <view class="over-box">
+      <view wx:if="{{seckillDetail.Type != 3}}">
+        <view class="payList-title">选择出发日期</view>
+        <view class="time-line">
+          <view wx:for="{{seckillDetail.MonthPrice}}" wx:key="index" class="month-box {{selIndex == index ?'sel-month' : ''}}" data-index="{{index}}" bindtap="changeIndex">
+            <view class="month">{{item.MonthIndex}}月</view>
+            <view class="price"></view>
+          </view>
+        </view>
+        <view class="data-line">
+          <view class="red">日</view>
+          <view>一</view>
+          <view>二</view>
+          <view>三</view>
+          <view>四</view>
+          <view>五</view>
+          <view class="red">六</view>
+        </view>
+        <view class="data-list">
+          <block wx:if="{{seckillDetail.MonthPrice[selIndex].Location > 0}}">
+            <view class="singleton" wx:for="{{seckillDetail.MonthPrice[selIndex].Location}}" wx:key=""></view>
+          </block>
+          <view wx:for="{{seckillDetail.MonthPrice[selIndex].Dates}}" wx:key="index" class="singleton {{item.Show ? '' : 'no-singleton'}} {{departureDate == item.ItemTime ? 'selSingleton' : ''}}" data-show="{{item.Show}}" data-time="{{item.ItemTime}}" bindtap="changeDate">
+            <view class="num">{{item.Index}}</view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="pay-title">是否拼房</view>
+      <view class="join-line">
+        <view class="no-join {{selJoin == 'true' ? 'sel-join' : ''}}" data-join="true" bindtap="changeJoin">
+          <text>拼房</text>
+          <text class="sub-join">如拼房失败，需补交房差¥{{seckillDetail.HousePrice}}</text>
+        </view>
+        <view class="no-join {{selJoin == 'false' ? 'sel-join' : ''}}" data-join="false" bindtap="changeJoin">不拼房</view>
+      </view> -->
+      <view class="pay-title">
+        <text>选择类型</text>
+      </view>
+      <view class="join-line">
+        <view class="no-join {{selVisitor == seckillDetail.VisitorType ? 'sel-join' : ''}}" data-id="{{seckillDetail.VisitorType}}" bindtap="changeType">
+          <text>{{seckillDetail.VisitorTypeName}}</text>
+        </view>
+      </view>
+      <block wx:if="{{orderPriceList.length>0}}">
+        <view class="pay-title">类型数量</view>
+        <view class="calculate-box">
+          <view class="calculate-line" wx:for="{{orderPriceList}}" wx:key="index">
+            <view class="calculate-people">
+              <text>{{item.ItemName}}</text>
+              <text class="sub-people" wx:if="{{item.MinAge || item.MaxAge}}">{{item.MinAge}}-{{item.MaxAge}}岁</text>
+            </view>
+            <i-input-number value="{{ item.ItemNum }}" min="1" max="100" data-index="{{index}}" bindchange="changeNum" />
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="purchase-box">
+      <view class="purchase" bindtap="toPay">立即购买</view>
+    </view>
+  </view>
+</view>
+<i-message id="message" />
+<view class='shareinto' bindtap='nosharebu' wx:if='{{shareall}}'>
+  <view class='sharewhite' catchtap='noBubbling'>
+    <image class="del-modal" bindtap='nosharebu' src="/images/delete.png"></image>
+    <view class="share-about">分享到</view>
+    <view class='friendandquan'>
+      <button class='wxfriends' open-type='share'>
+        <image src='/images/weixin.png'></image>
+        <view>微信好友</view>
+      </button>
+      <button class='wxfriends' bindtap='gotoShare'>
+        <image src='/images/wxquan.png'></image>
+        <view>分享专属图</view>
+      </button>
+    </view>
+  </view>
+</view>

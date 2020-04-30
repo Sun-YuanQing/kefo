@@ -1,0 +1,180 @@
+/* pages/cardBag/card_bag.wxss */
+
+.big-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+}
+
+.switch-icon {
+  width: 40rpx;
+  position: absolute;
+  right: 60rpx;
+  top: 30rpx;
+  z-index: 99;
+}
+
+.header {
+  font-weight: 700;
+  font-size: 62rpx;
+  margin: 0 0 10rpx 80rpx;
+}
+
+.header view:first-child {
+  font-size: 38rpx;
+  line-height: 1.5;
+}
+
+.page_section {
+  width: 100%;
+}
+
+swiper-item {
+  padding-top: 44rpx;
+}
+
+.swiper_item {
+  height: 100%;
+  display: block;
+  margin: 0 20rpx;
+}
+
+.swiper_item .main_content {
+  position: relative;
+  color: #fff;
+  padding: 36rpx 40rpx 62rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  margin-bottom: 40rpx;
+  border-radius: 16rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main_content .part1 {
+  margin-bottom: 60rpx;
+  line-height: 1.6;
+}
+
+.main_content .part1 .cardType {
+  font-size: 40rpx;
+  font-weight: 700;
+}
+
+.main_content .part2 {
+  margin-bottom: 230rpx;
+}
+
+.main_content .part2 .countdown {
+  font-size: 26rpx;
+}
+
+.main_content .part2 .countdown text {
+  font-size: 40rpx;
+  padding-right: 6rpx;
+}
+
+.main_content .part3 {
+  margin-bottom: 10rpx;
+}
+
+.main_content .part3 .number text {
+  font-size: 48rpx;
+  padding-right: 6rpx;
+  line-height: 1.6;
+}
+
+.main_content .button {
+  width: 180rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 30rpx;
+}
+
+.main_content .button image {
+  width: 12rpx;
+  height: 24rpx;
+  vertical-align: middle;
+  padding-left: 14rpx;
+}
+
+.store_name {
+  font-size: 32rpx;
+  font-weight: 700;
+  position: relative;
+}
+
+.store_name .star_image {
+  width: 24rpx;
+  height: 22rpx;
+}
+
+.total {
+  position: absolute;
+  top: 0rpx;
+  right: 50rpx;
+  width: 84rpx;
+  height: 84rpx;
+  line-height: 84rpx;
+  text-align: center;
+  border-radius: 50%;
+  border: 4px solid #696dff;
+  background: #fff;
+  font-size: 24rpx;
+  font-weight: 700;
+  z-index: 999999;
+}
+
+.total text {
+  font-size: 40rpx;
+}
+
+.red_packet {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.red_packet .amount {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 42%;
+  font-size: 26rpx;
+  color: #ffe2b1;
+}
+
+.red_packet .amount text {
+  font-size: 73rpx;
+}
+.bottom_a{
+  font-size: 24rpx;
+}
+
+.red_packet .close {
+  position: absolute;
+  bottom: 0%;
+  width: 120rpx;
+  height: 350rpx;
+  margin: 0 auto;
+}
+
+.red_packet .open {
+  position: absolute;
+  top: 42%;
+  width: 120rpx;
+  height: 200rpx;
+  margin: 0 auto;
+}

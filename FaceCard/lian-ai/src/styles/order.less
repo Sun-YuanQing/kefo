@@ -1,0 +1,478 @@
+.content:after{
+    display:block;
+    clear:both;
+    content:"";
+    visibility:hidden;
+    height:0
+ }
+.content{
+    zoom:1;
+    padding-top: 10px;
+    .right{
+        float: left;
+        width: 480px;
+        height: 100%;
+        overflow: auto;
+        padding: 0 30px 70px;
+        box-sizing: border-box;
+        border-left: 1px solid #e4e4e4;
+        position: relative;
+        .radio{
+            display: flex;
+            li{
+                width: 50%;
+                color: #E94E27;
+                cursor: pointer;
+                padding: 15px 0;
+                span{
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    border: 1px solid #E94E27;
+                    margin-right: 5px;
+                }
+            }
+        }
+        // .traveler{
+        //     color: #E94E27;
+        //     cursor: pointer;
+        //     span{
+        //         display: inline-block;
+        //         width: 12px;
+        //         height: 12px;
+        //         border-radius: 50%;
+        //         border: 1px solid #E94E27;
+        //         margin-right: 5px;
+        //     }
+        // }
+        // .add{
+        //     font-size: 14px;
+        //     color: #E94E27;
+        //     padding: 10px 0;
+        //     cursor: pointer;
+        //     text-decoration: underline;
+        // }
+        .userInfo{
+            font-size: 18px;
+            background-color: #F7F8FA;
+            padding: 20px;
+            position: relative;
+            .tag{
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                font-size: 12px;
+                color: #E94E27;
+                background-color: #F7EEE4;
+                padding: 0 13px;
+                border-radius: 10px;
+            }
+            .top{
+                display: flex;
+                align-items: center;
+                line-height: 1.8;
+                img{
+                    margin-right: 20px;
+                    border-radius: 50%;
+                }
+            }
+            .bottom{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 15px;
+                padding: 20px 0;
+                border-bottom: 1px solid #E4E4E4;
+                font-size: 14px;
+                li span:first-of-type{
+                    padding-right: 10px;
+                }
+            }
+            .toCharge{
+                margin-top: 20px;
+                display: flex;
+                justify-content: center;
+                .ivu-btn{
+                    margin-right: 30px;
+                    :last-of-type{
+                        margin-right: 0;
+                    }
+                }
+            }
+            
+        }
+        .buttonWrap{
+            width: 480px;
+            position: fixed;
+            bottom: 0px;
+            // left: 0px;
+            right: 0px;
+            display: flex;
+            .ivu-btn{
+                width: 50%;
+                height: 60px;
+                line-height: 60px;
+                text-align: center;
+                font-size: 18px;
+                color: #fff;
+                border-radius: 0;
+                // cursor: pointer;
+                &:nth-of-type(1){
+                    background-color: #FF9F27;
+                }
+                &:nth-of-type(2){
+                    background-color: #3275F5;
+                }
+            }
+        }
+    }
+    .left{
+        float: left;
+        justify-content: center;
+        width: calc(100% - 480px);
+        box-sizing: border-box;
+        height: 100%;
+        overflow: auto;
+        padding: 0 30px;
+        
+        .ivu-tabs{
+            margin-top: 10px;
+        }
+        .itemList{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 15px;
+            li{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                background-color: #F7F8FA;
+                padding: 10px;
+                height: 120px;
+                cursor: pointer;
+                line-height: 1.8;
+            }
+        }
+    }
+}
+
+.empty{
+    width: 100%;
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+    line-height: 80px;
+    a{
+        color: #E94E27;
+        text-decoration: underline;
+    }
+}
+
+        
+
+.projectList{
+    padding: 10px 20px;
+    background-color: #F7F8FA;
+    font-size: 14px;
+    color: #666;
+    border-radius: 4px;
+    margin:  20px 0;
+    position: relative;
+    overflow: hidden;
+    .close{
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+    }
+    > li{
+        display: flex;
+        justify-content: space-between;
+        line-height: 1.5;
+    }
+    .projectList,.staffList{
+        width: 100%;
+        padding: 12px 15px;
+        margin-bottom: 15px;
+        margin-top: 0;
+        background-color: #fff;
+        li{
+            display: flex;
+            justify-content: space-between;
+            line-height: 1.8;
+            .itemName{
+                max-width: 78%;
+                display: flex;
+                align-items: center;
+                >span{
+                    max-width: 90%;
+                    display: inline-block;
+                    white-space:nowrap; 
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    margin-right: 5px;
+                }
+            }
+            .over{
+                max-width: 70%;
+                display: inline-block;
+                white-space:nowrap; 
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        .tag{
+            border-bottom: 1px solid #e4e4e4;
+            padding-bottom: 6px;
+            margin-bottom: 6px;
+        }
+    }
+    .staffList{
+        margin-bottom: 6px;
+        li{
+            span:not(.point){
+                width: 40%;
+            }
+            span:last-of-type{
+                text-align: right;
+            }
+            .point{
+                border-radius: 4px;
+                padding: 2px;
+                font-size: 12px;
+            }
+        }
+    }
+    .name{
+        font-size: 15px;
+        color: #333;
+        font-weight: 700;
+        margin-bottom: 10px;
+        .blue{
+            color: #3275F5;
+            font-size: 12px;
+            padding-left: 10px;
+            cursor: pointer;
+        }
+        .old{
+            font-size: 12px;
+            color: #999;
+            text-decoration: line-through;
+            font-weight: 500;
+            margin-right: 5px;
+        }
+    }  
+    .config{
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 500;
+        > span:nth-of-type(2) span{
+            padding-right: 5px;
+        }
+    }
+}
+
+.addModal{
+    .ivu-modal-body{
+        .addModalFooter{
+            border-top: 1px solid #e4e4e4;
+            display: flex;
+            justify-content: center;
+            .ivu-btn{
+                width: 200px; 
+                height: 40px;
+                margin-top: 20px;
+            }
+        }
+        .addModalConten{
+            display: flex;
+            .workList{
+                width: 160px;
+                max-height: 400px;
+                overflow-y: auto;
+                li{
+                    padding: 18px 6px;
+                    font-size: 15px;
+                    color: #333;
+                    text-align: center;
+                    cursor: pointer;
+                    span{
+                        color: #ccc;
+                    }
+                }
+                .active{
+                    background-color: #F7F8FA;
+                    font-weight: 900;
+                    span{
+                        font-weight: normal;
+                    }
+                }
+            }
+            .job{
+                width: calc(100% - 160px);
+                background-color: #F7F8FA;
+                // min-height: 200px;
+                padding-bottom: 20px;
+                
+                .ivu-tabs-nav .ivu-tabs-tab{
+                    padding: 18px 16px;
+                }
+                .jobList{
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-gap: 15px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    max-height: 290px;
+                    overflow-y: auto;
+                    li{
+                        padding: 15px 20px;
+                        border: 1px solid #E4E4E4;
+                        border-radius: 8px;
+                        display: flex;
+                        justify-content: space-between;
+                        font-size: 16px;
+                        line-height: 1.8;
+                        cursor: pointer;
+                        .number{
+                            font-size: 13px;
+                            color: #999;
+                        }
+                        .switchWrap{
+                            p{
+                                font-size: 12px;
+                                color: #999;
+                                width: 44px;
+                                text-align: center;
+                            }
+                        }
+                    }
+                    .selected {
+                        border: 1px solid #3275F5;
+                        position: relative;
+                        overflow: hidden;
+                        &::after{
+                            content: '';
+                            width: 35px;
+                            height: 35px;
+                            border: 1px solid #3275F5;
+                            background-color: #3275F5;
+                            position: absolute;
+                            right: 0;
+                            bottom: -1px;
+                            transform: rotate(45deg) translate(72%);
+                            z-index: 7;
+                            
+                        }
+                        &::before{
+                            content: '✔';
+                            position: absolute;
+                            right: 1px;
+                            bottom: -1px;
+                            color: #fff;
+                            z-index: 9;
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.priceModal{
+    .priceModalConten{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        li{
+            margin: 10px 0;
+            font-size: 16px;
+            > span{
+                display: inline-block;
+                width: 70px;
+                padding: 0 10px;
+                text-align: right;
+            }
+            .ivu-input-number{
+                font-size: 16px;
+                width: 200px;
+                height: 44px;
+                line-height: 44px;
+                
+            }
+            .ivu-btn{
+                width: 200px; 
+                height: 40px;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px){
+    .content {
+        .left{
+            width: calc(100% - 380px);
+            .itemList{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .right{
+            width: 380px;
+            .buttonWrap{
+                width: 380px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px){
+    .content {
+        padding-bottom: 60px;
+        .left,.right{
+            width: 100%;
+            height: auto;
+        }
+        .right{
+            margin-top: 40px;
+            border-left: none;
+            min-height: 100px;
+            .buttonWrap{
+                width: 100%;
+                // position: fixed;
+            }
+        }
+    }
+    
+}
+@media screen and (max-width: 576px){
+    .content{
+        .left{
+            .itemList{
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+        
+    }
+    .addModal .ivu-modal-body .addModalConten {
+        flex-direction: column;
+        max-height: 300px;
+        overflow-y: auto;
+        .ivu-tabs{
+            overflow-y: auto;
+        }
+        .job {
+            width: 100%;
+            margin-top: 20px;
+            .jobList{
+                grid-template-columns: repeat(1, 1fr);
+                max-height: none;
+            }
+        }
+        
+        .workList{
+            width: 100%;
+        }
+    }
+    
+}

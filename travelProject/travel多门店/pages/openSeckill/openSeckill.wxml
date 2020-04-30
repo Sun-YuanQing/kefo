@@ -1,0 +1,138 @@
+<!--pages/openSeckill/openSeckill.wxml-->
+<view class="goods-box">
+  <image class="goods-img" src="{{goodsDetail.DisplayPhoto[0]}}"></image>
+  <view class="goods-name">{{goodsDetail.Name}}</view>
+</view>
+<view class="activity-box">
+  <view class="activity-line">
+    <view class="activity-name">活动时间</view>
+    <view class="activity-time">
+      <picker mode="date" bindchange="getStartData">
+        <view class="timeDiv">{{startData}}</view>
+      </picker>
+      <text class="activity-zhi">|</text>
+      <picker mode="time" bindchange="getStartTime">
+        <view class="timeDiv">{{startTime}}</view>
+      </picker>
+    </view>
+  </view>
+  <view class="activity-line">
+    <view class="activity-name">
+      <text>至</text>
+    </view>
+    <view class="activity-time">
+      <picker mode="date" bindchange="getEndData" start="{{startData}}">
+        <view class="timeDiv">{{endData}}</view>
+      </picker>
+      <text class="activity-zhi">|</text>
+      <picker mode="time" bindchange="getEndTime">
+        <view class="timeDiv">{{endTime}}</view>
+      </picker>
+    </view>
+  </view>
+  <view class="activity-line">
+    <view class="activity-name">类型</view>
+    <view class="activity-time">
+      <picker mode="selector" range="{{visitorType}}" range-key="Name" bindchange="getVisitor">
+        <view class="zhan-width {{formVal.VisitorTypeName ? 'activity-price' : 'share-place'}}">{{formVal.VisitorTypeName ||'请选择类型'}}</view>
+      </picker>
+      <image class="toRight" src="/images/icon-right.png"></image>
+    </view>
+  </view>
+  <view class="activity-line" wx:if="{{goodsDetail.Type==1 || goodsDetail.Type==2}}">
+    <view class="activity-name">出发日期</view>
+    <view class="activity-time">
+      <picker mode="selector" range="{{goodsDetail.DepartureDate}}" bindchange="getGoTime">
+        <view class="zhan-width {{formVal.DepartureDate ? 'activity-price' : 'share-place'}}">{{formVal.DepartureDate || '请选择出发日期'}}</view>
+      </picker>
+      <image class="toRight" src="/images/icon-right.png"></image>
+    </view>
+  </view>
+  <view class="activity-line">
+    <view class="activity-name">价格</view>
+    <view class="activity-price" wx:if="{{formVal.CostPrice}}">成本价 ¥{{formVal.CostPrice}} 售价 ¥{{formVal.Price}}</view>
+    <view class="share-place" wx:else>
+      {{goodsDetail.Type==1 || goodsDetail.Type==2 ? "选择类型与日期后自动获取成本价与售价" : "选择类型自动获取成本价与售价"}}
+    </view>
+  </view>
+  <view class="activity-line">
+    <view class="activity-name">活动价</view>
+    <view class="activity-time">
+      <input placeholder-class="share-place" placeholder="请输入价格" value="{{formVal.KillPrice}}" bindblur="getKillPrice"></input>
+      <view>元</view>
+    </view>
+  </view>
+  <view class="activity-line" wx:if="{{openType == 'assem'}}">
+    <view class="activity-name">成团人数</view>
+    <view class="activity-time">
+      <input placeholder-class="share-place" placeholder="请输入大于1的整数" value="{{formVal.ASSENUM}}" bindblur="getASSENUM" maxlength="8"></input>
+      <view>人</view>
+    </view>
+  </view>
+  <view class="activity-line">
+    <view class="activity-name">活动库存</view>
+    <view class="activity-time">
+      <input placeholder-class="share-place" placeholder="请输入数量" value="{{formVal.StockNum}}" bindblur="getStockNum" maxlength="8"></input>
+      <view>件</view>
+    </view>
+  </view>
+  <view class="activity-line">
+    <view class="activity-name">活动限购</view>
+    <view>
+      <view class="activity-radio">
+        <view data-limit="{{1}}" bindtap="changeLimit" class="radio-none {{formVal.IsLimtBuy == 1 ? 'radio-sel' : ''}}">
+          <image src="/images/icon-true.png"></image>
+        </view>
+        <view class="radio-line">
+          <text>限购</text>
+          <input class="radio-input" bindblur="getLimtNum" value="{{formVal.LimtNum}}" type="number"></input>
+          <text>次/人</text>
+        </view>
+      </view>
+      <view class="activity-bottom">
+        <view data-limit="{{0}}" bindtap="changeLimit" class="radio-none {{formVal.IsLimtBuy== 0 ? 'radio-sel' : ''}}">
+          <image src="/images/icon-true.png"></image>
+        </view>
+        <text>不限购</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="share-box">
+  <view class="share-title">分享文案</view>
+  <textarea class="share-textarea" placeholder-class="share-place" placeholder="请输入分享文案内容，不低于5个字" maxlength="25" name="textarea" bindblur="getExtens" value="{{formVal.Extens}}" />
+  <view class="share-num">{{formVal.Extens.length || 0}}/25</view>
+</view>
+<view class="rule-box">
+  <view class="rule-title">活动规则</view>
+  <view class="rule-content">
+    <block wx:if="{{openType == 'seckill'}}">
+      <view>1、不定期更新，限量发送，活动有效期内售完即止</view>
+      <view>2、在秒杀商品活动页面中选择商品，点击购买进入支付页</view>
+      <view>3、限时秒杀仅支持在线预定，电话下单无效</view>
+      <view>4、限时秒杀产品资源特殊，付款成功后不可取消和退款</view>
+      <view>5、秒杀商品不与其他优惠福利同享</view>
+      <view>6、秒杀商品不可使用优惠券</view>
+      <view>7、同一登录账户、同一手机号、同一终端设备号、同一支付账户等合理显示为同一用户的情形，均视为同一用户</view>
+      <view>8、通过不正当手段参与秒杀活动，本平台有撤销相关订单的权利</view>
+    </block>
+    <block wx:else>
+      <view>1、不定期更新，限量发送，活动有效期内售完即止</view>
+      <view>2、在拼图商品活动页面中选择商品，点击购买进入支付页</view>
+      <view>3、限时拼团仅支持在线预定，电话下单无效</view>
+      <view>4、限时拼团产品资源特殊，付款成功后不可取消和退款</view>
+      <view>5、开团成功后，可将拼团信息分享给好友，指定时间内邀请到成团人数的好友享拼团价，即为拼团成功；否则，拼团失败，联系商家退款</view>
+      <view>6、拼团商品不与其他优惠福利同享</view>
+      <view>7、拼团商品不可使用优惠券</view>
+      <view>8、同一登录账户、同一手机号、同一终端设备号、同一支付账户等合理显示为同一用户的情形，均视为同一用户</view>
+      <view>9、通过不正当手段参与秒杀活动，本平台有撤销相关订单的权利</view>
+    </block>
+  </view>
+</view>
+<view class="foot-box">
+  <view class="foot-line">
+    <view class="foot-preview" data-type="preview" bindtap="reviseData">预览</view>
+    <view class="foot-issue" data-type="issue" bindtap="reviseData">发布</view>
+  </view>
+</view>
+<i-message id="message" />

@@ -1,0 +1,130 @@
+// 去除苹果input样式
+input,textarea,select,option{
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline-color: transparent;
+}
+
+.ivu-form {
+  .ivu-form-item-label {
+    // font-size: 14px;
+    color: #999;
+  }
+}
+.ivu-input-wrapper {
+  height: 40px;
+  // font-size: 16px;
+  color: @primary-color;
+  width: 200px;
+}
+
+.ivu-input {
+  padding: 0 9px;
+  border: 1px solid #e4e4e4;
+  border-radius: 4px;
+  height: 100%;
+  background-color: transparent;
+  font-size: inherit;
+  outline: none;
+  box-shadow: none;
+  color: inherit;
+
+  &:hover, &:focus {
+    border-color: #000;
+    box-shadow: none;
+  }
+}
+.ivu-btn:hover{
+  border-color: transparent;
+}
+.ivu-radio-group-button {
+  .ivu-radio-wrapper {
+    padding: 0 24px;
+    // background-color: #E4E4E4;
+    // border: 1px solid #E4E4E4;
+  }
+  .ivu-radio-wrapper-checked {
+    color: #fff;
+    background-color: @primary-color;
+    // background-color: #ffff;
+    // color: #000; 
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.ivu-switch-checked {
+  background-color: #4cd964;
+  border-color: #4cd964;
+}
+
+.ivu-input-number {
+  font-size: 18px;
+  color: #000;
+}
+
+.ivu-input-number-handler-wrap {
+  display: none;
+}
+.ivu-input-number-input-wrap {
+  height: 100%;
+}
+
+.text-align-center {
+
+  .ivu-input-number-input {
+    text-align: center;
+  }
+}
+
+.ivu-btn {
+  min-width: 70px;
+  padding: 0 15px;
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.ivu-btn-text:focus{
+  box-shadow: none;
+}
+
+.ivu-btn-default {
+  color: #333;
+}
+.ivu-select-single .ivu-select-selection .ivu-select-placeholder, 
+.ivu-select-single .ivu-select-selection .ivu-select-selected-value{
+  height: 40px;
+  line-height: 40px;
+}
+.ivu-select-single .ivu-select-selection{
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+}
+
+
+
+//提现
+.cash-out-modal{
+  .ivu-modal-footer{
+    padding: 0;
+  }
+  .ivu-modal{
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.ivu-modal{
+  top: 50%;
+  transform: translateY(-50%);
+  .title{
+    text-align: center;
+    font-size: 18px;
+    margin: 10px 0 -8px;
+    color: #333;
+  }
+}
+

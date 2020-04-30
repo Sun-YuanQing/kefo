@@ -1,0 +1,4 @@
+/* pages/activity/activity.wxss */
+.container{
+  width: 100%;
+}

@@ -1,0 +1,4 @@
+<!--pages/loading/loading.wxml-->
+<view class="container">
+   <image src="/images/loading.gif" mode="widthFix" width="100%"></image>
+</view>

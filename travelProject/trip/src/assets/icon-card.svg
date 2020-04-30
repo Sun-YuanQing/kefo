@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>icon-卡项@3x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="24.4897959%" x2="0%" y2="84.1501468%" id="linearGradient-1">
+            <stop stop-color="#FFA005" offset="0%"></stop>
+            <stop stop-color="#FECC1C" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-17.1%" y="-24.0%" width="134.3%" height="148.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="2" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <linearGradient x1="53.947939%" y1="48.9625325%" x2="50%" y2="54.44458%" id="linearGradient-3">
+            <stop stop-color="#FFBC00" offset="0%"></stop>
+            <stop stop-color="#FE8700" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="24.4897959%" x2="0%" y2="84.1501468%" id="linearGradient-4">
+            <stop stop-color="#FE8700" offset="0%"></stop>
+            <stop stop-color="#FECC1C" offset="100%"></stop>
+        </linearGradient>
+        <path d="M24.1408648,18.8898559 L27.1300252,23.8717899 C27.2720288,24.1085826 27.1952557,24.4156747 26.9584948,24.5577313 C26.9053745,24.5896035 26.8467931,24.6113255 26.785735,24.6217906 C24.2231451,25.0610101 21.9612335,25.0165514 20,24.4884145 C20.0473631,23.7518335 21.1491243,21.8745104 23.3052835,18.8564451 C23.4658114,18.6317608 23.7780863,18.579743 24.0027751,18.7402647 C24.0585769,18.7801305 24.105581,18.8310496 24.1408648,18.8898559 Z" id="path-5"></path>
+        <filter x="-35.1%" y="-58.4%" width="199.3%" height="215.1%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="1" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.996078431   0 0 0 0 0.529411765   0 0 0 0 0  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M14.5865659,17.5 C15.9099228,17.5 23.7442544,25.2466127 21.7894669,26.25 C17.79625,27.393715 13.1396396,27.4436688 7.81963569,26.3998613 L7.81965328,26.3997717 C7.54872693,26.3466148 7.37218991,26.0838934 7.42534682,25.812967 C7.43816699,25.7476261 7.4639116,25.6855048 7.50106928,25.6302499 C11.146013,20.2100833 13.5078452,17.5 14.5865659,17.5 Z" id="path-7"></path>
+        <filter x="-17.7%" y="-36.3%" width="148.5%" height="172.6%" filterUnits="objectBoundingBox" id="filter-8">
+            <feOffset dx="1" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.996078431   0 0 0 0 0.529411765   0 0 0 0 0  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="门店商品上传、总部审核" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="PC-总部-产品设置-自定义产品" transform="translate(-354.000000, -537.000000)">
+            <g id="编组-6" transform="translate(346.000000, 528.000000)">
+                <g id="编组-4备份" transform="translate(0.000000, 9.000000)">
+                    <g id="卡项" transform="translate(8.000000, 0.000000)">
+                        <g transform="translate(6.250000, 7.500000)">
+                            <rect id="矩形" fill-opacity="0.6" fill="url(#linearGradient-1)" filter="url(#filter-2)" x="1.25" y="11.25" width="35" height="25" rx="2"></rect>
+                            <g id="分组-6">
+                                <path d="M9.81233094,0.00538180756 L30.4831647,7.97041138 L30.4831647,7.97041138 L3.75,7.97041138 L7.31028548,0.965449752 C7.77487674,0.0513534148 8.85551941,-0.363303474 9.81233094,0.00538180756 Z" id="三角形-copy-2" fill="url(#linearGradient-3)"></path>
+                                <rect id="矩形" fill="url(#linearGradient-4)" x="0" y="10" width="35" height="25" rx="2"></rect>
+                                <g id="三角形-copy" opacity="0.8">
+                                    <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-5"></use>
+                                </g>
+                                <g id="三角形" opacity="0.8">
+                                    <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-7"></use>
+                                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-7"></use>
+                                </g>
+                                <circle id="椭圆形" fill="#FFECAF" cx="21.25" cy="16.25" r="1.25"></circle>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,37 @@
+<view class='detailBox'>
+  <view class='img_text'>
+    <image wx:if="{{typeNum == 1}}" class='icon_img' src='/images/blue_icon.png'></image>
+    <image wx:else class='icon_img' src='/images/yellow-icon.png'></image>
+    <view class='textMoney'>{{detailData.Amount}}</view>
+  </view>
+  <view class='containBox'>
+    <view class='line_text'>
+      <view class='left_title'>当前状态</view>
+      <view class='right_name'>{{detailData.State}}</view>
+    </view>
+    <view class='line_text'>
+      <view class='left_title'>充值类别</view>
+      <view class='right_name'>{{detailData.Type}}</view>
+    </view>
+    <view class='line_text'>
+      <view class='left_title'>会员卡号</view>
+      <view class='right_name'>{{detailData.CardNo}}</view>
+    </view>
+    <view class='line_text'>
+      <view class='left_title'>商家名称</view>
+      <view class='right_name'>{{detailData.SiteName}}</view>
+    </view>
+    <view class='line_text'>
+      <view class='left_title'>支付方式</view>
+      <view class='right_name'>{{detailData.SourceType}}</view>
+    </view>
+    <view class='line_text'>
+      <view class='left_title'>充值时间</view>
+      <view class='right_name'>{{detailData.CreatedTime}}</view>
+    </view>
+    <view class='line_text'>
+      <view class='left_title'>流水单号</view>
+      <view class='right_name'>{{detailData.RecordId}}</view>
+    </view>
+  </view>
+</view>

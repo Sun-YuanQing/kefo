@@ -1,0 +1,37 @@
+<!--pages/shopMall/shopList/shopList.wxml-->
+<block wx:if="{{tabs.length > 1}}">
+	<scroll-view class="scroll-box" scroll-x="true">
+		<view class="scroll-item {{travelType == -1 ? 'scroll-sel' :''}}" data-index="-1" bindtap="changeType">全部</view>
+		<view wx:for="{{tabs}}" wx:key="index" class="scroll-item {{travelType == item.Type ? 'scroll-sel' :''}}" data-index="{{index}}" bindtap="changeType">{{item.Name}}</view>
+	</scroll-view>
+</block>
+<block wx:if="{{twoTabs.length > 1}}">
+	<scroll-view class="scroll-boxs" scroll-x="true">
+		<view class="scroll-sub {{twoType == -1 ? 'scroll-tab' :''}}" data-type="-1" bindtap="changeTravelType">全部</view>
+		<view wx:for="{{twoTabs}}" wx:key="index" class="scroll-sub {{twoType == item.Id ? 'scroll-tab' :''}}" data-type="{{item.Id}}" bindtap="changeTravelType">{{item.Name}}</view>
+	</scroll-view>
+</block>
+<view class="goods_list" wx:if="{{recommendData.length > 0}}">
+	<view class="goods-listBox">
+		<block wx:for="{{recommendData}}" wx:key="index">
+			<commodity-list class="goods_item" isAdmin="{{isAdmin}}" setting="1" goods="{{item}}" wx:if="{{index % 2 == 0}}" bind:showModal="showModal" bind:toRecommend="toRecommend" showSet="{{showSet}}"></commodity-list>
+		</block>
+	</view>
+	<view class="goods-listBox">
+		<block wx:for="{{recommendData}}" wx:key="index">
+			<commodity-list class="goods_item" isAdmin="{{isAdmin}}" setting="1" goods="{{item}}" wx:if="{{index % 2 == 1}}" bind:showModal="showModal" bind:toRecommend="toRecommend" showSet="{{showSet}}"></commodity-list>
+		</block>
+	</view>
+</view>
+<i-toast id="toast" />
+<view class="container" wx:if="{{loadSpin}}">
+	<i-spin fix></i-spin>
+</view>
+<i-message id="message" />
+<view class="no-box" wx:if="{{noGoods}}">
+	<image class="no-img" src="/images/none-goods.png"></image>
+	<view class="no-text">哎呀～还没有商品哦～</view>
+</view>
+<view class="container" wx:if="{{loadSpin}}">
+	<i-spin fix></i-spin>
+</view>

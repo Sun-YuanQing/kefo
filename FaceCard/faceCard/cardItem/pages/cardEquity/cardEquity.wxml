@@ -1,0 +1,133 @@
+<!--cardItem/pages/cardEquity/cardEquity.wxml-->
+<view class="card_head">
+  <image class="white_head" src="/cardItem/images/white_back.png"></image>
+  <view class="head_box">
+    <view class="head_text">
+      <image class="mo_card" src="{{cardDetail.PhotoUrl}}"></image>
+      <view class="text_box">
+        <view>
+          <text class="ci_card">{{cardDetail.ClassType}}</text>
+          <image class="fei_card_img" wx:if="{{cardDetail.FeiKaPrice>0}}" src="/cardItem/images/face_money.png"></image>
+        </view>
+        <view class="head_card_name">{{cardDetail.Name}}</view>
+        <block wx:if="{{cardDetail.IsAct}}">
+          <view class="user_box">
+            <text class="user_record" bindtap="torecord">使用记录</text>
+          </view>
+          <view class="validity">有效期</view>
+          <view class="validity">{{cardDetail.IsForever ? '永久有效' : cardDetail.ActTime+'至'+cardDetail.DueTime}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="content_box">
+  <view class="shop_line">
+    <image class="shop_img" src="/cardItem/images/y_house.png"></image>
+    <text class="shop_text">{{cardDetail.SiteName}}</text>
+  </view>
+  <view class="card_main_box">
+    <block wx:if="{{cardDetail.IsAct && cardDetail.ToTalNum > 10}}">
+      <view class="withprogress">使用进度（
+        <text class="withprogress_red">{{cardDetail.UsedNum}}</text>/{{cardDetail.ToTalNum}}次）</view>
+      <view class="withprogress_color">
+        <view style="width:{{cardDetail.UsedNum / cardDetail.ToTalNum * 100}}%;background:#FF4142;"></view>
+        <view style="width:{{(1 - cardDetail.UsedNum / cardDetail.ToTalNum) * 100}}%;background:#FFF3F3;"></view>
+      </view>
+    </block>
+    <block wx:if="{{cardDetail.CardRightsItems.Project.length > 0 || (cardDetail.ClassType == '折扣卡' && cardDetail.IsUnionDisc)}}">
+      <view class="{{cardDetail.IsAct ? 'card_main_head_black' : 'card_main_head'}}">项目/服务权益</view>
+      <view class="discount_num" wx:if="{{cardDetail.ChildType == '多项有限次'}}">
+        <image src="/cardItem/images/discount_num.png"></image>
+        <view class="discount_text">共{{cardData.ToTalNum}}次</view>
+      </view>
+      <block wx:if="{{cardDetail.ClassType == '折扣卡' && cardDetail.IsUnionDisc}}">
+        <view class="discount">
+          <image src="/cardItem/images/discount.png"></image>
+          <view class="discount_text">全店项目/服务</view>
+        </view>
+        <view class="discount_small">
+          <image src="/cardItem/images/discount_small.png"></image>
+          <view class="discount_text">{{cardDetail.Discount}}折</view>
+        </view>
+      </block>
+      <view class="line_project_box" wx:for="{{cardDetail.CardRightsItems.Project}}" wx:key="index" data-severid="{{item.ItemId}}" bindtap="toproject">
+        <image class="project_box_img" src="{{item.PhotoUrl ? item.PhotoUrl :'/cardItem/images/blue.png'}}"></image>
+        <view class="projext_text_box">
+          <view class="{{cardDetail.IsAct ? 'project_text_title_black' : 'project_text_title'}}">{{item.ItemName}}</view>
+          <text class="{{cardDetail.IsAct ? 'project_text_num_black' : 'project_text_num'}}">(<text class="{{cardDetail.IsAct ? 'user_red' : ''}}">{{item.UsedNum }}</text>/{{item.ItemNum+item.ItemUnit}})</text>
+          <view class="line_text_nun">
+            <view>¥{{item.ItemPrice}}/{{item.ItemUnit}}</view>
+            <image class="line_text_img" src="/cardItem/images/toroght.png"></image>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{cardDetail.CardRightsItems.Product.length > 0|| (cardDetail.ClassType == '折扣卡' && cardDetail.IsUnionDisc)}}">
+      <view class="{{cardDetail.IsAct ? 'card_main_head_black' : 'card_main_head'}}">产品权益</view>
+      <block wx:if="{{cardDetail.ClassType == '折扣卡' && cardDetail.IsUnionDisc}}">
+        <view class="discount">
+          <image src="/cardItem/images/discount.png"></image>
+          <view class="discount_text">全店产品</view>
+        </view>
+        <view class="discount_small">
+          <image src="/cardItem/images/discount_small.png"></image>
+          <view class="discount_text">{{cardDetail.Discount}}折</view>
+        </view>
+      </block>
+      <view class="line_project_box" wx:for="{{cardDetail.CardRightsItems.Product}}" wx:key="index">
+        <image class="project_box_img" src="{{item.PhotoUrl ? item.PhotoUrl :'/cardItem/images/blue.png'}}"></image>
+        <view class="projext_text_box">
+          <view class="{{cardDetail.IsAct ? 'project_text_title_black' : 'project_text_title'}}">{{item.ItemName}}</view>
+          <text class="{{cardDetail.IsAct ? 'project_text_num_black' : 'project_text_num'}}">(<text class="{{cardDetail.IsAct ? 'user_red' : ''}}">{{item.UsedNum }}</text>/{{item.ItemNum+item.ItemUnit}})</text>
+          <view class="line_text_nun">
+            <view>¥{{item.ItemPrice}}/{{item.ItemUnit}}</view>
+            <!-- <image class="line_text_img" src="/cardItem/images/toroght.png"></image> -->
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{cardDetail.CardGivingItems.Project.length > 0}}">
+      <view class="info_box {{cardDetail.IsAct ? 'info_box_red' : 'info_box'}}" wx:if="{{cardDetail.FeiKaPrice>0}}">
+        <image class="info" src="{{cardDetail.IsAct ? '/cardItem/images/info_red.png':'/cardItem/images/info.png'}}"></image>
+        <view class="{{cardDetail.IsAct ? 'info_text_red':'info_text'}}">完成所有权益之后才可使用赠送权益哦～</view>
+      </view>
+      <view class="{{cardDetail.IsAct ? 'card_main_head_black' : 'card_main_head'}}">赠送权益</view>
+      <view class="line_project_box" wx:for="{{cardDetail.CardGivingItems.Project}}" wx:key="index" data-severid="{{item.ItemId}}" bindtap="toproject">
+        <image class="project_box_img" src="{{item.PhotoUrl ? item.PhotoUrl : '/cardItem/images/blue.png'}}"></image>
+        <view class="projext_text_box">
+          <view class="{{cardDetail.IsAct ? 'project_text_title_black' : 'project_text_title'}}">{{item.ItemName}}</view>
+          <!-- <view class="{{cardDetail.IsAct ? 'project_text_num_black' : 'project_text_num'}}">{{item.ItemNum}}{{item.ItemUnit}}</view> -->
+          <text class="{{cardDetail.IsAct ? 'project_text_num_black' : 'project_text_num'}}">(<text class="{{cardDetail.IsAct ? 'user_red' : ''}}">{{item.UsedNum }}</text>/{{item.ItemNum+item.ItemUnit}})</text>
+          <view class="line_text_nun">
+            <view>¥{{item.ItemPrice}}/{{item.ItemUnit}}</view>
+            <image class="line_text_img" src="/cardItem/images/toroght.png"></image>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{cardDetail.CardGivingItems.Product.length > 0}}">
+      <view class="{{cardDetail.IsAct ? 'card_main_head_black' : 'card_main_head'}}">赠送产品</view>
+      <view class="line_project_box" wx:for="{{cardDetail.CardGivingItems.Product}}" wx:key="index">
+        <image class="project_box_img" src="{{item.PhotoUrl ? item.PhotoUrl :'/cardItem/images/blue.png'}}"></image>
+        <view class="projext_text_box">
+          <view class="{{cardDetail.IsAct ? 'project_text_title_black' : 'project_text_title'}}">{{item.ItemName}}</view>
+          <view class="{{cardDetail.IsAct ? 'project_text_num_black' : 'project_text_num'}}">{{ItemNum}}{{ItemUnit}}</view>
+          <view class="line_text_nun">
+            <view>¥{{item.ItemPrice}}/{{item.ItemUnit}}</view>
+            <!-- <image class="line_text_img" src="/cardItem/images/toroght.png"></image> -->
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view class="foot_box" bindtap="toActive" wx:if="{{!cardDetail.IsAct}}">
+  <view class="activate">激活</view>
+</view>
+<i-modal title="激活此卡" visible="{{ showModal }}" actions="{{ modalList }}" bind:click="isModal">
+  <view style="font-size:24rpx;color:#666;">购买后请尽快激活并使用，15天后会自动为您激活～</view>
+</i-modal>
+<i-message id="message" />

@@ -1,0 +1,140 @@
+/* pages/mine/coupon/coupon.wxss */
+page{
+  background: #f5f5f5;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+}
+.navbar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 500;
+  width: 100%;
+  height: 88rpx;
+  text-align: center;
+  color: #666;
+  font-size: 30rpx;
+  box-sizing: border-box;
+  background-color: #FFF;
+}
+.navbar_item{
+  flex: 1;
+  padding: 26rpx 0px;
+}
+.navbar_item_active{
+  color: #000;
+  font-weight: 700;
+  position: relative;
+}
+.navbar_item_active::before{
+  content: "";
+  width: 84rpx;
+  height: 8rpx;
+  background: #FF4142;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-48%,0)
+}
+
+.content_wrap{
+  padding: 88rpx 30rpx 60rpx;
+}
+.block{
+  padding-top: 30rpx;
+}
+.block .title{
+  font-size: 32rpx;
+  font-weight: 700;
+}
+.block .detail{
+  width: 100%;
+  height: 200rpx;
+  overflow: hidden;
+  background: url(http://www.linkedsign.cn/Beauty/Pic/ticket1.png) no-repeat center center;
+  background-size: cover;
+  display: flex;
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  position: relative;
+}
+.detail_left{
+  width: 33.33%;
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.detail_left > view:first-of-type{
+  display: flex;
+  align-items: flex-start;
+}
+.detail_left .big{
+  font-size: 50rpx;
+}
+.detail_left .small{
+  padding-top: 16rpx;
+}
+.detail_right{
+  width: 66.66%;
+  height: 200rpx;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.detail_right .usage{
+  font-size: 28rpx;
+  font-weight: 700;
+}
+.detail_right .validity{
+  color: #666;
+}
+.detail_right .remain{
+  color: #FF4142;
+}
+.block_used .detail_right,.block_expire .detail_right{
+  line-height: 2.1;
+}
+.block_expire .detail{
+   background: url(http://www.linkedsign.cn/Beauty/Pic/ticket2.png) no-repeat center;
+   background-size: cover;
+}
+.new{
+  width: 124rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.used{
+  width: 132rpx;
+  position: absolute;
+  right: 10rpx;
+  top: 20rpx;
+}
+.noBox{
+  text-align: center;
+  margin-top: 400rpx;
+  position: relative;
+}
+.noImg{
+  width: 280rpx;
+  height: 280rpx;
+}
+.noName{
+  color: #999999;
+  font-size: 24rpx;
+  position: absolute;
+  top: 170rpx;
+  margin: 0 auto;
+  width: 100%;
+}

@@ -1,0 +1,15 @@
+<!--pages/distribution/editShop/editShop.wxml-->
+<view class="content-box">
+	<view class="content-list">
+		<view class="title">店名</view>
+		<input class="content-input" placeholder="请输入您的店名" bindblur="getShopname" value="{{shopData.SiteName}}"></input>
+	</view>
+	<view class="content-list">
+		<view class="title">门店宣言</view>
+		<input class="content-input" maxlength="20" placeholder="请输入您的门店宣言" bindinput="getShopdesc" value="{{shopData.SiteDesc}}"></input>
+		<view class="textNum"><text>{{textNum}}/20</text></view>
+	</view>
+</view>
+<view class="bottom-box">
+	<view class="bootom-btn" bindtap="toForm">保存</view>
+</view>

@@ -1,0 +1,207 @@
+/* pages/doctor/reportDetails/reportDetails.wxss */
+page {
+  background: rgba(245, 245, 245, 1);
+}
+
+image {
+  width: 10rpx;
+  height: 10rpx;
+}
+
+.f-row-between {
+  display: flex;
+  /* 默认 row水平方向*/
+  flex-direction: row;
+  /*富裕空间平均分配在每两个元素之间*/
+  justify-content: space-between;
+  /*根据侧轴方向上高度居中*/
+  align-items: center;
+
+}
+
+.f-row-start {
+  display: flex;
+  /* 默认 row水平方向*/
+  flex-direction: row;
+  /*元素在主轴开始位置，富裕空间在主轴的结束位置*/
+  justify-content: flex-start;
+  /*根据侧轴方向上高度居中*/
+  align-items: center;
+}
+
+.f-row-last {
+  display: flex;
+  /* 默认 row水平方向*/
+  flex-direction: row;
+  /*元素在主轴开始位置，富裕空间在主轴的开始位置*/
+  justify-content: flex-end;
+  /*根据侧轴方向上高度居中*/
+  align-items: center;
+}
+
+.h-center {
+  display: flex;
+  /*根据侧轴方向高度居中*/
+  align-items: center;
+}
+
+.paddingRL30 {
+  padding: 0 30rpx;
+}
+
+.paddingRL28 {
+  padding: 0 28rpx;
+}
+
+.marginT20 {
+  margin-top: 20rpx;
+}
+
+
+.marginL48 {
+  margin-left: 48rpx;
+}
+
+.marginT28 {
+  margin-top: 28rpx;
+}
+.scroll-box {
+  width: 100%;
+  height: 80rpx;
+  white-space: nowrap;
+  background: #fff;
+}
+
+.scroll-item {
+  display: inline-block;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  margin: 0 30rpx;
+}
+
+.scroll-box .scroll-item:nth-of-type(1) {
+  margin: 0 30rpx 0 0;
+}
+
+.scroll-sel {
+  height: 74rpx;
+  line-height: 74rpx;
+  font-size: 32rpx;
+  color: #000;
+  font-weight: 800;
+  border-bottom: 6rpx solid #4d85ff;
+  color: #4d85ff;
+}
+
+.block-box {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 6rpx 6rpx 8rpx 0rpx rgba(234, 234, 234, 0.5);
+  border-radius: 12rpx;
+}
+
+.block-box .block-conter {
+  padding-top: 40rpx;
+  padding-bottom: 64rpx;
+}
+
+
+
+.Package-label {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 40rpx;
+}
+
+.Package-conter {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  line-height: 40rpx;
+}
+
+
+
+.chainView {
+  position: relative;
+}
+
+.chainbox {
+  position: absolute;
+  top: -30rpx;
+  display: flex;
+  width: 100%;
+}
+
+.chainImage {
+  width: 24rpx;
+  height: 80rpx;
+}
+
+
+.item-lable {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 40rpx;
+}
+
+.item-value text {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 40rpx;
+}
+
+.item-value image {
+  width: 8rpx;
+  height: 16rpx;
+}
+
+.value-image {
+  width: 28rpx;
+  height: 40rpx;
+}
+
+.block-box-1 {
+  margin-bottom: 28rpx;
+}
+
+.block-conter-1 {
+  padding: 64rpx 0;
+}
+
+.f-column-between {
+  display: flex;
+  /* 侧轴列形式*/
+  flex-direction: column;
+  /*富裕空间平均分配在每两个元素之间*/
+  justify-content: space-between;
+}
+
+
+.lable {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 40rpx;
+}
+
+.conterText {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 40rpx;
+}

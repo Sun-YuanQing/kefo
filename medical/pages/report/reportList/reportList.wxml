@@ -1,0 +1,23 @@
+<!--pages/doctor/reportList/reportList.wxml-->
+<view>
+	<scroll-view class="scroll-box" scroll-x="true">
+		<view class="scroll-item scroll-sel" bindtap="changeProduct">体检产品</view>
+	</scroll-view>
+	<view class="paddingRL30">
+		<view class="list-block" wx:for="{{reportList}}" wx:item="item" wx:key="index" data-item="{{item}}" bindtap="onToReportDetail">
+			<view class="imageView">
+				<image class="image" src="{{item.Photo}}"></image>
+			</view>
+			<view class="conter-info">
+				<view class="info-text">{{item.ProductName}}</view>
+				<view class="f-row-between">
+					<view class="info-time">体检日期 {{item.PhyDate}}</view>
+					<view class="info-btn">查看报告 ></view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="backHome">
+		<image src="../../images/home.png"></image>
+	</view>
+</view>

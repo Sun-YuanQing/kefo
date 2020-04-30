@@ -1,0 +1,19 @@
+<!--hotelPackage/pages/hotelInfo/infoList/infoList.wxml-->
+<block wx:if="{{infoList.length > 0}}">
+	<view class="gray"></view>
+	<view class="content-box">
+		<view class="list-item" wx:for="{{infoList}}" wx:key="index" data-id="{{item.Id}}" data-index="{{index}}" bindtap="toAdd">
+			<view>
+				<view class="personPhone">
+					<text>{{item.Name}}</text>
+					<text class="item-phone">{{item.Phone}}</text>
+				</view>
+				<view class="IdCard">{{item.IdCard}}</view>
+			</view>
+			<image class="edit-img" src="/images/hotelInfo-edit.png" data-id="{{item.Id}}" catchtap="toEdit"></image>
+		</view>
+	</view>
+</block>
+<view class="add-box" wx:if="{{!infoType}}">
+	<view class="add-btn" bindtap="toAdd">+新增入住人</view>
+</view>

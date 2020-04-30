@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "新增入住人",
+  "usingComponents": {
+    "i-message":"../../../components/iview/message/index"
+  }
+}

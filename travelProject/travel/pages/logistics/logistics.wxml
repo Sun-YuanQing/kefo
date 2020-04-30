@@ -1,0 +1,41 @@
+<!--pages/logistics/logistics.wxml-->
+<scroll-view scroll-x="true" class="logistics-heads" wx:if="{{expressDetail.AliYunExpressResult.length > 1}}">
+	<view wx:for="{{expressDetail.AliYunExpressResult}}" wx:key="index" class="{{selTabs == index ? 'sel-logistics' : ''}}" data-index="{{index}}" bindtap="changeTabs">物流{{index + 1}}</view>
+</scroll-view>
+<view class="content-box">
+	<view class="goods-box">
+		<view class="goods-nowInfo">{{expressDetail.AliYunExpressResult[selTabs].result.issign == 1 ? '已签收' : '运输中…'}}</view>
+		<view class="goods-info">
+			<image class="goods-img" src="{{expressDetail.CoverPhoto}}"></image>
+			<view class="goodsTitle-box">
+				<view class="goodsTitle">{{expressDetail.ProductName}}</view>
+				<view class="orderNum">订单号：{{expressDetail.OrderNo}}</view>
+			</view>
+		</view>
+	</view>
+	<view class="logistics-info">
+		<view class="logistics-title">
+			<view>{{expressDetail.AliYunExpressResult[selTabs].result.expName}}</view>
+			<view>{{expressDetail.AliYunExpressResult[selTabs].number}}</view>
+		</view>
+		<view class="main-steps">
+			<view class="steps-box" wx:for="{{expressDetail.AliYunExpressResult[selTabs].result.list}}" wx:key="index">
+				<view class="left-box">
+					<view class="date-title">{{item.date}}</view>
+					<view class="time-title">{{item.hour}}</view>
+				</view>
+				<view class="center-box">
+					<view class="{{index == 0 ? 'sel-circle' : 'circle'}}"></view>
+					<view wx:if="{{index + 1 < expressDetail.AliYunExpressResult[selTabs].result.list.length}}" class="{{index == 0 ? 'bottom-line' : 'bottom-unline'}}"></view>
+				</view>
+				<view class="right-box">
+					<view class="transit-title" wx:if="{{index == 0}}">运输中</view>
+					<view class="address-title">{{item.status}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="container" wx:if="{{loadSpin}}">
+	<i-spin fix></i-spin>
+</view>

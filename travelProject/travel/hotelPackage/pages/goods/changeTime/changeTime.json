@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "选择日期",
+  "usingComponents": {
+    "i-message": "/hotelPackage/components/iview/message/index",
+    "i-spin": "/hotelPackage/components/iview/spin/index"
+  }
+}

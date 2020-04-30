@@ -1,0 +1,212 @@
+page {
+  background: #f5f5f5;
+}
+
+.head_tabs {
+  height: 88rpx;
+  width: 100%;
+  white-space: nowrap;
+  background: #fff;
+}
+
+.item_tabs {
+  display: inline-block;
+  color: #666;
+  font-size: 28rpx;
+  padding: 0 14rpx;
+  margin: 0 32rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.sel_tabs {
+  color: #000;
+  font-weight: 800;
+  border-bottom: 8rpx solid #ff4142;
+  height: 80rpx;
+}
+
+.sever_box {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10rpx 30rpx 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list_box {
+  background: #fff;
+  border-radius: 16rpx;
+  width: 336rpx;
+  margin-top: 20rpx;
+}
+
+.list_box:nth-child(odd) {
+  margin-right: 18rpx;
+}
+
+.list_img {
+  width: 316rpx;
+  height: 316rpx;
+  border-radius: 16rpx;
+  margin: 10rpx;
+}
+
+.list_title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 24rpx;
+  margin: 0 20rpx;
+  font-weight: 800;
+}
+
+.list_line {
+  display: flex;
+  margin: 0 20rpx;
+  padding-bottom: 20rpx;
+  align-items: baseline;
+}
+
+.list_xian {
+  font-size: 24rpx;
+  color: #ff4142;
+}
+
+.list_yuan {
+  font-size: 18rpx;
+  color: #666;
+  text-decoration: line-through;
+  margin-left: 4rpx;
+}
+
+.no_box {
+  text-align: center;
+  margin-top: 50%;
+}
+
+.no_img {
+  width: 278rpx;
+  height: 212rpx;
+}
+
+.no_title {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.merchant_list {
+  background: #fff;
+  width: 100%;
+  border-radius: 16rpx;
+  box-sizing: border-box;
+  padding: 10rpx;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20rpx;
+}
+
+.merchant_product_img {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 16rpx;
+}
+
+.right_merchant_box {
+  margin-left: 20rpx;
+  width: calc(100% - 200rpx);
+}
+
+.right_merchant_title_box {
+  display: flex;
+  align-items: center;
+  margin-top: 16rpx;
+}
+
+.red_jian {
+  color: #fff;
+  background: linear-gradient(to right, #fc824e, #ff675d);
+  border-radius: 4rpx;
+  width: 26rpx;
+  height: 26rpx;
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 26rpx;
+}
+
+.right_merchant_title {
+  width: 440rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 28rpx;
+  font-weight: 800;
+  margin-left: 8rpx;
+}
+
+.line_money {
+  display: flex;
+  align-items: baseline;
+  margin-top: 4rpx;
+}
+
+.now_money {
+  display: flex;
+  align-items: baseline;
+  font-size: 20rpx;
+  font-weight: 800;
+}
+
+.now_money_big {
+  font-size: 28rpx;
+}
+
+.old_money {
+  font-size: 20rpx;
+  color: #666;
+  text-decoration: line-through;
+  margin-left: 10rpx;
+}
+
+.more_box {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 34rpx;
+}
+
+.clickmore_box {
+  width: 46rpx;
+  height: 32rpx;
+  text-align: center;
+  position: relative;
+}
+
+.clickmore {
+  width: 6rpx;
+  height: 32rpx;
+}
+
+.merchant_recommend {
+  position: absolute;
+  right: -17rpx;
+  bottom: -100rpx;
+}
+
+.back_recommend_box {
+  position: relative;
+}
+
+.back_recommend {
+  width: 148rpx;
+  height: 76rpx;
+}
+
+.recommend_text {
+  position: absolute;
+  top: 26rpx;
+  left: 0;
+  width: 148rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #ff4142;
+}

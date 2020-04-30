@@ -1,0 +1,10 @@
+<!--pages/distribution/explain/explain.wxml-->
+<view class="explain-box">
+	<view class="title">关于收益</view>
+	<view class="first-name">一、你或你的客户通过你分享的链接进入小程序购买商品并交易完成，你将获得收益如下：</view>
+	<view class="formula">普通商品收益 = 商品利润 x {{appIncome.Profit}}%</view>
+	<view class="formula">活动商品收益 = 商品售价 x {{appIncome.Sale}}%</view>
+	<view class="second-name">二、“预估收益”：是指还未交易完成的订单均为预估收益，不计入你的累计收益金额里</view>
+	<view class="title">关于权责</view>
+	<view class="first-name">最终解释权归“{{appIncome.SiteName}}”所有</view>
+</view>

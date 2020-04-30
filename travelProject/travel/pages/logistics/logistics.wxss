@@ -1,0 +1,177 @@
+/* pages/logistics/logistics.wxss */
+page {
+  background: #F5F5F5;
+}
+
+.logistics-heads {
+  background: #fff;
+  width: 100%;
+  height: 100rpx;
+  white-space: nowrap;
+}
+
+.logistics-heads view  {
+  display: inline-block;
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border: 1rpx solid #CCCCCC;
+  color: #666666;
+  font-size: 28rpx;
+  margin-right: 44rpx;
+  border-radius: 30rpx;
+}
+
+.sel-logistics {
+  background: #F5F5F5;
+  border: 1rpx solid #F5F5F5 !important;
+  color: #000;
+}
+
+.content-box {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx;
+}
+
+.goods-box {
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40rpx 28rpx;
+  border-radius: 12rpx;
+}
+
+.goods-nowInfo {
+  font-size: 32rpx;
+  font-weight: 800;
+  padding-bottom: 28rpx;
+  border-bottom: 1rpx solid #EEEEEE;
+}
+
+.goods-info {
+  display: flex;
+  align-items: center;
+  margin-top: 40rpx;
+}
+
+.goods-img {
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 12rpx;
+}
+
+.goodsTitle-box {
+  width: calc(100% - 170rpx);
+  margin-left: 24rpx;
+}
+
+.goodsTitle {
+  font-size: 28rpx;
+  color: #333333;
+  min-height: 80rpx;
+}
+
+.orderNum {
+  font-size: 28rpx;
+  color: #999999;
+  margin-top: 28rpx;
+}
+
+.logistics-info {
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40rpx 28rpx;
+  border-radius: 12rpx;
+  margin-top: 20rpx;
+}
+
+.logistics-title {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.logistics-title view {
+  margin-left: 20rpx;
+}
+
+.main-steps {
+  margin-top: 46rpx;
+}
+
+.steps-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.left-box {
+  text-align: right;
+}
+
+.date-title {
+  font-size: 24rpx;
+  color: #333333;
+}
+
+.time-title {
+  font-size: 20rpx;
+  color: #999999;
+}
+
+.center-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sel-circle {
+  width: 38rpx;
+  height: 38rpx;
+  background: linear-gradient(138deg, rgba(129, 196, 255, 1) 0%, rgba(77, 133, 255, 1) 100%);
+  border: 6rpx solid rgba(231, 239, 255, 1);
+  border-radius: 50%;
+}
+
+.circle {
+  width: 10rpx;
+  height: 10rpx;
+  background: #BBBBBB;
+  border-radius: 50%;
+  margin-top: 14rpx;
+}
+
+.bottom-line {
+  width: 2rpx;
+  min-height: 56rpx;
+  height: calc(100% - 54rpx);
+  background: #BBBBBB;
+  margin-top: 14rpx;
+}
+
+.bottom-unline {
+  width: 2rpx;
+  min-height: 106rpx;
+  height: calc(100% - 30rpx);
+  background: #BBBBBB;
+  margin-top: 14rpx;
+}
+
+.right-box {
+  width: 448rpx;
+}
+
+.transit-title {
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.address-title {
+  font-size: 24rpx;
+  color: #333333;
+}

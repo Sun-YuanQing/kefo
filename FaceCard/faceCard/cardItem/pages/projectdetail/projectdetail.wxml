@@ -1,0 +1,75 @@
+<!--cardItem/pages/projectdetail/projectdetail.wxml-->
+<view class="head_box">
+  <swiper wx:if="{{detailData.ProductPhoto.length>0}}" indicator-dots indicator-color="#FFFFFF" autoplay interval="3000" circular>
+    <block wx:for="{{detailData.ProductPhoto}}" wx:key="index">
+      <swiper-item>
+        <image class="carousel" src="{{item}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view wx:else>
+    <image class="carousel" src="/cardItem/images/mo_detail.png"></image>
+  </view>
+  <view wx:if="{{detailData.State == 1}}" class="sold_out">
+    <image src="../../images/rectangle.png"></image>
+    <view class="sold_text">已下架</view>
+  </view>
+
+</view>
+<view class="title_box">
+  <view class="title {{detailData.State == 1 ? 'title_grad' : '' }}">{{detailData.ServiceName}}</view>
+  <view class="title_line">
+    <view class="left_line">
+      <view class="left_one {{detailData.State == 1 ? 'title_grad' : '' }}">￥
+        <view class="money">{{detailData.sellHead}}.</view>{{detailData.sellEnd}}
+      </view>
+      <view class="left_end {{detailData.State == 1 ? 'title_grad' : '' }}">￥{{detailData.Price}}</view>
+    </view>
+    <view class="right_text {{detailData.State == 1 ? 'title_grad' : '' }}">已售{{detailData.SellNum}}</view>
+  </view>
+</view>
+
+<view class="tabs">
+  <view class="contain">
+    <view class="left_tab">
+      <image class="tab_img" src="{{detailData.State == 1 ? '/cardItem/images/onshop_grap.png' : '/cardItem/images/onshop.png' }}"></image>
+      <view class="tab_name {{detailData.State == 1 ? 'title_grad' : '' }}">{{detailData.AppointmentMode == 1 ? '到店付' : '需支付'}}</view>
+    </view>
+    <view class="right_tab">
+      <image class="tab_img" src="{{detailData.State == 1 ? '/cardItem/images/redtime_grap.png' : '/cardItem/images/redtime.png' }}"></image>
+      <view class="tab_name {{detailData.State == 1 ? 'title_grad' : '' }}">{{detailData.ServiceTime}}分钟</view>
+    </view>
+  </view>
+</view>
+<view class="shop_info">
+  <view class="line_shop">
+    <view class="left_title">{{siteData.Name}}</view>
+    <image class="tel_img" bindtap="showphone" src="/cardItem/images/tel.png"></image>
+  </view>
+  <view class="line_subshop">
+    <view class="left_subhead">{{siteData.Address}}</view>
+    <image class="local_img" bindtap="getLocaltion" src="/cardItem/images/location.png"></image>
+  </view>
+</view>
+<view class="detail_box" wx:if="{{(detailData.Description !='' && detailData.Description != null) || detailData.WebdetailPhoto.length>0}}">
+  <view class="img_text_detail" wx:if="{{detailData.Description !='' && detailData.Description != null}}">
+    <view class="img_text_title">图文详情</view>
+    <view class="detail_text">{{detailData.Description}}</view>
+  </view>
+  <view wx:for="{{detailData.WebdetailPhoto}}" wx:key="" class="contain_box">
+    <image class="contain_img" src="{{item}}"></image>
+  </view>
+</view>
+<view class="foot_box">
+  <view class="foot_sold" wx:if="{{detailData.State == 1}}">此项目/服务已下架啦～看看其他项目/服务</view>
+  <view class="bottom_box">
+    <view class="left_shopname">
+      <image class="shop_logo" src="/cardItem/images/shop.png"></image>
+      <view class="shop_dian">店铺</view>
+    </view>
+    <view class="shop_now" wx:if="{{detailData.State == 1}}">去看看其他项目/服务</view>
+    <view class="shop_now" bindtap="toNowPay" wx:else>{{detailData.AppointmentMode == 1 ? '立即预约' : '立即购买'}}</view>
+  </view>
+</view>
+<i-action-sheet visible="{{ visible }}" actions="{{ telphone }}" show-cancel bind:cancel="downphone" bind:click="handleClickItem" />
+<i-toast id="toast" />
