@@ -14,7 +14,7 @@
     "fundebug-javascript": "^1.7.3",
     "fundebug-vue": "^0.0.1",
     "iview": "^3.4.2",
-    "lodash-es": "^4.17.11",
+    "lodash-es": "^4.17.21",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
     "vue-echarts": "^4.0.2",
